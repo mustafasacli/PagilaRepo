@@ -1,0 +1,108 @@
+@model Pagila.ViewModel.FilmViewModel
+
+@{
+}
+
+<h2>Kayýt Detay</h2>
+
+<div>
+    <h4>Kayýt detaylarý</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd>
+            @(Model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @(Model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReleaseYear)
+        </dt>
+        <dd>
+            @(Model.ReleaseYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LanguageId)
+        </dt>
+        <dd>
+            @(Model.LanguageId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OriginalLanguageId)
+        </dt>
+        <dd>
+            @(Model.OriginalLanguageId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RentalDuration)
+        </dt>
+        <dd>
+            @(Model.RentalDuration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RentalRate)
+        </dt>
+        <dd>
+            @(Model.RentalRate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Length)
+        </dt>
+        <dd>
+            @(Model.Length)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReplacementCost)
+        </dt>
+        <dd>
+            @(Model.ReplacementCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+        <dd>
+            @(Model.Rating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastUpdate)
+        </dt>
+        <dd>
+            @(Model.LastUpdate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialFeatures)
+        </dt>
+        <dd>
+            @(Model.SpecialFeatures)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fulltext)
+        </dt>
+        <dd>
+            @(Model.Fulltext)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { filmId = Model.FilmId }) |
+    @Html.ActionLink("Sil", "Delete", new { filmId = Model.FilmId }) |
+    @Html.ActionLink("Listeye Dön", "Index")
+</p>

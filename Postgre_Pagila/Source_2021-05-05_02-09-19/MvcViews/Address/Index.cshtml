@@ -1,0 +1,74 @@
+@model System.Collections.Generic.IEnumerable<Pagila.ViewModel.AddressViewModel>
+
+@{
+}
+
+<h2>Liste</h2>
+
+<p>
+    @Html.ActionLink("Ekle", "Create")
+</p>
+<table class="table">
+   <tr>
+       <th>
+           @Html.DisplayNameFor(model => model.Address)
+       </th>
+       <th>
+           @Html.DisplayNameFor(model => model.Address2)
+       </th>
+       <th>
+           @Html.DisplayNameFor(model => model.District)
+       </th>
+       <th>
+           @Html.DisplayNameFor(model => model.CityId)
+       </th>
+       <th>
+           @Html.DisplayNameFor(model => model.PostalCode)
+       </th>
+       <th>
+           @Html.DisplayNameFor(model => model.Phone)
+       </th>
+       <th>
+           @Html.DisplayNameFor(model => model.LastUpdate)
+       </th>
+       <th>
+           @Html.Label("", "Ýþlemler")
+       </th>
+   </tr>
+   @foreach (var item in Model)
+   {
+       <tr>
+           <td>
+               @(item.Address)
+           </td>
+           <td>
+               @(item.Address2)
+           </td>
+           <td>
+               @(item.District)
+           </td>
+           <td>
+               @(item.CityId)
+           </td>
+           <td>
+               @(item.PostalCode)
+           </td>
+           <td>
+               @(item.Phone)
+           </td>
+           <td>
+               @(item.LastUpdate)
+           </td>
+           <td>
+               @Html.ActionLink("Detay", "Detail", new { addressId = item.AddressId }) |
+               @Html.ActionLink("Düzenle", "Edit", new { addressId = item.AddressId }) |
+               @Html.ActionLink("Sil", "Delete", new { addressId = item.AddressId })
+           </td>
+       </tr>
+   }
+</table>
+<div>
+       <ul>
+           <li>@Html.ActionLink("Anasayfaya dön", "Index", "Home")</li>
+       </ul>
+</div>

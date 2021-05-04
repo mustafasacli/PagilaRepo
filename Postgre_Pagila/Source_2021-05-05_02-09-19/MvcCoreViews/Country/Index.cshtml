@@ -1,0 +1,44 @@
+@model System.Collections.Generic.IEnumerable<Pagila.ViewModel.CountryViewModel>
+
+@{
+}
+
+<h2>Liste</h2>
+
+<p>
+    @Html.ActionLink("Ekle", "Create")
+</p>
+<table class="table">
+   <tr>
+       <th>
+           @Html.DisplayNameFor(model => model.Country)
+       </th>
+       <th>
+           @Html.DisplayNameFor(model => model.LastUpdate)
+       </th>
+       <th>
+           @Html.Label("", "Ýþlemler")
+       </th>
+   </tr>
+   @foreach (var item in Model)
+   {
+       <tr>
+           <td>
+               @(item.Country)
+           </td>
+           <td>
+               @(item.LastUpdate)
+           </td>
+           <td>
+               @Html.ActionLink("Detay", "Detail", new { countryId = item.CountryId }) |
+               @Html.ActionLink("Düzenle", "Edit", new { countryId = item.CountryId }) |
+               @Html.ActionLink("Sil", "Delete", new { countryId = item.CountryId })
+           </td>
+       </tr>
+   }
+</table>
+<div>
+       <ul>
+           <li>@Html.ActionLink("Anasayfaya dön", "Index", "Home")</li>
+       </ul>
+</div>
