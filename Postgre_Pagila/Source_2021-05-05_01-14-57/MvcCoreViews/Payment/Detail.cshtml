@@ -1,0 +1,52 @@
+@model Pagila.ViewModel.PaymentViewModel
+
+@{
+}
+
+<h2>Kayýt Detay</h2>
+
+<div>
+    <h4>Kayýt detaylarý</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerId)
+        </dt>
+        <dd>
+            @(Model.CustomerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StaffId)
+        </dt>
+        <dd>
+            @(Model.StaffId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RentalId)
+        </dt>
+        <dd>
+            @(Model.RentalId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+        <dd>
+            @(Model.Amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaymentDate)
+        </dt>
+        <dd>
+            @(Model.PaymentDate)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new {  }) |
+    @Html.ActionLink("Sil", "Delete", new {  }) |
+    @Html.ActionLink("Listeye Dön", "Index")
+</p>

@@ -1,0 +1,31 @@
+@model Pagila.ViewModel.CategoryViewModel
+
+@{
+}
+
+<h2>Kayýt Detay</h2>
+
+<div>
+    <h4>Kayýt detaylarý</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @(Model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastUpdate)
+        </dt>
+        <dd>
+            @(Model.LastUpdate)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { categoryId = Model.CategoryId }) |
+    @Html.ActionLink("Sil", "Delete", new { categoryId = Model.CategoryId }) |
+    @Html.ActionLink("Listeye Dön", "Index")
+</p>

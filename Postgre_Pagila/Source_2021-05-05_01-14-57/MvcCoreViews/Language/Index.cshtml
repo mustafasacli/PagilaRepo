@@ -1,0 +1,44 @@
+@model System.Collections.Generic.IEnumerable<Pagila.ViewModel.LanguageViewModel>
+
+@{
+}
+
+<h2>Liste</h2>
+
+<p>
+    @Html.ActionLink("Ekle", "Create")
+</p>
+<table class="table">
+   <tr>
+       <th>
+           @Html.DisplayNameFor(model => model.Name)
+       </th>
+       <th>
+           @Html.DisplayNameFor(model => model.LastUpdate)
+       </th>
+       <th>
+           @Html.Label("", "Ýþlemler")
+       </th>
+   </tr>
+   @foreach (var item in Model)
+   {
+       <tr>
+           <td>
+               @(item.Name)
+           </td>
+           <td>
+               @(item.LastUpdate)
+           </td>
+           <td>
+               @Html.ActionLink("Detay", "Detail", new { languageId = item.LanguageId }) |
+               @Html.ActionLink("Düzenle", "Edit", new { languageId = item.LanguageId }) |
+               @Html.ActionLink("Sil", "Delete", new { languageId = item.LanguageId })
+           </td>
+       </tr>
+   }
+</table>
+<div>
+       <ul>
+           <li>@Html.ActionLink("Anasayfaya dön", "Index", "Home")</li>
+       </ul>
+</div>

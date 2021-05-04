@@ -1,0 +1,68 @@
+@model System.Collections.Generic.IEnumerable<Pagila.ViewModel.RentalViewModel>
+
+@{
+}
+
+<h2>Liste</h2>
+
+<p>
+    @Html.ActionLink("Ekle", "Create")
+</p>
+<table class="table">
+   <tr>
+       <th>
+           @Html.DisplayNameFor(model => model.RentalDate)
+       </th>
+       <th>
+           @Html.DisplayNameFor(model => model.InventoryId)
+       </th>
+       <th>
+           @Html.DisplayNameFor(model => model.CustomerId)
+       </th>
+       <th>
+           @Html.DisplayNameFor(model => model.ReturnDate)
+       </th>
+       <th>
+           @Html.DisplayNameFor(model => model.StaffId)
+       </th>
+       <th>
+           @Html.DisplayNameFor(model => model.LastUpdate)
+       </th>
+       <th>
+           @Html.Label("", "Ýþlemler")
+       </th>
+   </tr>
+   @foreach (var item in Model)
+   {
+       <tr>
+           <td>
+               @(item.RentalDate)
+           </td>
+           <td>
+               @(item.InventoryId)
+           </td>
+           <td>
+               @(item.CustomerId)
+           </td>
+           <td>
+               @(item.ReturnDate)
+           </td>
+           <td>
+               @(item.StaffId)
+           </td>
+           <td>
+               @(item.LastUpdate)
+           </td>
+           <td>
+               @Html.ActionLink("Detay", "Detail", new { rentalId = item.RentalId }) |
+               @Html.ActionLink("Düzenle", "Edit", new { rentalId = item.RentalId }) |
+               @Html.ActionLink("Sil", "Delete", new { rentalId = item.RentalId })
+           </td>
+       </tr>
+   }
+</table>
+<div>
+       <ul>
+           <li>@Html.ActionLink("Anasayfaya dön", "Index", "Home")</li>
+       </ul>
+</div>

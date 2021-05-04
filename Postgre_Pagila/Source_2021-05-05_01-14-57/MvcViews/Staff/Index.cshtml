@@ -1,0 +1,92 @@
+@model System.Collections.Generic.IEnumerable<Pagila.ViewModel.StaffViewModel>
+
+@{
+}
+
+<h2>Liste</h2>
+
+<p>
+    @Html.ActionLink("Ekle", "Create")
+</p>
+<table class="table">
+   <tr>
+       <th>
+           @Html.DisplayNameFor(model => model.FirstName)
+       </th>
+       <th>
+           @Html.DisplayNameFor(model => model.LastName)
+       </th>
+       <th>
+           @Html.DisplayNameFor(model => model.AddressId)
+       </th>
+       <th>
+           @Html.DisplayNameFor(model => model.Email)
+       </th>
+       <th>
+           @Html.DisplayNameFor(model => model.StoreId)
+       </th>
+       <th>
+           @Html.DisplayNameFor(model => model.Active)
+       </th>
+       <th>
+           @Html.DisplayNameFor(model => model.Username)
+       </th>
+       <th>
+           @Html.DisplayNameFor(model => model.Password)
+       </th>
+       <th>
+           @Html.DisplayNameFor(model => model.LastUpdate)
+       </th>
+       <th>
+           @Html.DisplayNameFor(model => model.Picture)
+       </th>
+       <th>
+           @Html.Label("", "Ýþlemler")
+       </th>
+   </tr>
+   @foreach (var item in Model)
+   {
+       <tr>
+           <td>
+               @(item.FirstName)
+           </td>
+           <td>
+               @(item.LastName)
+           </td>
+           <td>
+               @(item.AddressId)
+           </td>
+           <td>
+               @(item.Email)
+           </td>
+           <td>
+               @(item.StoreId)
+           </td>
+           <td>
+               @(item.Active)
+           </td>
+           <td>
+               @(item.Username)
+           </td>
+           <td>
+               @(item.Password)
+           </td>
+           <td>
+               @(item.LastUpdate)
+           </td>
+           <td>
+               @(item.Picture)
+           </td>
+           <td>
+               @Html.ActionLink("Detay", "Detail", new { staffId = item.StaffId }) |
+               @Html.ActionLink("Düzenle", "Edit", new { staffId = item.StaffId }) |
+               @Html.ActionLink("Sil", "Delete", new { staffId = item.StaffId })
+           </td>
+       </tr>
+   }
+</table>
+<div>
+       <ul>
+           <li>@Html.ActionLink("Anasayfaya dön", "Index", "Home")</li>
+       </ul>
+</div>

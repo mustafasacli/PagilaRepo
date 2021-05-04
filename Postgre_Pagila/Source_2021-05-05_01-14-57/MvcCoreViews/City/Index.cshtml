@@ -1,0 +1,50 @@
+@model System.Collections.Generic.IEnumerable<Pagila.ViewModel.CityViewModel>
+
+@{
+}
+
+<h2>Liste</h2>
+
+<p>
+    @Html.ActionLink("Ekle", "Create")
+</p>
+<table class="table">
+   <tr>
+       <th>
+           @Html.DisplayNameFor(model => model.City)
+       </th>
+       <th>
+           @Html.DisplayNameFor(model => model.CountryId)
+       </th>
+       <th>
+           @Html.DisplayNameFor(model => model.LastUpdate)
+       </th>
+       <th>
+           @Html.Label("", "Ýþlemler")
+       </th>
+   </tr>
+   @foreach (var item in Model)
+   {
+       <tr>
+           <td>
+               @(item.City)
+           </td>
+           <td>
+               @(item.CountryId)
+           </td>
+           <td>
+               @(item.LastUpdate)
+           </td>
+           <td>
+               @Html.ActionLink("Detay", "Detail", new { cityId = item.CityId }) |
+               @Html.ActionLink("Düzenle", "Edit", new { cityId = item.CityId }) |
+               @Html.ActionLink("Sil", "Delete", new { cityId = item.CityId })
+           </td>
+       </tr>
+   }
+</table>
+<div>
+       <ul>
+           <li>@Html.ActionLink("Anasayfaya dön", "Index", "Home")</li>
+       </ul>
+</div>
