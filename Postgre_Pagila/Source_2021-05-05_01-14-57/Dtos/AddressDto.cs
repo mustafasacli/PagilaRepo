@@ -1,11 +1,11 @@
-using SimpleInfra.Dto.Core;
+
 using System;
 using System.Runtime.Serialization;
 
 namespace Pagila.Dtos
 {
     [DataContract]
-    public class AddressDto : SimpleBaseDto
+    public class AddressDto
     {
         [DataMember]
         public int AddressId
