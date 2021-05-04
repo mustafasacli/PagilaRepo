@@ -1,0 +1,877 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Coddie.Common</name>
+    </assembly>
+    <members>
+        <member name="T:Coddie.Common.DictionaryExtensions">
+            <summary>
+            Defines the <see cref="T:Coddie.Common.DictionaryExtensions" />.
+            </summary>
+        </member>
+        <member name="M:Coddie.Common.DictionaryExtensions.GetValueOrDefault``1(System.Collections.Generic.IDictionary{System.String,``0},System.String,``0)">
+            <summary>
+            An IDictionary&lt;string,T&gt; extension method that gets value or default.
+            </summary>
+            <typeparam name="T">    Generic type parameter. .</typeparam>
+            <param name="dictionary">   The dictionary to act on. .</param>
+            <param name="key">          The key. .</param>
+            <param name="defaultValue"> The default value. .</param>
+            <returns>   The value or default. .</returns>
+        </member>
+        <member name="M:Coddie.Common.DictionaryExtensions.DictionaryToList(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            A Dictionary&lt;string,string&gt; extension method that dictionary to list.
+            </summary>
+            <param name="dictionary">   The dictionary to act on. .</param>
+            <returns>   A List&lt;string&gt; .</returns>
+        </member>
+        <member name="T:Coddie.Common.DynamicExtensions">
+            <summary>
+            Defines the <see cref="T:Coddie.Common.DynamicExtensions" />.
+            </summary>
+        </member>
+        <member name="M:Coddie.Common.DynamicExtensions.ConvertTo``1(System.Dynamic.ExpandoObject)">
+            <summary>
+            The ConvertTo.
+            </summary>
+            <typeparam name="T">    Generic type parameter. .</typeparam>
+            <param name="dyn">  The dyn to act on. .</param>
+            <returns>   to converted. .</returns>
+        </member>
+        <member name="M:Coddie.Common.DynamicExtensions.ConvertToV2``1(System.Dynamic.ExpandoObject)">
+            <summary>
+            The ConvertToV2.
+            </summary>
+            <typeparam name="T">    Generic type parameter. .</typeparam>
+            <param name="dyn">  The dyn to act on. .</param>
+            <returns>   The given data converted to a v 2. .</returns>
+        </member>
+        <member name="M:Coddie.Common.DynamicExtensions.ConvertToList``1(System.Collections.Generic.List{System.Dynamic.ExpandoObject})">
+            <summary>
+            A List&lt;ExpandoObject&gt; extension method that converts a dynList to a list.
+            </summary>
+            <typeparam name="T">    Generic type parameter. .</typeparam>
+            <param name="dynList">  The dynList to act on. .</param>
+            <returns>   The given data converted to a list. .</returns>
+        </member>
+        <member name="M:Coddie.Common.DynamicExtensions.GetValue(System.Dynamic.ExpandoObject,System.String)">
+            <summary>
+            The GetValue.
+            </summary>
+            <param name="expandoObj">   The expandoObj to act on. .</param>
+            <param name="key">          The key. .</param>
+            <returns>   The value. .</returns>
+        </member>
+        <member name="M:Coddie.Common.DynamicExtensions.SetValue(System.Dynamic.ExpandoObject,System.String,System.Object)">
+            <summary>
+            The SetValue.
+            </summary>
+            <param name="expandoObj">   The expandoObj to act on. .</param>
+            <param name="key">          The key. .</param>
+            <param name="value">        The value. .</param>
+            <returns>   True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="M:Coddie.Common.DynamicExtensions.ToExpando(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Extension method that turns a dictionary of string and object to an ExpandoObject.
+            </summary>
+            <param name="dictionary">The dictionary<see cref="!:IDictionary&lt;string, object&gt;"/>.</param>
+            <returns>The <see cref="T:System.Dynamic.ExpandoObject"/>.</returns>
+        </member>
+        <member name="T:Coddie.Common.EnumExtensions">
+            <summary>
+            Defines the <see cref="T:Coddie.Common.EnumExtensions" />.
+            </summary>
+        </member>
+        <member name="M:Coddie.Common.EnumExtensions.GetDayName(System.DayOfWeek)">
+            <summary>
+            Gets Day Name of CurrentCulture.
+            </summary>
+            <param name="dayOfWeek">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Common.EnumExtensions.GetDayName(System.DayOfWeek,System.String)">
+            <summary>
+            Gets Day Name of given CurrentCulture.
+            </summary>
+            <param name="dayOfWeek">.</param>
+            <param name="culture">culture name.</param>
+            <returns>.</returns>
+        </member>
+        <member name="T:Coddie.Common.GenericExtensions">
+            <summary>
+            Defines the <see cref="T:Coddie.Common.GenericExtensions" />.
+            </summary>
+        </member>
+        <member name="M:Coddie.Common.GenericExtensions.IsMember``1(``0,``0[])">
+            <summary>
+            The IsMember.
+            </summary>
+            <typeparam name="T">    Generic type parameter. .</typeparam>
+            <param name="t">    The t to act on. .</param>
+            <param name="tArr"> A variable-length parameters list containing array. .</param>
+            <returns>   True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="M:Coddie.Common.GenericExtensions.IsDifferent``1(``0,``0)">
+            <summary>
+            The IsDifferent.
+            </summary>
+            <typeparam name="T">    Generic type parameter. .</typeparam>
+            <param name="t1">   The t1 to act on. .</param>
+            <param name="t2">   The second T. .</param>
+            <returns>   True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="M:Coddie.Common.GenericExtensions.GetValidProperties``1(``0)">
+            <summary>
+            The GetValidProperties.
+            </summary>
+            <typeparam name="T">    Generic type parameter. .</typeparam>
+            <param name="t">    The t to act on. .</param>
+            <returns>   An array of property İnformation. .</returns>
+        </member>
+        <member name="M:Coddie.Common.GenericExtensions.GetPropertyValues``1(``0,System.Boolean)">
+            <summary>
+            The GetPropertyValues.
+            </summary>
+            <typeparam name="T">    Generic type parameter. .</typeparam>
+            <param name="t">    The t to act on. .</param>
+            <param name="includeNotMappedProperties">.</param>
+            <returns>   The properties. .</returns>
+        </member>
+        <member name="M:Coddie.Common.GenericExtensions.GetPropertyValues``1(``0,System.Collections.Generic.List{System.String})">
+            <summary>
+            The GetPropertyValues.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="t">.</param>
+            <param name="propertyNames">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Common.GenericExtensions.GetColumnsReverse``1(``0)">
+            <summary>
+            The GetColumnsReverse.
+            </summary>
+            <typeparam name="T">    Generic type parameter. .</typeparam>
+            <param name="t">    The t to act on. .</param>
+            <returns>   The columns reverse. .</returns>
+        </member>
+        <member name="M:Coddie.Common.GenericExtensions.GetColumns``1(``0)">
+            <summary>
+            The GetColumns.
+            </summary>
+            <typeparam name="T">    Generic type parameter. .</typeparam>
+            <param name="t">    The t to act on. .</param>
+            <returns>   The columns. .</returns>
+        </member>
+        <member name="M:Coddie.Common.GenericExtensions.GetKey``1(``0,System.Boolean)">
+            <summary>
+            The GetKey.
+            </summary>
+            <typeparam name="T">    Generic type parameter. .</typeparam>
+            <param name="t">                The t to act on. .</param>
+            <param name="isFirstPropKey">   (Optional) True if is first property key, false if not. .</param>
+            <returns>   The key. .</returns>
+        </member>
+        <member name="M:Coddie.Common.GenericExtensions.GetTableName``1(``0)">
+            <summary>
+            The GetTableName.
+            </summary>
+            <typeparam name="T">    Generic type parameter. .</typeparam>
+            <param name="t">    The t to act on. .</param>
+            <returns>   The table name. .</returns>
+        </member>
+        <member name="M:Coddie.Common.GenericExtensions.GetSchemaName``1(``0)">
+            <summary>
+            The GetSchemaName.
+            </summary>
+            <typeparam name="T">    Generic type parameter. .</typeparam>
+            <param name="t">    The t to act on. .</param>
+            <returns>   The schema name. .</returns>
+        </member>
+        <member name="M:Coddie.Common.GenericExtensions.GetPropValue``1(``0,System.String)">
+            <summary>
+            The GetPropValue.
+            </summary>
+            <typeparam name="T">    Generic type parameter. .</typeparam>
+            <param name="t">        The t to act on. .</param>
+            <param name="propName"> Name of the property. .</param>
+            <returns>   The property value. .</returns>
+        </member>
+        <member name="M:Coddie.Common.GenericExtensions.SetPropValue``1(``0,System.String,System.Object)">
+            <summary>
+            The SetPropValue.
+            </summary>
+            <typeparam name="T">    Generic type parameter. .</typeparam>
+            <param name="t">        The t to act on. .</param>
+            <param name="propName"> Name of the property. .</param>
+            <param name="value">    The value. .</param>
+        </member>
+        <member name="M:Coddie.Common.GenericExtensions.IsNotNullOrDefault``1(``0)">
+            <summary>
+            if instance is null or default returns false else returns true.
+            </summary>
+            <typeparam name="T">Generic Type.</typeparam>
+            <param name="instance">Generic Type instance.</param>
+            <returns>if instance is null or default returns false else returns true.</returns>
+        </member>
+        <member name="M:Coddie.Common.GenericExtensions.GetPropertyValue``1(``0,System.String)">
+            <summary>
+            The GetPropertyValue.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="t">.</param>
+            <param name="propertyName">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Common.GenericExtensions.SetPropertyValue``1(``0,System.String,System.Object)">
+            <summary>
+            The SetPropertyValue.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="t">.</param>
+            <param name="propertyName">.</param>
+            <param name="value">.</param>
+        </member>
+        <member name="T:Coddie.Common.ObjectExtension">
+            <summary>
+            Defines the <see cref="T:Coddie.Common.ObjectExtension" />.
+            </summary>
+        </member>
+        <member name="M:Coddie.Common.ObjectExtension.IsNull(System.Object)">
+            <summary>
+            The IsNull.
+            </summary>
+            <param name="o">    The o to act on. .</param>
+            <returns>   True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="M:Coddie.Common.ObjectExtension.IsNullOrDbNull(System.Object)">
+            <summary>
+            An object extension method that query if 'obj' is null or database null.
+            </summary>
+            <param name="obj">  The obj to act on. .</param>
+            <returns>   True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="M:Coddie.Common.ObjectExtension.ToStr(System.Object)">
+            <summary>
+            The ToStr.
+            </summary>
+            <param name="obj">  The obj to act on. .</param>
+            <returns>   Obj as a string. .</returns>
+        </member>
+        <member name="M:Coddie.Common.ObjectExtension.ToInt(System.Object)">
+            <summary>
+            The ToInt.
+            </summary>
+            <param name="obj">  The obj to act on. .</param>
+            <returns>   Obj as an int. .</returns>
+        </member>
+        <member name="M:Coddie.Common.ObjectExtension.ToLong(System.Object)">
+            <summary>
+            The ToLong.
+            </summary>
+            <param name="obj">  The obj to act on. .</param>
+            <returns>   Obj as an long? .</returns>
+        </member>
+        <member name="M:Coddie.Common.ObjectExtension.ToByteNullable(System.Object)">
+            <summary>
+            The ToByteNullable.
+            </summary>
+            <param name="obj">  The obj to act on. .</param>
+            <returns>   Obj as an byte? .</returns>
+        </member>
+        <member name="M:Coddie.Common.ObjectExtension.ToShortNullable(System.Object)">
+            <summary>
+            The ToShortNullable.
+            </summary>
+            <param name="obj">  The obj to act on. .</param>
+            <returns>   Obj as an short? .</returns>
+        </member>
+        <member name="M:Coddie.Common.ObjectExtension.ToIntNullable(System.Object)">
+            <summary>
+            The ToIntNullable.
+            </summary>
+            <param name="obj">  The obj to act on. .</param>
+            <returns>   Obj as an int? .</returns>
+        </member>
+        <member name="M:Coddie.Common.ObjectExtension.ToLongNullable(System.Object)">
+            <summary>
+            The ToLongNullable.
+            </summary>
+            <param name="obj">  The obj to act on. .</param>
+            <returns>   Obj as an long? .</returns>
+        </member>
+        <member name="M:Coddie.Common.ObjectExtension.ToDecimalNullable(System.Object)">
+            <summary>
+            The ToDecimalNullable.
+            </summary>
+            <param name="obj">  The obj to act on. .</param>
+            <returns>   Obj as an decimal? .</returns>
+        </member>
+        <member name="M:Coddie.Common.ObjectExtension.ToDoubleNullable(System.Object)">
+            <summary>
+            The ToDoubleNullable.
+            </summary>
+            <param name="obj">  The obj to act on. .</param>
+            <returns>   Obj as an double? .</returns>
+        </member>
+        <member name="M:Coddie.Common.ObjectExtension.ToFloatNullable(System.Object)">
+            <summary>
+            The ToFloatNullable.
+            </summary>
+            <param name="obj">  The obj to act on. .</param>
+            <returns>   Obj as an float? .</returns>
+        </member>
+        <member name="M:Coddie.Common.ObjectExtension.ToDecimal(System.Object)">
+            <summary>
+            The ToDecimal.
+            </summary>
+            <param name="obj">  The obj to act on. .</param>
+            <returns>   Obj as a decimal. .</returns>
+        </member>
+        <member name="M:Coddie.Common.ObjectExtension.Char2Int(System.Char)">
+            <summary>
+            The Char2Int.
+            </summary>
+            <param name="ch">   The ch to act on. .</param>
+            <returns>   An int. .</returns>
+        </member>
+        <member name="M:Coddie.Common.ObjectExtension.IsNullOrEmpty(System.String)">
+            <summary>
+            The IsNullOrEmpty.
+            </summary>
+            <param name="str">  The str to act on. .</param>
+            <returns>   True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="M:Coddie.Common.ObjectExtension.IsNullOrSpace(System.String)">
+            <summary>
+            The IsNullOrSpace.
+            </summary>
+            <param name="str">  The str to act on. .</param>
+            <returns>   True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="M:Coddie.Common.ObjectExtension.GetValueWithCheckDbNull(System.Object)">
+            <summary>
+            if value is DbNulll.Value returns null, else return object value.
+            </summary>
+            <param name="obj">.</param>
+            <returns>Returns object.</returns>
+        </member>
+        <member name="M:Coddie.Common.ObjectExtension.ToDateTimeNullable(System.Object)">
+            <summary>
+            Convert object to DateTime nullable.
+            </summary>
+            <param name="obj">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="T:Coddie.Common.PropertyExtension">
+            <summary>
+            Defines the <see cref="T:Coddie.Common.PropertyExtension" />.
+            </summary>
+        </member>
+        <member name="M:Coddie.Common.PropertyExtension.GetColumnNameOfProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            get the column attribute value of property, the column attribute no exist return property name.
+            </summary>
+            <param name="propertyInfo">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Common.PropertyExtension.GetKeyProperties(System.Reflection.PropertyInfo[])">
+            <summary>
+            Get Properties which has Key attribute as array.
+            </summary>
+            <param name="properties">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Common.PropertyExtension.GetIdentityProperties(System.Reflection.PropertyInfo[])">
+            <summary>
+            Get Properties which has Identity attribute as array.
+            </summary>
+            <param name="properties">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Common.PropertyExtension.GetNotIdentityProperties(System.Reflection.PropertyInfo[])">
+            <summary>
+            Get Properties which has not Identity attribute as array.
+            </summary>
+            <param name="properties">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Common.PropertyExtension.GetPropertiesByGeneratedOption(System.Reflection.PropertyInfo[],System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption)">
+            <summary>
+            The GetPropertiesByGeneratedOption.
+            </summary>
+            <param name="properties">.</param>
+            <param name="option">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="T:Coddie.Common.StringExtension">
+            <summary>
+            Defines the <see cref="T:Coddie.Common.StringExtension" />.
+            </summary>
+        </member>
+        <member name="M:Coddie.Common.StringExtension.IsValid(System.String)">
+            <summary>
+            The IsValid.
+            </summary>
+            <param name="s">    The s to act on. .</param>
+            <returns>   True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="M:Coddie.Common.StringExtension.Len(System.String)">
+            <summary>
+            The Len.
+            </summary>
+            <param name="s">    The s to act on. .</param>
+            <returns>   An int. .</returns>
+        </member>
+        <member name="M:Coddie.Common.StringExtension.TrimAll(System.String)">
+            <summary>
+            The Trim All spaces.
+            </summary>
+            <param name="s">    The s to act on. .</param>
+            <returns>   A string. .</returns>
+        </member>
+        <member name="M:Coddie.Common.StringExtension.FirstIndexOf(System.String,System.Char)">
+            <summary>
+            The FirstIndexOf.
+            </summary>
+            <param name="str">  The str to act on. .</param>
+            <param name="ch">   The ch. .</param>
+            <returns>   An int. .</returns>
+        </member>
+        <member name="M:Coddie.Common.StringExtension.RemoveUnderLineAndCapitalizeString(System.String)">
+            <summary>
+            A string extension method that removes the under line and capitalize string described by
+            str removes underline and point.
+            </summary>
+            <param name="str">  The str to act on. .</param>
+            <returns>   A string. .</returns>
+        </member>
+        <member name="M:Coddie.Common.StringExtension.CapitalizeEndPart(System.String,System.String)">
+            <summary>
+            The CapitalizeEndPart.
+            </summary>
+            <param name="str">      The str to act on. .</param>
+            <param name="endPart">  The end part. .</param>
+            <returns>   A string. .</returns>
+        </member>
+        <member name="M:Coddie.Common.StringExtension.CapitalizeString(System.String)">
+            <summary>
+            The CapitalizeString.
+            </summary>
+            <param name="str">  The str to act on. .</param>
+            <returns>   A string. .</returns>
+        </member>
+        <member name="M:Coddie.Common.StringExtension.RemoveSpaces(System.String)">
+            <summary>
+            The RemoveSpaces.
+            </summary>
+            <param name="str">  The str to act on. .</param>
+            <returns>   A string. .</returns>
+        </member>
+        <member name="M:Coddie.Common.StringExtension.RemoveChars(System.String,System.Char[])">
+            <summary>
+            The RemoveChars.
+            </summary>
+            <param name="str">      The str to act on. .</param>
+            <param name="chars">    A variable-length parameters list containing characters. .</param>
+            <returns>   A string. .</returns>
+        </member>
+        <member name="M:Coddie.Common.StringExtension.FirstCharToUpper(System.String)">
+            <summary>
+            The FirstCharToUpper.
+            </summary>
+            <param name="input">    The input to act on. .</param>
+            <returns>   A string. .</returns>
+        </member>
+        <member name="M:Coddie.Common.StringExtension.FirstCharToLower(System.String)">
+            <summary>
+            The FirstCharToLower.
+            </summary>
+            <param name="input">    The input to act on. .</param>
+            <returns>   A string. .</returns>
+        </member>
+        <member name="M:Coddie.Common.StringExtension.UppercaseFirst(System.String)">
+            <summary>
+            The UppercaseFirst.
+            </summary>
+            <param name="s">    The s to act on. .</param>
+            <returns>   A string. .</returns>
+        </member>
+        <member name="M:Coddie.Common.StringExtension.RemovewithDictionary(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            The RemovewithDictionary.
+            </summary>
+            <param name="str">.</param>
+            <param name="dictionary">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Common.StringExtension.RemoveTurkishChars(System.String)">
+            <summary>
+            The RemoveTurkishChars.
+            </summary>
+            <param name="s">The s<see cref="T:System.String"/>.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="T:Coddie.Common.TypeExtensions">
+            <summary>
+            Defines the <see cref="T:Coddie.Common.TypeExtensions" />.
+            </summary>
+        </member>
+        <member name="M:Coddie.Common.TypeExtensions.IsSimpleType(System.Type)">
+            <summary>
+            Determine whether a type is simple (String, Decimal, DateTime, etc)
+            or complex (i.e. custom class with public properties and methods). source code:
+            https://gist.github.com/jonathanconway/3330614.
+            </summary>
+            <param name="type"> The type to act on. .</param>
+            <returns>   True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="M:Coddie.Common.TypeExtensions.IsSimpleTypeV2(System.Type)">
+            <summary>
+            The IsSimpleTypeV2.
+            </summary>
+            <param name="type"> The type to act on. .</param>
+            <returns>   True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="M:Coddie.Common.TypeExtensions.ToDbType(System.Type)">
+            <summary>
+            The ToDbType.
+            </summary>
+            <param name="type"> The type to act on. .</param>
+            <returns>   Type as a DbType. .</returns>
+        </member>
+        <member name="M:Coddie.Common.TypeExtensions.ToDbType(System.Object)">
+            <summary>
+            The ToDbType.
+            </summary>
+            <param name="obj">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Common.TypeExtensions.GetColumnsOfTypeAsReverse(System.Type)">
+            <summary>
+            The GetColumnsOfTypeAsReverse.
+            </summary>
+            <param name="type"> The type to act on. .</param>
+            <returns>   The columns of type as reverse. .</returns>
+        </member>
+        <member name="M:Coddie.Common.TypeExtensions.GetKeyOfType(System.Type)">
+            <summary>
+            The GetKeyOfType.
+            </summary>
+            <param name="type"> The type to act on. .</param>
+            <returns>   The key of type. .</returns>
+        </member>
+        <member name="M:Coddie.Common.TypeExtensions.GetIdentityPropertyOfType(System.Type)">
+            <summary>
+            The GetIdentityPropertyOfType.
+            </summary>
+            <param name="type"> The type to act on. .</param>
+            <returns>   The ıdentity property of type. .</returns>
+        </member>
+        <member name="M:Coddie.Common.TypeExtensions.GetIdentityPropertyList(System.Type)">
+            <summary>
+            The GetIdentityPropertyList.
+            </summary>
+            <param name="type">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Common.TypeExtensions.GetKeyColumnOfType(System.Type)">
+            <summary>
+            The GetKeyColumnOfType.
+            </summary>
+            <param name="type"> The type to act on. .</param>
+            <returns>   The key column of type. .</returns>
+        </member>
+        <member name="M:Coddie.Common.TypeExtensions.GetPropertyColumnOfType(System.Type,System.String)">
+            <summary>
+            The GetPropertyColumnOfType.
+            </summary>
+            <param name="type">         The type to act on. .</param>
+            <param name="propertyName"> Name of the property. .</param>
+            <returns>   The property column of type. .</returns>
+        </member>
+        <member name="M:Coddie.Common.TypeExtensions.GetTableNameOfType(System.Type)">
+            <summary>
+            The GetTableNameOfType.
+            </summary>
+            <param name="type"> The type to act on. .</param>
+            <returns>   The table name of type. .</returns>
+        </member>
+        <member name="M:Coddie.Common.TypeExtensions.GetSchemaNameOfType(System.Type)">
+            <summary>
+            The GetSchemaNameOfType.
+            </summary>
+            <param name="type"> The type to act on. .</param>
+            <returns>   The schema name of type. .</returns>
+        </member>
+        <member name="M:Coddie.Common.TypeExtensions.GetColumnsOfType(System.Type,System.Boolean)">
+            <summary>
+            The GetColumnsOfType.
+            </summary>
+            <param name="type"> The type to act on. .</param>
+            <param name="includeNotMappedProperties">if true NotMapped Properties are included, else not.</param>
+            <returns>   The columns of type. .</returns>
+        </member>
+        <member name="M:Coddie.Common.TypeExtensions.GetColumnsReverseOfType(System.Type)">
+            <summary>
+            The GetColumnsReverseOfType.
+            </summary>
+            <param name="type"> The type to act on. .</param>
+            <returns>   The columns reverse of type. .</returns>
+        </member>
+        <member name="M:Coddie.Common.TypeExtensions.IsKeyColumnNumeric(System.Type)">
+            <summary>
+            The IsKeyColumnNumeric.
+            </summary>
+            <param name="type"> The type to act on. .</param>
+            <returns>   True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="M:Coddie.Common.TypeExtensions.GetValidPropertiesOfType(System.Type,System.Boolean)">
+            <summary>
+            The GetValidPropertiesOfType.
+            </summary>
+            <param name="type"> The type to act on. .</param>
+            <param name="includeNotMappedProperties">if true NotMapped Properties are included, else not.</param>
+            <returns>   An array of property İnformation. .</returns>
+        </member>
+        <member name="M:Coddie.Common.TypeExtensions.GetValidPropertiesOfTypeV2(System.Type)">
+            <summary>
+            The GetValidPropertiesOfTypeV2.
+            </summary>
+            <param name="type"> The type to act on. .</param>
+            <returns>   An array of property İnformation. .</returns>
+        </member>
+        <member name="M:Coddie.Common.TypeExtensions.GetPropertyTypesOfType(System.Type)">
+            <summary>
+            The GetPropertyTypesOfType.
+            </summary>
+            <param name="type"> The type to act on. .</param>
+            <returns>   The property types of type. .</returns>
+        </member>
+        <member name="M:Coddie.Common.TypeExtensions.GetSameProperties(System.Type,System.Type)">
+            <summary>
+            Gets common Properties of two types.
+            </summary>
+            <param name="type1">First type.</param>
+            <param name="type2">Second type.</param>
+            <returns>returns string list.</returns>
+        </member>
+        <member name="M:Coddie.Common.TypeExtensions.IsAnonymousType(System.Type)">
+            <summary>
+            check type is anonymous.
+            </summary>
+            <param name="type">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Common.TypeExtensions.CheckIfAnonymousType(System.Type)">
+            <summary>
+            check type is anonymous.
+            </summary>
+            <param name="type">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Common.TypeExtensions.GetKeysOfType(System.Type)">
+            <summary>
+            The GetKeysOfType.
+            </summary>
+            <param name="type">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Common.TypeExtensions.GetKeyNamesOfType(System.Type,System.Boolean)">
+            <summary>
+            The GetKeyNamesOfType.
+            </summary>
+            <param name="type">.</param>
+            <param name="includeIdentityProperties">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Common.TypeExtensions.GetIdentityPropertyNamesOfType(System.Type)">
+            <summary>
+            The GetIdentityPropertyNamesOfType.
+            </summary>
+            <param name="type"> The type to act on. .</param>
+            <returns>   The ıdentity property of type. .</returns>
+        </member>
+        <member name="M:Coddie.Common.TypeExtensions.GetKeyPropertiesOfType(System.Type,System.Boolean)">
+            <summary>
+            The GetKeyPropertiesOfType.
+            </summary>
+            <param name="type">The type<see cref="T:System.Type"/>.</param>
+            <param name="includeIdentityProperties">The includeIdentityProperties<see cref="T:System.Boolean"/>.</param>
+            <returns>The <see cref="!:List&lt;string&gt;"/>.</returns>
+        </member>
+        <member name="M:Coddie.Common.TypeExtensions.GetIdentityProperties(System.Type)">
+            <summary>
+            Get Properties which has Identity attribute as array.
+            </summary>
+            <param name="type">The type<see cref="T:System.Type"/>.</param>
+            <returns>.</returns>
+        </member>
+        <member name="T:Coddie.Common.TypeHelper">
+            <summary>
+            Defines the <see cref="T:Coddie.Common.TypeHelper" />.
+            </summary>
+        </member>
+        <member name="F:Coddie.Common.TypeHelper.NumericTypes">
+            <summary>
+            Defines the NumericTypes.
+            </summary>
+        </member>
+        <member name="M:Coddie.Common.TypeHelper.IsNumeric(System.Type)">
+            <summary>
+            The IsNumeric.
+            </summary>
+            <param name="type"> The type. .</param>
+            <returns>   True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="T:Coddie.Common.Objects.MstDictionary">
+            <summary>
+            Defines the <see cref="T:Coddie.Common.Objects.MstDictionary" />.
+            </summary>
+        </member>
+        <member name="F:Coddie.Common.Objects.MstDictionary.dictionary">
+            <summary>
+            The dictionary..
+            </summary>
+        </member>
+        <member name="M:Coddie.Common.Objects.MstDictionary.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Common.Objects.MstDictionary"/> class.
+            </summary>
+        </member>
+        <member name="M:Coddie.Common.Objects.MstDictionary.#ctor(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Common.Objects.MstDictionary"/> class.
+            </summary>
+            <param name="dict">   The dictionary. .</param>
+        </member>
+        <member name="M:Coddie.Common.Objects.MstDictionary.#ctor(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Common.Objects.MstDictionary"/> class.
+            </summary>
+            <param name="dict">   The dictionary. .</param>
+        </member>
+        <member name="M:Coddie.Common.Objects.MstDictionary.#ctor(System.Dynamic.ExpandoObject)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Common.Objects.MstDictionary"/> class.
+            </summary>
+            <param name="expando">  The expando. .</param>
+        </member>
+        <member name="P:Coddie.Common.Objects.MstDictionary.Item(System.String)">
+             <summary>   Gets or sets the element with the specified key. </summary>
+            
+             <param name="key">  The key of the element to get or set. </param>
+            
+             <returns>   The element with the specified key. </returns>
+        </member>
+        <member name="P:Coddie.Common.Objects.MstDictionary.Count">
+            <summary>
+            Gets the Count.
+            </summary>
+        </member>
+        <member name="P:Coddie.Common.Objects.MstDictionary.IsReadOnly">
+            <summary>
+            Gets a value indicating whether IsReadOnly.
+            </summary>
+        </member>
+        <member name="P:Coddie.Common.Objects.MstDictionary.Keys">
+            <summary>
+            Gets the Keys
+            Gets an <see cref="T:System.Collections.Generic.ICollection`1" /> containing the keys of the
+            <see cref="T:System.Collections.Generic.IDictionary`2" />..
+            </summary>
+        </member>
+        <member name="P:Coddie.Common.Objects.MstDictionary.Values">
+            <summary>
+            Gets the Values
+            Gets an <see cref="T:System.Collections.Generic.ICollection`1" /> containing the values in
+            the <see cref="T:System.Collections.Generic.IDictionary`2" />..
+            </summary>
+        </member>
+        <member name="M:Coddie.Common.Objects.MstDictionary.Add(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            Adds an element with the provided key and value to the
+            <see cref="T:System.Collections.Generic.IDictionary`2" />.
+            </summary>
+            <param name="item"> The item to remove. .</param>
+        </member>
+        <member name="M:Coddie.Common.Objects.MstDictionary.Add(System.String,System.Object)">
+            <summary>
+            Adds an element with the provided key and value to the
+            <see cref="T:System.Collections.Generic.IDictionary`2" />.
+            </summary>
+            <param name="key">      The object to use as the key of the element to add. .</param>
+            <param name="value">    The object to use as the value of the element to add. .</param>
+        </member>
+        <member name="M:Coddie.Common.Objects.MstDictionary.Clear">
+            <summary>
+            The Clear.
+            </summary>
+        </member>
+        <member name="M:Coddie.Common.Objects.MstDictionary.Contains(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            The Contains.
+            </summary>
+            <param name="item"> The item to remove. .</param>
+            <returns>   True if the object is in this collection, false if not. .</returns>
+        </member>
+        <member name="M:Coddie.Common.Objects.MstDictionary.ContainsKey(System.String)">
+            <summary>
+            Determines whether the <see cref="T:System.Collections.Generic.IDictionary`2" /> contains an
+            element with the specified key.
+            </summary>
+            <param name="key">The key<see cref="T:System.String"/>.</param>
+            <returns>The <see cref="T:System.Boolean"/>.</returns>
+        </member>
+        <member name="M:Coddie.Common.Objects.MstDictionary.CopyTo(System.Collections.Generic.KeyValuePair{System.String,System.Object}[],System.Int32)">
+            <summary>
+            The CopyTo.
+            </summary>
+            <param name="array">        The array. .</param>
+            <param name="arrayIndex">   The array ındex. .</param>
+        </member>
+        <member name="M:Coddie.Common.Objects.MstDictionary.GetEnumerator">
+            <summary>
+            The GetEnumerator.
+            </summary>
+            <returns>   The enumerator. .</returns>
+        </member>
+        <member name="M:Coddie.Common.Objects.MstDictionary.Remove(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            Removes the element with the specified key from the
+            <see cref="T:System.Collections.Generic.IDictionary`2" />.
+            </summary>
+            <param name="item"> The item to remove. .</param>
+            <returns>The <see cref="T:System.Boolean"/>.</returns>
+        </member>
+        <member name="M:Coddie.Common.Objects.MstDictionary.Remove(System.String)">
+            <summary>
+            Removes the element with the specified key from the
+            <see cref="T:System.Collections.Generic.IDictionary`2" />.
+            </summary>
+            <param name="key">  The key of the element to remove. .</param>
+            <returns>The <see cref="T:System.Boolean"/>.</returns>
+        </member>
+        <member name="M:Coddie.Common.Objects.MstDictionary.TryGetValue(System.String,System.Object@)">
+            <summary>
+            The TryGetValue.
+            </summary>
+            <param name="key">      The key whose value to get. .</param>
+            <param name="value">The value<see cref="T:System.Object"/>.</param>
+            <returns>The <see cref="T:System.Boolean"/>.</returns>
+        </member>
+        <member name="M:Coddie.Common.Objects.MstDictionary.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            The GetEnumerator.
+            </summary>
+            <returns>   The enumerator. .</returns>
+        </member>
+        <member name="M:Coddie.Common.Objects.MstDictionary.AsDictionary">
+            <summary>
+            The AsDictionary.
+            </summary>
+            <returns>   The content. .</returns>
+        </member>
+    </members>
+</doc>

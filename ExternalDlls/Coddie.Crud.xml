@@ -1,0 +1,3030 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Coddie.Crud</name>
+    </assembly>
+    <members>
+        <member name="T:Coddie.Crud.Build.InsertAndGetIdCommandCache">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Build.InsertAndGetIdCommandCache"/>.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Build.InsertAndGetIdCommandCache.commandDictionary">
+            <summary>
+            Defines the commandDictionary.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Build.InsertAndGetIdCommandCache.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Coddie.Crud.Build.InsertAndGetIdCommandCache"/> class.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Build.InsertAndGetIdCommandCache.TryGetValue(System.String,System.Data.IDbCommand@)">
+            <summary>
+            The TryGetValue.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">[out] The value. .</param>
+            <returns>True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="M:Coddie.Crud.Build.InsertAndGetIdCommandCache.GetOrAdd(System.String,System.Data.IDbCommand)">
+            <summary>
+            The GetOrAdd.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">The value. .</param>
+            <returns>The or add. .</returns>
+        </member>
+        <member name="T:Coddie.Crud.Build.InsertCommandCache">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Build.InsertCommandCache"/>.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Build.InsertCommandCache.commandDictionary">
+            <summary>
+            Defines the commandDictionary.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Build.InsertCommandCache.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Coddie.Crud.Build.InsertCommandCache"/> class.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Build.InsertCommandCache.TryGetValue(System.String,System.Data.IDbCommand@)">
+            <summary>
+            The TryGetValue.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">[out] The value. .</param>
+            <returns>True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="M:Coddie.Crud.Build.InsertCommandCache.GetOrAdd(System.String,System.Data.IDbCommand)">
+            <summary>
+            The GetOrAdd.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">The value. .</param>
+            <returns>The or add. .</returns>
+        </member>
+        <member name="T:Coddie.Crud.Build.UpdateCommandCache">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Build.UpdateCommandCache"/>.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Build.UpdateCommandCache.commandDictionary">
+            <summary>
+            Defines the commandDictionary.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Build.UpdateCommandCache.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Coddie.Crud.Build.UpdateCommandCache"/> class.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Build.UpdateCommandCache.TryGetValue(System.String,System.Data.IDbCommand@)">
+            <summary>
+            The TryGetValue.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">[out] The value. .</param>
+            <returns>True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="M:Coddie.Crud.Build.UpdateCommandCache.GetOrAdd(System.String,System.Data.IDbCommand)">
+            <summary>
+            The GetOrAdd.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">The value. .</param>
+            <returns>The or add. .</returns>
+        </member>
+        <member name="T:Coddie.Crud.Build.DeleteCommandCache">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Build.DeleteCommandCache"/>.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Build.DeleteCommandCache.commandDictionary">
+            <summary>
+            Defines the commandDictionary.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Build.DeleteCommandCache.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Coddie.Crud.Build.DeleteCommandCache"/> class.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Build.DeleteCommandCache.TryGetValue(System.String,System.Data.IDbCommand@)">
+            <summary>
+            The TryGetValue.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">[out] The value. .</param>
+            <returns>True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="M:Coddie.Crud.Build.DeleteCommandCache.GetOrAdd(System.String,System.Data.IDbCommand)">
+            <summary>
+            The GetOrAdd.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">The value. .</param>
+            <returns>The or add. .</returns>
+        </member>
+        <member name="T:Coddie.Crud.Build.GetByIdCommandCache">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Build.GetByIdCommandCache"/>.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Build.GetByIdCommandCache.commandDictionary">
+            <summary>
+            Defines the commandDictionary.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Build.GetByIdCommandCache.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Coddie.Crud.Build.GetByIdCommandCache"/> class.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Build.GetByIdCommandCache.TryGetValue(System.String,System.Data.IDbCommand@)">
+            <summary>
+            The TryGetValue.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">[out] The value. .</param>
+            <returns>True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="M:Coddie.Crud.Build.GetByIdCommandCache.GetOrAdd(System.String,System.Data.IDbCommand)">
+            <summary>
+            The GetOrAdd.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">The value. .</param>
+            <returns>The or add. .</returns>
+        </member>
+        <member name="T:Coddie.Crud.Build.GetAllCommandCache">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Build.GetAllCommandCache"/>.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Build.GetAllCommandCache.commandDictionary">
+            <summary>
+            Defines the commandDictionary.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Build.GetAllCommandCache.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Coddie.Crud.Build.GetAllCommandCache"/> class.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Build.GetAllCommandCache.TryGetValue(System.String,System.Data.IDbCommand@)">
+            <summary>
+            The TryGetValue.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">[out] The value. .</param>
+            <returns>True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="M:Coddie.Crud.Build.GetAllCommandCache.GetOrAdd(System.String,System.Data.IDbCommand)">
+            <summary>
+            The GetOrAdd.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">The value. .</param>
+            <returns>The or add. .</returns>
+        </member>
+        <member name="T:Coddie.Crud.Build.InsertAndGetIdCommandDefCache">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Build.InsertAndGetIdCommandDefCache"/>.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Build.InsertAndGetIdCommandDefCache.commandDictionary">
+            <summary>
+            Defines the commandDictionary.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Build.InsertAndGetIdCommandDefCache.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Coddie.Crud.Build.InsertAndGetIdCommandDefCache"/> class.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Build.InsertAndGetIdCommandDefCache.TryGetValue(System.String,Coddie.Data.Objects.CommandDefinition@)">
+            <summary>
+            The TryGetValue.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">[out] The value. .</param>
+            <returns>True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="M:Coddie.Crud.Build.InsertAndGetIdCommandDefCache.GetOrAdd(System.String,Coddie.Data.Objects.CommandDefinition)">
+            <summary>
+            The GetOrAdd.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">The value. .</param>
+            <returns>The or add. .</returns>
+        </member>
+        <member name="M:Coddie.Crud.Build.InsertAndGetIdCommandDefCache.GetOrAdd(System.String,System.Func{System.String,Coddie.Data.Objects.CommandDefinition})">
+            <summary>
+            The GetOrAdd.
+            </summary>
+            <param name="key">The key <see cref="T:System.String"/>.</param>
+            <param name="func">The func <see cref="!:Func&lt;string, CommandDefinition&gt;"/>.</param>
+            <returns>The <see cref="T:Coddie.Data.Objects.CommandDefinition"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Build.InsertCommandDefCache">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Build.InsertCommandDefCache"/>.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Build.InsertCommandDefCache.commandDictionary">
+            <summary>
+            Defines the commandDictionary.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Build.InsertCommandDefCache.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Coddie.Crud.Build.InsertCommandDefCache"/> class.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Build.InsertCommandDefCache.TryGetValue(System.String,Coddie.Data.Objects.CommandDefinition@)">
+            <summary>
+            The TryGetValue.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">[out] The value. .</param>
+            <returns>True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="M:Coddie.Crud.Build.InsertCommandDefCache.GetOrAdd(System.String,Coddie.Data.Objects.CommandDefinition)">
+            <summary>
+            The GetOrAdd.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">The value. .</param>
+            <returns>The or add. .</returns>
+        </member>
+        <member name="M:Coddie.Crud.Build.InsertCommandDefCache.GetOrAdd(System.String,System.Func{System.String,Coddie.Data.Objects.CommandDefinition})">
+            <summary>
+            The GetOrAdd.
+            </summary>
+            <param name="key">The key <see cref="T:System.String"/>.</param>
+            <param name="func">The func <see cref="!:Func&lt;string, CommandDefinition&gt;"/>.</param>
+            <returns>The <see cref="T:Coddie.Data.Objects.CommandDefinition"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Build.UpdateCommandDefCache">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Build.UpdateCommandDefCache"/>.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Build.UpdateCommandDefCache.commandDictionary">
+            <summary>
+            Defines the commandDictionary.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Build.UpdateCommandDefCache.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Coddie.Crud.Build.UpdateCommandDefCache"/> class.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Build.UpdateCommandDefCache.TryGetValue(System.String,Coddie.Data.Objects.CommandDefinition@)">
+            <summary>
+            The TryGetValue.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">[out] The value. .</param>
+            <returns>True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="M:Coddie.Crud.Build.UpdateCommandDefCache.GetOrAdd(System.String,Coddie.Data.Objects.CommandDefinition)">
+            <summary>
+            The GetOrAdd.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">The value. .</param>
+            <returns>The or add. .</returns>
+        </member>
+        <member name="M:Coddie.Crud.Build.UpdateCommandDefCache.GetOrAdd(System.String,System.Func{System.String,Coddie.Data.Objects.CommandDefinition})">
+            <summary>
+            The GetOrAdd.
+            </summary>
+            <param name="key">The key <see cref="T:System.String"/>.</param>
+            <param name="func">The func <see cref="!:Func&lt;string, CommandDefinition&gt;"/>.</param>
+            <returns>The <see cref="T:Coddie.Data.Objects.CommandDefinition"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Build.DeleteCommandDefCache">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Build.DeleteCommandDefCache"/>.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Build.DeleteCommandDefCache.commandDictionary">
+            <summary>
+            Defines the commandDictionary.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Build.DeleteCommandDefCache.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Coddie.Crud.Build.DeleteCommandDefCache"/> class.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Build.DeleteCommandDefCache.TryGetValue(System.String,Coddie.Data.Objects.CommandDefinition@)">
+            <summary>
+            The TryGetValue.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">[out] The value. .</param>
+            <returns>True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="M:Coddie.Crud.Build.DeleteCommandDefCache.GetOrAdd(System.String,Coddie.Data.Objects.CommandDefinition)">
+            <summary>
+            The GetOrAdd.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">The value. .</param>
+            <returns>The or add. .</returns>
+        </member>
+        <member name="M:Coddie.Crud.Build.DeleteCommandDefCache.GetOrAdd(System.String,System.Func{System.String,Coddie.Data.Objects.CommandDefinition})">
+            <summary>
+            The GetOrAdd.
+            </summary>
+            <param name="key">The key <see cref="T:System.String"/>.</param>
+            <param name="func">The func <see cref="!:Func&lt;string, CommandDefinition&gt;"/>.</param>
+            <returns>The <see cref="T:Coddie.Data.Objects.CommandDefinition"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Build.GetByIdCommandDefCache">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Build.GetByIdCommandDefCache"/>.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Build.GetByIdCommandDefCache.commandDictionary">
+            <summary>
+            Defines the commandDictionary.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Build.GetByIdCommandDefCache.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Coddie.Crud.Build.GetByIdCommandDefCache"/> class.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Build.GetByIdCommandDefCache.TryGetValue(System.String,Coddie.Data.Objects.CommandDefinition@)">
+            <summary>
+            The TryGetValue.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">[out] The value. .</param>
+            <returns>True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="M:Coddie.Crud.Build.GetByIdCommandDefCache.GetOrAdd(System.String,Coddie.Data.Objects.CommandDefinition)">
+            <summary>
+            The GetOrAdd.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">The value. .</param>
+            <returns>The or add. .</returns>
+        </member>
+        <member name="M:Coddie.Crud.Build.GetByIdCommandDefCache.GetOrAdd(System.String,System.Func{System.String,Coddie.Data.Objects.CommandDefinition})">
+            <summary>
+            The GetOrAdd.
+            </summary>
+            <param name="key">The key <see cref="T:System.String"/>.</param>
+            <param name="func">The func <see cref="!:Func&lt;string, CommandDefinition&gt;"/>.</param>
+            <returns>The <see cref="T:Coddie.Data.Objects.CommandDefinition"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Build.GetAllCommandDefCache">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Build.GetAllCommandDefCache"/>.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Build.GetAllCommandDefCache.commandDictionary">
+            <summary>
+            Defines the commandDictionary.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Build.GetAllCommandDefCache.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Coddie.Crud.Build.GetAllCommandDefCache"/> class.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Build.GetAllCommandDefCache.TryGetValue(System.String,Coddie.Data.Objects.CommandDefinition@)">
+            <summary>
+            The TryGetValue.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">[out] The value. .</param>
+            <returns>True if it succeeds, false if it fails.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Build.GetAllCommandDefCache.GetOrAdd(System.String,Coddie.Data.Objects.CommandDefinition)">
+            <summary>
+            The GetOrAdd.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">The value. .</param>
+            <returns>The or add. .</returns>
+        </member>
+        <member name="M:Coddie.Crud.Build.GetAllCommandDefCache.GetOrAdd(System.String,System.Func{System.String,Coddie.Data.Objects.CommandDefinition})">
+            <summary>
+            The GetOrAdd.
+            </summary>
+            <param name="key">The key <see cref="T:System.String"/>.</param>
+            <param name="func">The func <see cref="!:Func&lt;string, CommandDefinition&gt;"/>.</param>
+            <returns>The <see cref="T:Coddie.Data.Objects.CommandDefinition"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Build.GetWhereIdInCommandDefCache">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Build.GetByIdCommandDefCache"/>.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Build.GetWhereIdInCommandDefCache.commandDictionary">
+            <summary>
+            Defines the commandDictionary.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Build.GetWhereIdInCommandDefCache.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Coddie.Crud.Build.GetWhereIdInCommandDefCache"/> class.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Build.GetWhereIdInCommandDefCache.TryGetValue(System.String,Coddie.Data.Objects.CommandDefinition@)">
+            <summary>
+            The TryGetValue.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">[out] The value. .</param>
+            <returns>True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="M:Coddie.Crud.Build.GetWhereIdInCommandDefCache.GetOrAdd(System.String,Coddie.Data.Objects.CommandDefinition)">
+            <summary>
+            The GetOrAdd.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">The value. .</param>
+            <returns>The or add. .</returns>
+        </member>
+        <member name="M:Coddie.Crud.Build.GetWhereIdInCommandDefCache.GetOrAdd(System.String,System.Func{System.String,Coddie.Data.Objects.CommandDefinition})">
+            <summary>
+            The GetOrAdd.
+            </summary>
+            <param name="key">The key <see cref="T:System.String"/>.</param>
+            <param name="func">The func <see cref="!:Func&lt;string, CommandDefinition&gt;"/>.</param>
+            <returns>The <see cref="T:Coddie.Data.Objects.CommandDefinition"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Build.RocketParameterBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Build.RocketParameterBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Build.RocketParameterBuilder.InputProperties``1(Coddie.Data.Enums.DbConnectionTypes,Coddie.Crud.Enums.QueryTypes)">
+            <summary>
+            The InputProperties.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="connType">The connType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+            <param name="queryType">The queryType <see cref="T:Coddie.Crud.Enums.QueryTypes"/>.</param>
+            <returns>The <see cref="!:IList&lt;string&gt;"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Build.RocketParameterBuilder.OutputProperties``1(Coddie.Data.Enums.DbConnectionTypes,Coddie.Crud.Enums.QueryTypes)">
+            <summary>
+            The OutputProperties.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="connType">The connType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+            <param name="queryType">The queryType <see cref="T:Coddie.Crud.Enums.QueryTypes"/>.</param>
+            <returns>The <see cref="!:IList&lt;string&gt;"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Build.RocketParameterBuilder.GetInputProperties(System.Reflection.PropertyInfo[],Coddie.Data.Enums.DbConnectionTypes,Coddie.Crud.Enums.QueryTypes)">
+            <summary>
+            The GetInputProperties.
+            </summary>
+            <param name="properties">The properties <see cref="!:PropertyInfo[]"/>.</param>
+            <param name="connType">The connType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+            <param name="queryType">The queryType <see cref="T:Coddie.Crud.Enums.QueryTypes"/>.</param>
+            <returns>The <see cref="!:PropertyInfo[]"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Build.RocketParameterBuilder.GetOutputProperties(System.Reflection.PropertyInfo[],Coddie.Data.Enums.DbConnectionTypes,Coddie.Crud.Enums.QueryTypes)">
+            <summary>
+            The GetOutputProperties.
+            </summary>
+            <param name="properties">The properties <see cref="!:PropertyInfo[]"/>.</param>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+            <param name="queryType">The queryType <see cref="T:Coddie.Crud.Enums.QueryTypes"/>.</param>
+            <returns>The <see cref="!:PropertyInfo[]"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.InsertAndGetIdQueryCache">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.InsertAndGetIdQueryCache"/>.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.InsertAndGetIdQueryCache.queryDictionary">
+            <summary>
+            Defines the queryDictionary.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.InsertAndGetIdQueryCache.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Coddie.Crud.InsertAndGetIdQueryCache"/> class.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.InsertAndGetIdQueryCache.TryGetValue(System.String,System.String@)">
+            <summary>
+            The TryGetValue.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">[out] The value. .</param>
+            <returns>True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="M:Coddie.Crud.InsertAndGetIdQueryCache.GetOrAdd(System.String,System.String)">
+            <summary>
+            The GetOrAdd.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">The value. .</param>
+            <returns>The or add. .</returns>
+        </member>
+        <member name="T:Coddie.Crud.InsertQueryCache">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.InsertQueryCache"/>.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.InsertQueryCache.queryDictionary">
+            <summary>
+            Defines the queryDictionary.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.InsertQueryCache.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Coddie.Crud.InsertQueryCache"/> class.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.InsertQueryCache.TryGetValue(System.String,System.String@)">
+            <summary>
+            The TryGetValue.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">[out] The value. .</param>
+            <returns>True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="M:Coddie.Crud.InsertQueryCache.GetOrAdd(System.String,System.String)">
+            <summary>
+            The GetOrAdd.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">The value. .</param>
+            <returns>The or add. .</returns>
+        </member>
+        <member name="T:Coddie.Crud.UpdateQueryCache">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.UpdateQueryCache"/>.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.UpdateQueryCache.queryDictionary">
+            <summary>
+            Defines the queryDictionary.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.UpdateQueryCache.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Coddie.Crud.UpdateQueryCache"/> class.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.UpdateQueryCache.TryGetValue(System.String,System.String@)">
+            <summary>
+            The TryGetValue.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">[out] The value. .</param>
+            <returns>True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="M:Coddie.Crud.UpdateQueryCache.GetOrAdd(System.String,System.String)">
+            <summary>
+            The GetOrAdd.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">The value. .</param>
+            <returns>The or add. .</returns>
+        </member>
+        <member name="T:Coddie.Crud.DeleteQueryCache">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.DeleteQueryCache"/>.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.DeleteQueryCache.queryDictionary">
+            <summary>
+            Defines the queryDictionary.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.DeleteQueryCache.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Coddie.Crud.DeleteQueryCache"/> class.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.DeleteQueryCache.TryGetValue(System.String,System.String@)">
+            <summary>
+            The TryGetValue.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">[out] The value. .</param>
+            <returns>True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="M:Coddie.Crud.DeleteQueryCache.GetOrAdd(System.String,System.String)">
+            <summary>
+            The GetOrAdd.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">The value. .</param>
+            <returns>The or add. .</returns>
+        </member>
+        <member name="T:Coddie.Crud.GetByIdQueryCache">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.GetByIdQueryCache"/>.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.GetByIdQueryCache.queryDictionary">
+            <summary>
+            Defines the queryDictionary.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.GetByIdQueryCache.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Coddie.Crud.GetByIdQueryCache"/> class.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.GetByIdQueryCache.TryGetValue(System.String,System.String@)">
+            <summary>
+            The TryGetValue.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">[out] The value. .</param>
+            <returns>True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="M:Coddie.Crud.GetByIdQueryCache.GetOrAdd(System.String,System.String)">
+            <summary>
+            The GetOrAdd.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">The value. .</param>
+            <returns>The or add. .</returns>
+        </member>
+        <member name="T:Coddie.Crud.GetAllQueryCache">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.GetAllQueryCache"/>.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.GetAllQueryCache.queryDictionary">
+            <summary>
+            Defines the queryDictionary.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.GetAllQueryCache.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Coddie.Crud.GetAllQueryCache"/> class.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.GetAllQueryCache.TryGetValue(System.String,System.String@)">
+            <summary>
+            The TryGetValue.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">[out] The value. .</param>
+            <returns>True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="M:Coddie.Crud.GetAllQueryCache.GetOrAdd(System.String,System.String)">
+            <summary>
+            The GetOrAdd.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">The value. .</param>
+            <returns>The or add. .</returns>
+        </member>
+        <member name="T:Coddie.Crud.GetQueryCache">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.GetQueryCache"/>.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.GetQueryCache.queryDictionary">
+            <summary>
+            Defines the queryDictionary.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.GetQueryCache.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Coddie.Crud.GetQueryCache"/> class.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.GetQueryCache.TryGetValue(System.String,System.String@)">
+            <summary>
+            The TryGetValue.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">[out] The value. .</param>
+            <returns>True if it succeeds, false if it fails. .</returns>
+        </member>
+        <member name="M:Coddie.Crud.GetQueryCache.GetOrAdd(System.String,System.String)">
+            <summary>
+            The GetOrAdd.
+            </summary>
+            <param name="key">The key. .</param>
+            <param name="value">The value. .</param>
+            <returns>The or add. .</returns>
+        </member>
+        <member name="T:Coddie.Crud.QueryFormatter">
+            <summary>
+            Represents formatter of Query.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.QueryFormatter.GetQueryFormat(Coddie.Crud.Enums.QueryTypes)">
+            <summary>
+            Returns Format of Query according to QueryType.
+            </summary>
+            <param name="queryType">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.SimpleCommandDefinitionBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.SimpleCommandDefinitionBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.SimpleCommandDefinitionBuilder.GetCommandDefinition``1(System.Data.IDbConnection,Coddie.Data.Enums.DbConnectionTypes,Coddie.Crud.Enums.QueryTypes)">
+            <summary>
+            The GetCommandDefinition.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="connection">The connection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+            <param name="queryType">The queryType <see cref="T:Coddie.Crud.Enums.QueryTypes"/>.</param>
+            <returns>The <see cref="T:Coddie.Data.Objects.CommandDefinition"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleCommandDefinitionBuilder.GetCommandDefinition``1(Coddie.Data.Enums.DbConnectionTypes,Coddie.Crud.Enums.QueryTypes)">
+            <summary>
+            The GetCommandDefinition.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+            <param name="queryType">The queryType <see cref="T:Coddie.Crud.Enums.QueryTypes"/>.</param>
+            <returns>The <see cref="T:Coddie.Data.Objects.CommandDefinition"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.SimpleFileOperator">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.SimpleFileOperator"/>.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.SimpleFileOperator.lazyOperator">
+            <summary>
+            Defines the lazyOperator.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.SimpleFileOperator.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:Coddie.Crud.SimpleFileOperator"/> class from being created.
+            </summary>
+        </member>
+        <member name="P:Coddie.Crud.SimpleFileOperator.Instance">
+            <summary>
+            Gets the Instance.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.SimpleFileOperator.Write(System.String,System.Collections.Generic.List{System.String},System.Boolean)">
+            <summary>
+            The Write.
+            </summary>
+            <param name="filePath">The filePath <see cref="T:System.String"/>.</param>
+            <param name="rows">The rows <see cref="!:List&lt;string&gt;"/>.</param>
+            <param name="writeLine">The writeLine <see cref="T:System.Boolean"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.Command.CommandDefinitionExtension">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Command.CommandDefinitionExtension.BuildQueryKey``1(Coddie.Data.Enums.DbConnectionTypes,Coddie.Crud.Enums.QueryTypes)">
+            <summary>
+            The Build Query Key.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="connType">The connType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+            <param name="queryType">The queryType <see cref="T:Coddie.Crud.Enums.QueryTypes"/>.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Command.BaseCommandExecutor">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Command.BaseCommandExecutor"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Command.BaseCommandExecutor.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="!:BaseCommandExecutor&lt;T&gt;"/> class.
+            </summary>
+            <param name="connectionType">.</param>
+        </member>
+        <member name="P:Coddie.Crud.Command.BaseCommandExecutor.ConnectionType">
+            <summary>
+            Gets or sets the ConnectionType Connection Type of DbConnection...
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Command.BaseCommandExecutor.Execute(Coddie.Data.Objects.CommandDefinition)">
+            <summary>
+            The Execute.
+            </summary>
+            <param name="commandDefinition">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Command.BaseCommandExecutor.InsertAndGetIdWIT``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
+            <summary>
+            The InsertAndGetId.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="connection">The connection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <param name="commandTimeout">The commandTimeout <see cref="!:int?"/>.</param>
+            <returns>The <see cref="!:ICommandResult&lt;object&gt;"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Command.BaseCommandExecutor.InsertAndGetId``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            The InsertAndGetId.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="connection">The connection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
+            <param name="commandTimeout">The commandTimeout <see cref="!:int?"/>.</param>
+            <returns>The <see cref="!:ICommandResult&lt;object&gt;"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Command.ICommandExecutor">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Command.ICommandExecutor"/>.
+            </summary>
+        </member>
+        <member name="P:Coddie.Crud.Command.ICommandExecutor.ConnectionType">
+            <summary>
+            Gets the ConnectionType Connection Type of Query Builder..
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Command.ICommandExecutor.Execute(Coddie.Data.Objects.CommandDefinition)">
+            <summary>
+            The Execute.
+            </summary>
+            <param name="commandDefinition">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Command.ICommandExecutor.InsertAndGetIdWIT``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
+            <summary>
+            The InsertAndGetId.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="connection">The connection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <param name="commandTimeout">The commandTimeout <see cref="!:int?"/>.</param>
+            <returns>The <see cref="!:ICommandResult&lt;object&gt;"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Command.ICommandExecutor.InsertAndGetId``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            The InsertAndGetId.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="connection">The connection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
+            <param name="commandTimeout">The commandTimeout <see cref="!:int?"/>.</param>
+            <returns>The <see cref="!:ICommandResult&lt;object&gt;"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Command.DB2CommandExecutor">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Command.DB2CommandExecutor"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Command.DB2CommandExecutor.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Command.DB2CommandExecutor"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.Command.FirebirdCommandExecutor">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Command.FirebirdCommandExecutor"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Command.FirebirdCommandExecutor.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Command.FirebirdCommandExecutor"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.Command.MsSqlCommandExecutor">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Command.MsSqlCommandExecutor"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Command.MsSqlCommandExecutor.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Command.MsSqlCommandExecutor"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.Command.MySqlCommandExecutor">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Command.MySqlCommandExecutor"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Command.MySqlCommandExecutor.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Command.MySqlCommandExecutor"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.Command.NuoDbCommandExecutor">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Command.NuoDbCommandExecutor"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Command.NuoDbCommandExecutor.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Command.NuoDbCommandExecutor"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.Command.OdbcCommandExecutor">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Command.OdbcCommandExecutor"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Command.OdbcCommandExecutor.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Command.OdbcCommandExecutor"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.Command.OledbCommandExecutor">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Command.OledbCommandExecutor"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Command.OledbCommandExecutor.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Command.OledbCommandExecutor"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.Command.OracleCommandExecutor">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Command.OracleCommandExecutor"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Command.OracleCommandExecutor.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Command.OracleCommandExecutor"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.Command.PgSqlCommandExecutor">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Command.PgSqlCommandExecutor"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Command.PgSqlCommandExecutor.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Command.PgSqlCommandExecutor"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.Command.SqlBaseCommandExecutor">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Command.SqlBaseCommandExecutor"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Command.SqlBaseCommandExecutor.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Command.SqlBaseCommandExecutor"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.Command.SqlCECommandExecutor">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Command.SqlCECommandExecutor"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Command.SqlCECommandExecutor.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Command.SqlCECommandExecutor"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.Command.SqlDatabaseCommandExecutor">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Command.SqlDatabaseCommandExecutor"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Command.SqlDatabaseCommandExecutor.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Command.SqlDatabaseCommandExecutor"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.Command.SQLiteCommandExecutor">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Command.SQLiteCommandExecutor"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Command.SQLiteCommandExecutor.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Command.SQLiteCommandExecutor"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.Command.SynergyCommandExecutor">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Command.SynergyCommandExecutor"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Command.SynergyCommandExecutor.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Command.SynergyCommandExecutor"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.Command.VistaDbCommandExecutor">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Command.VistaDbCommandExecutor"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Command.VistaDbCommandExecutor.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Command.VistaDbCommandExecutor"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.DbConnectionExtension2">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.DbConnectionExtension2.BuildQueryObject``1(System.Data.IDbConnection,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            Builds the query object.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="connection">The connection.</param>
+            <param name="expression">The expression.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coddie.Crud.DbConnectionExtension2.BuildQueryObject``1(System.Data.IDbConnection,System.Object,Coddie.Crud.Enums.QueryTypes)">
+            <summary>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="connection"></param>
+            <param name="obj"></param>
+            <param name="queryType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Coddie.Crud.Evaluator">
+            <summary>
+            Evaluator sınıfı bize local değişken referanslarının (lambda ifadeleri içinde olan anonymous
+            metotları) expressions tree yapısına çevrilmesini sağlar. The Evaluator class is responsible
+            for creating the expression tree (of the anonymous methods in lambda expressions).
+            Referrer: http://blogs.msdn.com/b/mattwar/archive/2007/08/01/linq-building-an-iqueryable-provider-part-iii.aspx
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Coddie.Crud.Evaluator.PartialEval(System.Linq.Expressions.Expression,System.Func{System.Linq.Expressions.Expression,System.Boolean})" -->
+        <!-- Badly formed XML comment ignored for member "M:Coddie.Crud.Evaluator.PartialEval(System.Linq.Expressions.Expression)" -->
+        <!-- Badly formed XML comment ignored for member "T:Coddie.Crud.Evaluator.SubtreeEvaluator" -->
+        <member name="T:Coddie.Crud.Evaluator.Nominator">
+            <summary>
+            Performs bottom-up analysis to determine which nodes can possibly be part of an
+            evaluated sub-tree.
+            </summary>
+        </member>
+        <member name="T:Coddie.Crud.PartialDeleteOperator">
+            <summary>
+            Delete operator for predicate and given objects.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.PartialDeleteOperator.DeleteAll``1(System.Data.IDbConnection,System.Object,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Deletes all entities with given condition.
+            </summary>
+            <typeparam name="TEntity">The type of the entity.</typeparam>
+            <param name="connection">The connection.</param>
+            <param name="deletePropertyValues">The update property values.</param>
+            <param name="transaction"></param>
+            <param name="commandTimeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Coddie.Crud.PartialDeleteOperator.DeleteAll``1(System.Data.IDbConnection,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Deletes all entities with given condition.
+            </summary>
+            <typeparam name="TEntity">The type of the entity.</typeparam>
+            <param name="connection">The connection.</param>
+            <param name="expression">The expression.</param>
+            <param name="transaction">The transaction.</param>
+            <param name="commandTimeout">The command timeout.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Coddie.Crud.PartialInsertOperator">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.PartialInsertOperator.PartialInsert``1(System.Data.IDbConnection,System.Object,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            inserts the partial entity.
+            </summary>
+            <typeparam name="TEntity">The type of the entity.</typeparam>
+            <param name="connection">The connection.</param>
+            <param name="insertPropertyValues">The insert property values.</param>
+            <param name="transaction"></param>
+            <param name="commandTimeout"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Coddie.Crud.PartialInsertOperator.PartialInsertAndReturnId``1(System.Data.IDbConnection,System.Object,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            inserts the partial entity and return id.
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="connection"></param>
+            <param name="insertPropertyValues"></param>
+            <param name="transaction"></param>
+            <param name="commandTimeout"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Coddie.Crud.PartialReadOperator">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.PartialReadOperator.PartialSelect``1(System.Data.IDbConnection,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Selects Partial entities.
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="connection"></param>
+            <param name="expression"></param>
+            <param name="transaction"></param>
+            <param name="commandTimeout"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Coddie.Crud.PartialUpdateOperator">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.PartialUpdateOperator.PartialUpdate``1(System.Data.IDbConnection,System.Object,System.Object,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Partials the update.
+            </summary>
+            <typeparam name="TEntity">The type of the entity.</typeparam>
+            <param name="connection">The connection.</param>
+            <param name="setPropertyValues"></param>
+            <param name="wherePropertyValues"></param>
+            <param name="transaction"></param>
+            <param name="commandTimeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Coddie.Crud.PartialUpdateOperator.PartialUpdate``1(System.Data.IDbConnection,System.Object,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="connection"></param>
+            <param name="updatePropertyValues"></param>
+            <param name="expression"></param>
+            <param name="transaction"></param>
+            <param name="commandTimeout"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Coddie.Crud.QueryTranslator`1">
+            <summary>
+            QueryTranslator sınıfı lambda ifadelerini Visitor deseni aracılığı ile handle edebilmemizi
+            sağlamaktadır. VisitConstant tiplerinde 'Contains' desteğini sağladım. The QueryTranslator
+            class allows us to use Visitor design pattern to handle the lambda expressions. The
+            VisitConstant types have support for the "Contains" method.
+            Referrer: http://blogs.msdn.com/b/mattwar/archive/2007/07/31/linq-building-an-iqueryable-provider-part-ii.aspx
+            </summary>
+        </member>
+        <member name="P:Coddie.Crud.QueryTranslator`1.ConnectionType">
+            <summary>
+            Gets the type of the connection.
+            </summary>
+            <value>The type of the connection.</value>
+        </member>
+        <member name="M:Coddie.Crud.QueryTranslator`1.GetPropertyName(System.Linq.Expressions.BinaryExpression)">
+            <summary>
+            Gets the name of the property.
+            </summary>
+            <param name="body">The body.</param>
+            <returns>The property name for the property expression.</returns>
+        </member>
+        <member name="M:Coddie.Crud.QueryTranslator`1.GetFormattedString(System.String,System.Int32)">
+            <summary>
+            The GetFormattedString.
+            </summary>
+            <param name="str">The str <see cref="T:System.String"/>.</param>
+            <param name="number">The number <see cref="T:System.Int32"/>.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.QueryTranslator2`1">
+            <summary>
+            QueryTranslator sınıfı lambda ifadelerini Visitor deseni aracılığı ile handle edebilmemizi
+            sağlamaktadır. VisitConstant tiplerinde 'Contains' desteğini sağladım. The QueryTranslator
+            class allows us to use Visitor design pattern to handle the lambda expressions. The
+            VisitConstant types have support for the "Contains" method.
+            Referrer: http://blogs.msdn.com/b/mattwar/archive/2007/07/31/linq-building-an-iqueryable-provider-part-ii.aspx
+            </summary>
+        </member>
+        <member name="P:Coddie.Crud.QueryTranslator2`1.ConnectionType">
+            <summary>
+            Gets the type of the connection.
+            </summary>
+            <value>The type of the connection.</value>
+        </member>
+        <member name="M:Coddie.Crud.QueryTranslator2`1.GetPropertyName(System.Linq.Expressions.BinaryExpression)">
+            <summary>
+            Gets the name of the property.
+            </summary>
+            <param name="body">The body.</param>
+            <returns>The property name for the property expression.</returns>
+        </member>
+        <member name="M:Coddie.Crud.QueryTranslator2`1.GetFormattedString(System.String,System.Int32)">
+            <summary>
+            The GetFormattedString.
+            </summary>
+            <param name="str">The str <see cref="T:System.String"/>.</param>
+            <param name="number">The number <see cref="T:System.Int32"/>.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.SimpleAsyncBulkCrudOperations">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.SimpleAsyncBulkCrudOperations"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.SimpleAsyncBulkCrudOperations.InsertAndGetIdInternalAsync``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+            <summary>
+            Inserts And Get Id Async With internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">The dbConnection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="entityList">The entityList <see cref="T:System.Collections.Generic.List`1"/>.</param>
+            <param name="commandTimeout">The commandTimeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>The <see cref="!:Task&lt;long&gt;"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleAsyncBulkCrudOperations.InsertInternalAsync``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+            <summary>
+            Inserts Async With internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">The dbConnection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="entityList">The entityList <see cref="T:System.Collections.Generic.List`1"/>.</param>
+            <param name="commandTimeout">The commandTimeout <see cref="!:int?"/>.</param>
+            <returns>The <see cref="!:Task&lt;int&gt;"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleAsyncBulkCrudOperations.UpdateInternalAsync``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+            <summary>
+            Updates Async With internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">The dbConnection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="entityList">The entityList <see cref="T:System.Collections.Generic.List`1"/>.</param>
+            <param name="commandTimeout">The commandTimeout <see cref="!:int?"/>.</param>
+            <returns>The <see cref="!:Task&lt;int&gt;"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleAsyncBulkCrudOperations.DeleteInternalAsync``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+            <summary>
+            Deletes Async With internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">The dbConnection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="entityList">The entityList <see cref="T:System.Collections.Generic.List`1"/>.</param>
+            <param name="commandTimeout">The commandTimeout <see cref="!:int?"/>.</param>
+            <returns>The <see cref="!:Task&lt;int&gt;"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleAsyncBulkCrudOperations.InsertAndGetIdAsync``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Inserts And Get Id Async.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">The dbConnection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="entityList">The entityList <see cref="T:System.Collections.Generic.List`1"/>.</param>
+            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
+            <param name="commandTimeout">The commandTimeout <see cref="!:int?"/>.</param>
+            <returns>The <see cref="!:Task&lt;long&gt;"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleAsyncBulkCrudOperations.InsertAsync``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Inserts Async.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">The dbConnection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="entityList">The entityList <see cref="T:System.Collections.Generic.List`1"/>.</param>
+            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
+            <param name="commandTimeout">The commandTimeout <see cref="!:int?"/>.</param>
+            <returns>The <see cref="!:Task&lt;int&gt;"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleAsyncBulkCrudOperations.UpdateAsync``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Updates Async.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">The dbConnection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="entityList">The entityList <see cref="T:System.Collections.Generic.List`1"/>.</param>
+            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
+            <param name="commandTimeout">The commandTimeout <see cref="!:int?"/>.</param>
+            <returns>The <see cref="!:Task&lt;int&gt;"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.SimpleAsyncCrudOperations">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.SimpleAsyncCrudOperations"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.SimpleAsyncCrudOperations.InsertInternalAsync``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
+            <summary>
+            Inserts Async With internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">The dbConnection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <param name="commandTimeout">The commandTimeout <see cref="!:int?"/>.</param>
+            <returns>The <see cref="!:Task&lt;int&gt;"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleAsyncCrudOperations.InsertAndGetIdInternalAsync``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
+            <summary>
+            Inserts And Get Id Async With internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">The dbConnection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <param name="commandTimeout">The commandTimeout <see cref="!:int?"/>.</param>
+            <returns>The <see cref="!:Task&lt;object&gt;"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleAsyncCrudOperations.UpdateInternalAsync``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
+            <summary>
+            Updates Async With internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">The dbConnection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <param name="commandTimeout">The commandTimeout <see cref="!:int?"/>.</param>
+            <returns>The <see cref="!:Task&lt;int&gt;"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleAsyncCrudOperations.DeleteInternalAsync``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
+            <summary>
+            Deletes Async With internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">The dbConnection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <param name="commandTimeout">The commandTimeout <see cref="!:int?"/>.</param>
+            <returns>The <see cref="!:Task&lt;int&gt;"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleAsyncCrudOperations.InsertAsync``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Inserts Async.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">The dbConnection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
+            <param name="commandTimeout">The commandTimeout <see cref="!:int?"/>.</param>
+            <returns>The <see cref="!:Task&lt;int&gt;"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleAsyncCrudOperations.InsertAndGetIdAsync``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Inserts And Get Id Async.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">The dbConnection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
+            <param name="commandTimeout">The commandTimeout <see cref="!:int?"/>.</param>
+            <returns>The <see cref="!:Task&lt;object&gt;"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleAsyncCrudOperations.UpdateAsync``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Updates Async.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">The dbConnection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
+            <param name="commandTimeout">The commandTimeout <see cref="!:int?"/>.</param>
+            <returns>The <see cref="!:Task&lt;int&gt;"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleAsyncCrudOperations.DeleteAsync``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Deletes Async.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">The dbConnection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
+            <param name="commandTimeout">The commandTimeout <see cref="!:int?"/>.</param>
+            <returns>The <see cref="!:Task&lt;int&gt;"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleAsyncCrudOperations.DeleteByIdAsync``1(System.Data.IDbConnection,System.Object,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Deletes By Id Async.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">The dbConnection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="idValue">The idValue <see cref="T:System.Object"/>.</param>
+            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
+            <param name="commandTimeout">The commandTimeout <see cref="!:int?"/>.</param>
+            <returns>The <see cref="!:Task&lt;int&gt;"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.SimpleAsyncGetOperations">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.SimpleAsyncGetOperations"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.SimpleAsyncGetOperations.GetDynamicByIdAsync``1(System.Data.IDbConnection,System.Object,System.Nullable{System.Int32})">
+            <summary>
+            Gets Dynamic By Id Async.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">The dbConnection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="idValue">The idValue <see cref="T:System.Object"/>.</param>
+            <param name="commandTimeout">The commandTimeout <see cref="!:int?"/>.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task`1"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleAsyncGetOperations.GetByIdAsync``1(System.Data.IDbConnection,System.Object,System.Nullable{System.Int32})">
+            <summary>
+            Gets By Id Async.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">The dbConnection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="idValue">The idValue <see cref="T:System.Object"/>.</param>
+            <param name="commandTimeout">The commandTimeout <see cref="!:int?"/>.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task`1"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleAsyncGetOperations.GetAllAsync``1(System.Data.IDbConnection,System.Nullable{System.Int32})">
+            <summary>
+            Gets All Async.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">The dbConnection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="commandTimeout">The commandTimeout <see cref="!:int?"/>.</param>
+            <returns>The <see cref="!:Task&lt;List&lt;T&gt;&gt;"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleAsyncGetOperations.GetAllAsDynAsync``1(System.Data.IDbConnection,System.Nullable{System.Int32})">
+            <summary>
+            Gets All As Dyn Async.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">The dbConnection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="commandTimeout">The commandTimeout <see cref="!:int?"/>.</param>
+            <returns>The <see cref="!:Task&lt;List&lt;ExpandoObject&gt;&gt;"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleAsyncGetOperations.GetListByIdListAsync``1(System.Data.IDbConnection,System.Object[],System.Nullable{System.Int32})">
+            <summary>
+            Gets List By Id List Async.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">The dbConnection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="idValues">The idValues <see cref="!:object[]"/>.</param>
+            <param name="commandTimeout">The commandTimeout <see cref="!:int?"/>.</param>
+            <returns>The <see cref="!:Task&lt;List&lt;T&gt;&gt;"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleAsyncGetOperations.GetListByIdListAsDynAsync``1(System.Data.IDbConnection,System.Object[],System.Nullable{System.Int32})">
+            <summary>
+            Gets List By Id List As Dyn Async.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">The dbConnection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="idValues">The idValues <see cref="!:object[]"/>.</param>
+            <param name="commandTimeout">The commandTimeout <see cref="!:int?"/>.</param>
+            <returns>The <see cref="!:Task&lt;List&lt;ExpandoObject&gt;&gt;"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.SimpleAsyncPredicateOperator">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.SimpleAsyncPredicateOperator"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.SimpleAsyncPredicateOperator.GetInternalAsync``1(System.Data.IDbConnection,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            Gets With internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="connection">The connection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="expression">The expression <see cref="!:Expression&lt;Func&lt;T, bool&gt;&gt;"/>.</param>
+            <returns>The <see cref="!:Task&lt;IEnumerable&lt;T&gt;&gt;"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.SimpleBulkCrudOperator">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.SimpleBulkCrudOperator"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.SimpleBulkCrudOperator.InsertInternal``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+            <summary>
+            Inserts With internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">.</param>
+            <param name="entities">.</param>
+            <param name="commandTimeout">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleBulkCrudOperator.UpdateInternal``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+            <summary>
+            Updates With internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">.</param>
+            <param name="entities">.</param>
+            <param name="commandTimeout">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleBulkCrudOperator.DeleteInternal``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+            <summary>
+            Deletes With internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">.</param>
+            <param name="entities">.</param>
+            <param name="commandTimeout">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleBulkCrudOperator.InsertWithIdInternal``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+            <summary>
+            Inserts With Id With internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">.</param>
+            <param name="entities">.</param>
+            <param name="commandTimeout">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleBulkCrudOperator.InsertAndGetIdInternal``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+            <summary>
+            Insert AndGetId With internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">.</param>
+            <param name="entities">.</param>
+            <param name="commandTimeout">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleBulkCrudOperator.Insert``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">.</param>
+            <param name="entities">.</param>
+            <param name="transaction">.</param>
+            <param name="commandTimeout">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleBulkCrudOperator.Update``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Updates entity list.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">.</param>
+            <param name="entities">.</param>
+            <param name="transaction">.</param>
+            <param name="commandTimeout">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleBulkCrudOperator.Delete``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Deletes entity list.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">.</param>
+            <param name="entities">.</param>
+            <param name="transaction">.</param>
+            <param name="commandTimeout">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleBulkCrudOperator.InsertWithId``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Inserts With Id.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">.</param>
+            <param name="entities">.</param>
+            <param name="transaction">.</param>
+            <param name="commandTimeout">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleBulkCrudOperator.InsertAndGetId``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Inserts And Get Id.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">.</param>
+            <param name="entities">.</param>
+            <param name="transaction">.</param>
+            <param name="commandTimeout">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.SimpleCrudOperator">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.SimpleCrudOperator"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.SimpleCrudOperator.InsertInternal``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
+            <summary>
+            Inserts With internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">.</param>
+            <param name="entity">.</param>
+            <param name="commandTimeout">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleCrudOperator.UpdateInternal``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
+            <summary>
+            Updates With internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">.</param>
+            <param name="entity">.</param>
+            <param name="commandTimeout">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleCrudOperator.DeleteInternal``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
+            <summary>
+            Deletes With internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">.</param>
+            <param name="entity">.</param>
+            <param name="commandTimeout">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleCrudOperator.InsertWithIdInternal``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
+            <summary>
+            Inserts With Id With internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">.</param>
+            <param name="entity">.</param>
+            <param name="commandTimeout">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleCrudOperator.InsertAndGetIdInternal``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
+            <summary>
+            Inserts And Get Id With internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">.</param>
+            <param name="entity">.</param>
+            <param name="commandTimeout">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleCrudOperator.Insert``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">.</param>
+            <param name="entity">.</param>
+            <param name="transaction">.</param>
+            <param name="commandTimeout">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleCrudOperator.Update``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Updates entity.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">.</param>
+            <param name="entity">.</param>
+            <param name="transaction">.</param>
+            <param name="commandTimeout">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleCrudOperator.Delete``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Deletes entity.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">.</param>
+            <param name="entity">.</param>
+            <param name="transaction">.</param>
+            <param name="commandTimeout">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleCrudOperator.InsertWithId``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity With Id.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">.</param>
+            <param name="entity">.</param>
+            <param name="transaction">.</param>
+            <param name="commandTimeout">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleCrudOperator.InsertAndGetId``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity And Get Id.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">.</param>
+            <param name="entity">.</param>
+            <param name="transaction">.</param>
+            <param name="commandTimeout">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleCrudOperator.DeleteByIdList``1(System.Data.IDbConnection,System.Data.IDbTransaction,System.Nullable{System.Int32},System.Object[])">
+            <summary>
+            Deletes entities By Id List.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">.</param>
+            <param name="transaction">.</param>
+            <param name="commandTimeout">.</param>
+            <param name="idValues">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.SimpleGetDynamicOperator">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.SimpleGetDynamicOperator"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.SimpleGetDynamicOperator.GetByIdDynamic``1(System.Data.IDbConnection,System.Nullable{System.Int32},System.Object[])">
+            <summary>
+            Gets Dynamic By Id.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">.</param>
+            <param name="commandTimeout">.</param>
+            <param name="idValues">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleGetDynamicOperator.GetAllDynamic``1(System.Data.IDbConnection,System.Nullable{System.Int32})">
+            <summary>
+            Gets All as Dynamic object.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">.</param>
+            <param name="commandTimeout">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleGetDynamicOperator.GetByIdListDynamic``1(System.Data.IDbConnection,System.Nullable{System.Int32},System.Object[])">
+            <summary>
+            Gets Dynamic objects By Id List.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">.</param>
+            <param name="commandTimeout">.</param>
+            <param name="idValues">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.SimpleGetOperator">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.SimpleGetOperator"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.SimpleGetOperator.GetById``1(System.Data.IDbConnection,System.Nullable{System.Int32},System.Object[])">
+            <summary>
+            Gets entity By Id.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">.</param>
+            <param name="commandTimeout">.</param>
+            <param name="idValues">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleGetOperator.GetAll``1(System.Data.IDbConnection,System.Nullable{System.Int32})">
+            <summary>
+            Get All entities.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">.</param>
+            <param name="commandTimeout">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.SimpleGetOperator.GetByIdList``1(System.Data.IDbConnection,System.Nullable{System.Int32},System.Object[])">
+            <summary>
+            Gets entities By Id List.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">.</param>
+            <param name="commandTimeout">.</param>
+            <param name="idValues">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.SimplePredicateOperator">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.SimplePredicateOperator"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.SimplePredicateOperator.Select``1(System.Data.IDbConnection,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            Gets list with predicate ops.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="connection">The connection.</param>
+            <param name="expression">The expression.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Coddie.Crud.Constants.SimpleCrudAppValues">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Constants.SimpleCrudAppValues"/>.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.CommandTimeout">
+            <summary>
+            Defines the CommandTimeouty ==&gt; 1000000.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.CommandTextValueFormatKey">
+            <summary>
+            Defines the CommandTextValueFormatKeyy ==&gt; "#VALS#".
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.CommandTextTableFormatKey">
+            <summary>
+            Defines the CommandTextTableFormatKey ==&gt; "#TABLE_NAME#".
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.CommandTextColumnFormatKey">
+            <summary>
+            Defines the CommandTextColumnFormatKey ==&gt; "#COLUMNS#".
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.CommandTextIdColumnFormat">
+            <summary>
+            Defines the CommandTextIdColumnFormaty ==&gt; "#ID_COL#".
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.CommandTextIdParamFormat">
+            <summary>
+            Defines the CommandTextIdParamFormaty ==&gt; "#ID_PARAM#".
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.CommandTextIdValuesFormat">
+            <summary>
+            Defines the CommandTextIdValuesFormaty ==&gt; "#ID_VALS#".
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.CommandTextSqlScriptFormat">
+            <summary>
+            Defines the CommandTextSqlScriptFormaty ==&gt; "#SQL_SCRIPT#".
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.OracleSequenceExecFormat">
+            <summary>
+            Oracle Sequence Execution Format ===&gt; SELECT SEQ_{0}.NEXTVAL FROM DUAL.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.NullValue">
+            <summary>
+            means DbNull.Value.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.ErrorFileDateFormat">
+            <summary>
+            Time Format: yyyy-MM-dd-HH-mm-ss.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.GeneralDateFormat">
+            <summary>
+            Time Format: yyyy-MM-dd, HH:mm:ss ffffff.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.ServerVersionProperty">
+            <summary>
+            Defines the ServerVersionPropertyy ==&gt; .
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.ParameterQueryDelimiter">
+            <summary>
+            char '|'.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.ParameterPropertyDelimiter">
+            <summary>
+            char ';'.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.ConnectionName">
+            <summary>
+            Defines the connectionName ==&gt; "Connection";.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.ServerVersion">
+            <summary>
+            Defines the serverVersion ==&gt; "ServerVersion".
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.AtChar">
+            <summary>
+            Defines the atChar ==&gt; '@'.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.QuestionMark">
+            <summary>
+            Defines the questionChar ==&gt; '?'.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.QuestionMarkString">
+            <summary>
+            Defines the questionChar ==&gt; "?".
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.ColonChar">
+            <summary>
+            Defines the colonChar ==&gt; ':'.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.ParameterChar">
+            <summary>
+            Defines the ParameterChar ==&gt; 'p'.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.OpeningSquareBracket">
+            <summary>
+            Defines the OpeningSquareBracket ==&gt; '['.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.ClosingSquareBracket">
+            <summary>
+            Defines the ClosingSquareBracket ==&gt; ']'.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.QuoteChar">
+            <summary>
+            Defines the QuoteChar ==&gt; '"'.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.Emtpy">
+            <summary>
+            Defines the Emtpy string.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.CountFormat">
+            <summary>
+            Defines sql count format ==&gt; SELECT COUNT(1) AS CNT FROM ({0})
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.CommaChar">
+            <summary>
+            Defines the QuoteChar ==&gt; ','.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.CommaCharString">
+            <summary>
+            Defines the QuoteChar ==&gt; ",".
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.SqlScriptFormat">
+            <summary>
+            Defines the CommandTextSqlScriptFormaty ==&gt; "#SQL_SCRIPT#".
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.SkipFormat">
+            <summary>
+            Defines the CommandTextSqlScriptFormaty ==&gt; "#SKIP#".
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Constants.SimpleCrudAppValues.TakeFormat">
+            <summary>
+            Defines the CommandTextSqlScriptFormaty ==&gt; "#TAKE#".
+            </summary>
+        </member>
+        <member name="T:Coddie.Crud.Enums.QueryTypes">
+             <summary>   Values that represent query types. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 6.05.2019. </remarks>
+        </member>
+        <member name="F:Coddie.Crud.Enums.QueryTypes.Insert">
+            <summary>
+            An enum constant representing the insert option.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Enums.QueryTypes.Update">
+            <summary>
+            An enum constant representing the update option.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Enums.QueryTypes.Delete">
+            <summary>
+            An enum constant representing the delete option.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Enums.QueryTypes.InsertAndGetId">
+            <summary>
+            An enum constant representing the insert and get id option.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Enums.QueryTypes.GetById">
+            <summary>
+            An enum constant representing the get by id option.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Enums.QueryTypes.GetAll">
+            <summary>
+            An enum constant representing the get all option.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Enums.QueryTypes.GetByIdList">
+            <summary>
+            An enum constant representing the get by id list option.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Enums.QueryTypes.DeleteWhereIdIn">
+            <summary>
+            An enum constant representing the delete where id in option.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Enums.QueryTypes.GetWhereIdIn">
+            <summary>
+            An enum constant representing the get where id in option.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Enums.QueryTypes.CreateAsScript">
+            <summary>
+            An enum constant representing the create as script option.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Enums.QueryTypes.InsertWithId">
+            <summary>
+            Inserts entity with databse generated id.
+            </summary>
+        </member>
+        <member name="T:Coddie.Crud.Helpers.InternalLogHelper">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Helpers.InternalLogHelper"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Helpers.InternalLogHelper.LogException(System.Exception,System.String,System.Nullable{System.Int32})">
+            <summary>
+            The LogException.
+            </summary>
+            <param name="e">The e <see cref="T:System.Exception"/>.</param>
+            <param name="callerName">The callerName <see cref="T:System.String"/>.</param>
+            <param name="callerLineNumber">The callerLineNumber <see cref="!:int?"/>.</param>
+        </member>
+        <member name="P:Coddie.Crud.Helpers.InternalLogHelper.AssemblyDirectory">
+            <summary>
+            Gets the AssemblyDirectory.
+            </summary>
+        </member>
+        <member name="T:Coddie.Crud.Objects.QueryObject">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Objects.QueryObject" />.
+            </summary>
+        </member>
+        <member name="P:Coddie.Crud.Objects.QueryObject.OdbcSqlClause">
+            <summary>
+            Gets or sets the OdbcSqlClause .
+            </summary>
+        </member>
+        <member name="P:Coddie.Crud.Objects.QueryObject.Values">
+            <summary>
+            Gets or sets the Values.
+            </summary>
+        </member>
+        <member name="T:Coddie.Crud.Parameter.BaseParameterBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Parameter.BaseParameterBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Parameter.BaseParameterBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Parameter.BaseParameterBuilder"/> class.
+            </summary>
+            <param name="connectionType">.</param>
+        </member>
+        <member name="P:Coddie.Crud.Parameter.BaseParameterBuilder.ConnectionType">
+            <summary>
+            Gets or sets the ConnectionType Connection Type of DbConnection...
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Parameter.BaseParameterBuilder.GetParameters``1(Coddie.Crud.Enums.QueryTypes)">
+            <summary>
+            The GetParameters.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="queryType">The queryType <see cref="T:Coddie.Crud.Enums.QueryTypes"/>.</param>
+            <returns>The <see cref="T:Coddie.Crud.Parameter.RocketParameter"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Parameter.BaseParameterBuilder.GetInputProperties(System.Reflection.PropertyInfo[],Coddie.Crud.Enums.QueryTypes)">
+            <summary>
+            The GetInputProperties.
+            </summary>
+            <param name="properties">The properties.</param>
+            <param name="queryType">The queryType <see cref="T:Coddie.Crud.Enums.QueryTypes"/>.</param>
+            <returns>The .</returns>
+        </member>
+        <member name="M:Coddie.Crud.Parameter.BaseParameterBuilder.GetOutputProperties(System.Reflection.PropertyInfo[],Coddie.Crud.Enums.QueryTypes)">
+            <summary>
+            The GetOutputProperties.
+            </summary>
+            <param name="properties">The properties.</param>
+            <param name="queryType">The queryType <see cref="T:Coddie.Crud.Enums.QueryTypes"/>.</param>
+            <returns>The .</returns>
+        </member>
+        <member name="M:Coddie.Crud.Parameter.BaseParameterBuilder.BuildParameters(Coddie.Crud.Parameter.RocketParameter)">
+            <summary>
+            Builds Simple Command Parameters from RocketParameter.
+            </summary>
+            <param name="rocketParameter">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Parameter.BaseParameterBuilder.GetParameterFromProperty(System.Reflection.PropertyInfo,System.Boolean)">
+            <summary>
+            The GetParameterFromProperty.
+            </summary>
+            <param name="propertyInfo">The propertyInfo <see cref="T:System.Reflection.PropertyInfo"/>.</param>
+            <param name="isInput">The isInput <see cref="T:System.Boolean"/>.</param>
+            <returns>The <see cref="T:Coddie.Data.Objects.CommandParameter"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Parameter.BaseParameterBuilder.PropertyToDbType(System.Reflection.PropertyInfo)">
+            <summary>
+            The PropertyToDbType.
+            </summary>
+            <param name="info">The info <see cref="T:System.Reflection.PropertyInfo"/>.</param>
+            <returns>The <see cref="T:System.Nullable`1"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Parameter.BaseParameterBuilder.RebuildParameters``1(System.Collections.Generic.List{Coddie.Data.Objects.CommandParameter},``0)">
+            <summary>
+            The RebuildParameters.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="simpleCommandParameters">The simpleCommandParameters <see cref="T:System.Collections.Generic.List`1"/>.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <returns>The <see cref="T:System.Collections.Generic.List`1"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Parameter.IParameterBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Parameter.IParameterBuilder"/>.
+            </summary>
+        </member>
+        <member name="P:Coddie.Crud.Parameter.IParameterBuilder.ConnectionType">
+            <summary>
+            Gets the ConnectionType Connection Type of DbConnection...
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Parameter.IParameterBuilder.GetParameters``1(Coddie.Crud.Enums.QueryTypes)">
+            <summary>
+            The GetParameters.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="queryType">The queryType <see cref="T:Coddie.Crud.Enums.QueryTypes"/>.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Parameter.IParameterBuilder.BuildParameters(Coddie.Crud.Parameter.RocketParameter)">
+            <summary>
+            Builds Simple Command Parameters from RocketParameter.
+            </summary>
+            <param name="rocketParameter">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Parameter.IParameterBuilder.RebuildParameters``1(System.Collections.Generic.List{Coddie.Data.Objects.CommandParameter},``0)">
+            <summary>
+            The RebuildParameters.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="simpleCommandParameters">.</param>
+            <param name="entity">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Parameter.RocketParameter">
+            <summary>
+            RocketParameter is class for using store input and output parameter properties.
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Parameter.RocketParameter._inputs">
+            <summary>
+            Defines the _inputs.
+            </summary>
+        </member>
+        <member name="P:Coddie.Crud.Parameter.RocketParameter.Inputs">
+            <summary>
+            Gets or sets the Inputs Input parameter properties...
+            </summary>
+        </member>
+        <member name="F:Coddie.Crud.Parameter.RocketParameter._outputs">
+            <summary>
+            Defines the _outputs.
+            </summary>
+        </member>
+        <member name="P:Coddie.Crud.Parameter.RocketParameter.Outputs">
+            <summary>
+            Gets or sets the Outputs Output parameter properties...
+            </summary>
+        </member>
+        <member name="T:Coddie.Crud.Parameter.SimpleParameterBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Parameter.SimpleParameterBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Parameter.SimpleParameterBuilder.RebuildParameters``1(System.Collections.Generic.List{Coddie.Data.Objects.CommandParameter},``0)">
+            <summary>
+            The RebuildParameters.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="simpleCommandParameters">The simpleCommandParameters <see cref="T:System.Collections.Generic.List`1"/>.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <returns>The <see cref="T:System.Collections.Generic.List`1"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Parameter.DB2ParameterBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Parameter.DB2ParameterBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Parameter.DB2ParameterBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Parameter.DB2ParameterBuilder"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.Parameter.ParameterBuilderFactory">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Parameter.ParameterBuilderFactory"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Parameter.ParameterBuilderFactory.GetBuilder(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            The GetBuilder.
+            </summary>
+            <param name="connectionType">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Parameter.FirebirdParameterBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Parameter.FirebirdParameterBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Parameter.FirebirdParameterBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Parameter.FirebirdParameterBuilder"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.Parameter.MsSqlParameterBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Parameter.MsSqlParameterBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Parameter.MsSqlParameterBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Parameter.MsSqlParameterBuilder"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.Parameter.MySqlParameterBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Parameter.MySqlParameterBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Parameter.MySqlParameterBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Parameter.MySqlParameterBuilder"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.Parameter.NuoDbParameterBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Parameter.NuoDbParameterBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Parameter.NuoDbParameterBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Parameter.NuoDbParameterBuilder"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.Parameter.OdbcParameterBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Parameter.OdbcParameterBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Parameter.OdbcParameterBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Parameter.OdbcParameterBuilder"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.Parameter.OledbParameterBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Parameter.OledbParameterBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Parameter.OledbParameterBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Parameter.OledbParameterBuilder"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.Parameter.OracleParameterBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Parameter.OracleParameterBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Parameter.OracleParameterBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Parameter.OracleParameterBuilder"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.Parameter.PgSqlParameterBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Parameter.PgSqlParameterBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Parameter.PgSqlParameterBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Parameter.PgSqlParameterBuilder"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.Parameter.SqlBaseParameterBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Parameter.SqlBaseParameterBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Parameter.SqlBaseParameterBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Parameter.SqlBaseParameterBuilder"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.Parameter.SqlCEParameterBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Parameter.SqlCEParameterBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Parameter.SqlCEParameterBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Parameter.SqlCEParameterBuilder"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.Parameter.SqlDatabaseParameterBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Parameter.SqlDatabaseParameterBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Parameter.SqlDatabaseParameterBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Parameter.SqlDatabaseParameterBuilder"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.Parameter.SQLiteParameterBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Parameter.SQLiteParameterBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Parameter.SQLiteParameterBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Parameter.SQLiteParameterBuilder"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.Parameter.SynergyParameterBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Parameter.SynergyParameterBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Parameter.SynergyParameterBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Parameter.SynergyParameterBuilder"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.Parameter.VistaDbParameterBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Parameter.VistaDbParameterBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Parameter.VistaDbParameterBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Parameter.VistaDbParameterBuilder"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="T:Coddie.Crud.Query.BaseQueryBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Query.BaseQueryBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Query.BaseQueryBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Query.BaseQueryBuilder"/> class.
+            </summary>
+            <param name="connectionType">.</param>
+        </member>
+        <member name="P:Coddie.Crud.Query.BaseQueryBuilder.ConnectionType">
+            <summary>
+            Gets or sets the ConnectionType.
+            </summary>
+        </member>
+        <member name="P:Coddie.Crud.Query.BaseQueryBuilder.QueryAdd">
+            <summary>
+            Gets or sets the QueryAdd.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Query.BaseQueryBuilder.CheckOdbc">
+            <summary>
+            The CheckOdbc.
+            </summary>
+            <returns>The <see cref="T:System.Boolean"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Query.BaseQueryBuilder.CheckOledb">
+            <summary>
+            The CheckOledb.
+            </summary>
+            <returns>The <see cref="T:System.Boolean"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Query.BaseQueryBuilder.FullTableName``1(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            The FullTableName.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="connType">The connType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Query.BaseQueryBuilder.BuildColumnList``1(Coddie.Data.Enums.DbConnectionTypes,Coddie.Crud.Enums.QueryTypes,Coddie.Crud.Parameter.RocketParameter)">
+            <summary>
+            The BuildColumnList.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="connType">The connType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+            <param name="queryType">The queryType <see cref="T:Coddie.Crud.Enums.QueryTypes"/>.</param>
+            <param name="rocketParameter">The rocketParameter <see cref="T:Coddie.Crud.Parameter.RocketParameter"/>.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Query.BaseQueryBuilder.BuildValueList``1(Coddie.Data.Enums.DbConnectionTypes,Coddie.Crud.Enums.QueryTypes,Coddie.Crud.Parameter.RocketParameter)">
+            <summary>
+            The BuildValueList.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="connType">The connType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+            <param name="queryType">The queryType <see cref="T:Coddie.Crud.Enums.QueryTypes"/>.</param>
+            <param name="rocketParameter">The rocketParameter <see cref="T:Coddie.Crud.Parameter.RocketParameter"/>.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Query.BaseQueryBuilder.BuildQuery``1(Coddie.Crud.Enums.QueryTypes,Coddie.Crud.Parameter.RocketParameter)">
+            <summary>
+            The BuildQuery.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="queryType">.</param>
+            <param name="rocketParameter">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Query.BaseQueryBuilder.BuildQuery``1(Coddie.Crud.Enums.QueryTypes)">
+            <summary>
+            The BuildQuery.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="queryType">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="P:Coddie.Crud.Query.BaseQueryBuilder.IsOdbc">
+            <summary>
+            Gets or sets a value indicating whether IsOdbc Defines connection is odbc connection...
+            </summary>
+        </member>
+        <member name="P:Coddie.Crud.Query.BaseQueryBuilder.IsOledb">
+            <summary>
+            Gets or sets a value indicating whether IsOledb Defines connection is oledb connection...
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Query.BaseQueryBuilder.GetIdentityInsertFormat">
+            <summary>
+            The GetIdentityInsertFormat.
+            </summary>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Query.BaseQueryBuilder.GetIdentityInsertFormat(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Returns GetIdentity query part of InsertAndGetId.
+            </summary>
+            <param name="conn_type">The conn_type <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+            <returns>Returns GetIdentity query part of InsertAndGetId. .</returns>
+        </member>
+        <member name="M:Coddie.Crud.Query.BaseQueryBuilder.GetQueryFormat(Coddie.Crud.Enums.QueryTypes)">
+            <summary>
+            Returns Format of Query according to QueryType.
+            </summary>
+            <param name="queryType">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Query.BaseQueryBuilder.BuildWhereClauseQueryObject``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            Builds the query object.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="expression">The expression.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Coddie.Crud.Query.BaseQueryBuilder.BuildQueryObjectOld``1(System.Object,Coddie.Crud.Enums.QueryTypes,System.Boolean)">
+            <summary>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="queryType"></param>
+            <param name="isColumnsOrNotValues"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Coddie.Crud.Query.IQueryBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Query.IQueryBuilder"/>.
+            </summary>
+        </member>
+        <member name="P:Coddie.Crud.Query.IQueryBuilder.ConnectionType">
+            <summary>
+            Gets the ConnectionType Connection Type of Query Builder.....
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Query.IQueryBuilder.BuildQuery``1(Coddie.Crud.Enums.QueryTypes,Coddie.Crud.Parameter.RocketParameter)">
+            <summary>
+            The BuildQuery.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="queryType">.</param>
+            <param name="rocketParameter">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Query.IQueryBuilder.BuildQuery``1(Coddie.Crud.Enums.QueryTypes)">
+            <summary>
+            The BuildQuery.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="queryType">The queryType <see cref="T:Coddie.Crud.Enums.QueryTypes"/>.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="P:Coddie.Crud.Query.IQueryBuilder.IsOdbc">
+            <summary>
+            Gets the IsOdbc Defines connection is odbc connection......
+            </summary>
+        </member>
+        <member name="P:Coddie.Crud.Query.IQueryBuilder.IsOledb">
+            <summary>
+            Gets the IsOledb Defines connection is oledb connection......
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Query.IQueryBuilder.GetQueryFormat(Coddie.Crud.Enums.QueryTypes)">
+            <summary>
+            The GetQueryFormat.
+            </summary>
+            <param name="queryType">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Query.IQueryBuilder.GetPartialDeleteObject``1(System.Object)">
+            <summary>
+            The GetPartialDeleteObject.
+            </summary>
+            <typeparam name="TEntity">.</typeparam>
+            <param name="obj">The obj <see cref="T:System.Object"/>.</param>
+            <returns>The <see cref="T:Coddie.Crud.Objects.QueryObject"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Query.IQueryBuilder.BuildWhereClauseQueryObject``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            The BuildWhereClauseQueryObject.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="expression">The expression <see cref="!:Expression&lt;Func&lt;T, bool&gt;&gt;"/>.</param>
+            <returns>The <see cref="T:Coddie.Crud.Objects.QueryObject"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Query.IQueryBuilder.GetQueryObjectFromObject``1(System.Object,Coddie.Crud.Enums.QueryTypes,System.Boolean)">
+            <summary>
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="obj"></param>
+            <param name="queryType"></param>
+            <param name="isColumnsOrNotValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Coddie.Crud.Query.IQueryBuilder.BuildQueryObject``1(System.Object,Coddie.Crud.Enums.QueryTypes)">
+            <summary>
+            Build Query Object from any object.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="queryType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Coddie.Crud.Query.DB2QueryBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Query.DB2QueryBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Query.DB2QueryBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Query.DB2QueryBuilder"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="M:Coddie.Crud.Query.DB2QueryBuilder.BuildQuery``1(Coddie.Crud.Enums.QueryTypes,Coddie.Crud.Parameter.RocketParameter)">
+            <summary>
+            The BuildQuery.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="queryType">The queryType <see cref="T:Coddie.Crud.Enums.QueryTypes"/>.</param>
+            <param name="rocketParameter">The rocketParameter <see cref="T:Coddie.Crud.Parameter.RocketParameter"/>.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Query.DB2QueryBuilder.GetIdentityInsertFormat">
+            <summary>
+            The GetIdentityInsertFormat.
+            </summary>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Query.QueryBuilderFactory">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Query.QueryBuilderFactory"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Query.QueryBuilderFactory.GetQueryBuilder(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            The GetQueryBuilder.
+            </summary>
+            <param name="connectionType">.</param>
+            <returns>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Query.FirebirdQueryBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Query.FirebirdQueryBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Query.FirebirdQueryBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Query.FirebirdQueryBuilder"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="M:Coddie.Crud.Query.FirebirdQueryBuilder.BuildQuery``1(Coddie.Crud.Enums.QueryTypes,Coddie.Crud.Parameter.RocketParameter)">
+            <summary>
+            The BuildQuery.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="queryType">The queryType <see cref="T:Coddie.Crud.Enums.QueryTypes"/>.</param>
+            <param name="rocketParameter">The rocketParameter <see cref="T:Coddie.Crud.Parameter.RocketParameter"/>.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Query.FirebirdQueryBuilder.GetIdentityInsertFormat">
+            <summary>
+            The GetIdentityInsertFormat.
+            </summary>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Query.MsSqlQueryBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Query.MsSqlQueryBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Query.MsSqlQueryBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Query.MsSqlQueryBuilder"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="M:Coddie.Crud.Query.MsSqlQueryBuilder.BuildQuery``1(Coddie.Crud.Enums.QueryTypes,Coddie.Crud.Parameter.RocketParameter)">
+            <summary>
+            The BuildQuery.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="queryType">The queryType <see cref="T:Coddie.Crud.Enums.QueryTypes"/>.</param>
+            <param name="rocketParameter">The rocketParameter <see cref="T:Coddie.Crud.Parameter.RocketParameter"/>.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Query.MsSqlQueryBuilder.GetIdentityInsertFormat">
+            <summary>
+            The GetIdentityInsertFormat.
+            </summary>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Query.MySqlQueryBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Query.MySqlQueryBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Query.MySqlQueryBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Query.MySqlQueryBuilder"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="M:Coddie.Crud.Query.MySqlQueryBuilder.BuildQuery``1(Coddie.Crud.Enums.QueryTypes,Coddie.Crud.Parameter.RocketParameter)">
+            <summary>
+            The BuildQuery.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="queryType">The queryType <see cref="T:Coddie.Crud.Enums.QueryTypes"/>.</param>
+            <param name="rocketParameter">The rocketParameter <see cref="T:Coddie.Crud.Parameter.RocketParameter"/>.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Query.MySqlQueryBuilder.GetIdentityInsertFormat">
+            <summary>
+            The GetIdentityInsertFormat.
+            </summary>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Query.NuoDbQueryBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Query.NuoDbQueryBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Query.NuoDbQueryBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Query.NuoDbQueryBuilder"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="M:Coddie.Crud.Query.NuoDbQueryBuilder.BuildQuery``1(Coddie.Crud.Enums.QueryTypes,Coddie.Crud.Parameter.RocketParameter)">
+            <summary>
+            The BuildQuery.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="queryType">The queryType <see cref="T:Coddie.Crud.Enums.QueryTypes"/>.</param>
+            <param name="rocketParameter">The rocketParameter <see cref="T:Coddie.Crud.Parameter.RocketParameter"/>.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Query.NuoDbQueryBuilder.GetIdentityInsertFormat">
+            <summary>
+            The GetIdentityInsertFormat.
+            </summary>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Query.OdbcQueryBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Query.OdbcQueryBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Query.OdbcQueryBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Query.OdbcQueryBuilder"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="M:Coddie.Crud.Query.OdbcQueryBuilder.BuildQuery``1(Coddie.Crud.Enums.QueryTypes,Coddie.Crud.Parameter.RocketParameter)">
+            <summary>
+            The BuildQuery.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="queryType">The queryType <see cref="T:Coddie.Crud.Enums.QueryTypes"/>.</param>
+            <param name="rocketParameter">The rocketParameter <see cref="T:Coddie.Crud.Parameter.RocketParameter"/>.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Query.OdbcQueryBuilder.GetIdentityInsertFormat">
+            <summary>
+            The GetIdentityInsertFormat.
+            </summary>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Query.OledbQueryBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Query.OledbQueryBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Query.OledbQueryBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Query.OledbQueryBuilder"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="M:Coddie.Crud.Query.OledbQueryBuilder.BuildQuery``1(Coddie.Crud.Enums.QueryTypes,Coddie.Crud.Parameter.RocketParameter)">
+            <summary>
+            The BuildQuery.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="queryType">The queryType <see cref="T:Coddie.Crud.Enums.QueryTypes"/>.</param>
+            <param name="rocketParameter">The rocketParameter <see cref="T:Coddie.Crud.Parameter.RocketParameter"/>.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Query.OledbQueryBuilder.GetIdentityInsertFormat">
+            <summary>
+            The GetIdentityInsertFormat.
+            </summary>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Query.OracleQueryBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Query.OracleQueryBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Query.OracleQueryBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Query.OracleQueryBuilder"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="M:Coddie.Crud.Query.OracleQueryBuilder.BuildQuery``1(Coddie.Crud.Enums.QueryTypes,Coddie.Crud.Parameter.RocketParameter)">
+            <summary>
+            The BuildQuery.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="queryType">The queryType <see cref="T:Coddie.Crud.Enums.QueryTypes"/>.</param>
+            <param name="rocketParameter">The rocketParameter <see cref="T:Coddie.Crud.Parameter.RocketParameter"/>.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Query.OracleQueryBuilder.GetIdentityInsertFormat">
+            <summary>
+            The GetIdentityInsertFormat.
+            </summary>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Query.PgSqlQueryBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Query.PgSqlQueryBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Query.PgSqlQueryBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Query.PgSqlQueryBuilder"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="M:Coddie.Crud.Query.PgSqlQueryBuilder.BuildQuery``1(Coddie.Crud.Enums.QueryTypes,Coddie.Crud.Parameter.RocketParameter)">
+            <summary>
+            The BuildQuery.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="queryType">The queryType <see cref="T:Coddie.Crud.Enums.QueryTypes"/>.</param>
+            <param name="rocketParameter">The rocketParameter <see cref="T:Coddie.Crud.Parameter.RocketParameter"/>.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Query.PgSqlQueryBuilder.GetIdentityInsertFormat">
+            <summary>
+            The GetIdentityInsertFormat.
+            </summary>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Query.SqlBaseQueryBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Query.SqlBaseQueryBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Query.SqlBaseQueryBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Query.SqlBaseQueryBuilder"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="M:Coddie.Crud.Query.SqlBaseQueryBuilder.BuildQuery``1(Coddie.Crud.Enums.QueryTypes,Coddie.Crud.Parameter.RocketParameter)">
+            <summary>
+            The BuildQuery.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="queryType">The queryType <see cref="T:Coddie.Crud.Enums.QueryTypes"/>.</param>
+            <param name="rocketParameter">The rocketParameter <see cref="T:Coddie.Crud.Parameter.RocketParameter"/>.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Query.SqlBaseQueryBuilder.GetIdentityInsertFormat">
+            <summary>
+            The GetIdentityInsertFormat.
+            </summary>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Query.SqlCEQueryBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Query.SqlCEQueryBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Query.SqlCEQueryBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Query.SqlCEQueryBuilder"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="M:Coddie.Crud.Query.SqlCEQueryBuilder.BuildQuery``1(Coddie.Crud.Enums.QueryTypes,Coddie.Crud.Parameter.RocketParameter)">
+            <summary>
+            The BuildQuery.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="queryType">The queryType <see cref="T:Coddie.Crud.Enums.QueryTypes"/>.</param>
+            <param name="rocketParameter">The rocketParameter <see cref="T:Coddie.Crud.Parameter.RocketParameter"/>.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Query.SqlCEQueryBuilder.GetIdentityInsertFormat">
+            <summary>
+            The GetIdentityInsertFormat.
+            </summary>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Query.SqlDatabaseQueryBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Query.SqlDatabaseQueryBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Query.SqlDatabaseQueryBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Query.SqlDatabaseQueryBuilder"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="M:Coddie.Crud.Query.SqlDatabaseQueryBuilder.BuildQuery``1(Coddie.Crud.Enums.QueryTypes,Coddie.Crud.Parameter.RocketParameter)">
+            <summary>
+            The BuildQuery.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="queryType">The queryType <see cref="T:Coddie.Crud.Enums.QueryTypes"/>.</param>
+            <param name="rocketParameter">The rocketParameter <see cref="T:Coddie.Crud.Parameter.RocketParameter"/>.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Query.SqlDatabaseQueryBuilder.GetIdentityInsertFormat">
+            <summary>
+            The GetIdentityInsertFormat.
+            </summary>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Query.SQLiteQueryBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Query.SQLiteQueryBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Query.SQLiteQueryBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Query.SQLiteQueryBuilder"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="M:Coddie.Crud.Query.SQLiteQueryBuilder.BuildQuery``1(Coddie.Crud.Enums.QueryTypes,Coddie.Crud.Parameter.RocketParameter)">
+            <summary>
+            The BuildQuery.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="queryType">The queryType <see cref="T:Coddie.Crud.Enums.QueryTypes"/>.</param>
+            <param name="rocketParameter">The rocketParameter <see cref="T:Coddie.Crud.Parameter.RocketParameter"/>.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Query.SQLiteQueryBuilder.GetIdentityInsertFormat">
+            <summary>
+            The GetIdentityInsertFormat.
+            </summary>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Query.SynergyQueryBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Query.SynergyQueryBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Query.SynergyQueryBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Query.SynergyQueryBuilder"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="M:Coddie.Crud.Query.SynergyQueryBuilder.BuildQuery``1(Coddie.Crud.Enums.QueryTypes,Coddie.Crud.Parameter.RocketParameter)">
+            <summary>
+            The BuildQuery.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="queryType">The queryType <see cref="T:Coddie.Crud.Enums.QueryTypes"/>.</param>
+            <param name="rocketParameter">The rocketParameter <see cref="T:Coddie.Crud.Parameter.RocketParameter"/>.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Query.SynergyQueryBuilder.GetIdentityInsertFormat">
+            <summary>
+            The GetIdentityInsertFormat.
+            </summary>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Query.VistaDbQueryBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Query.VistaDbQueryBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Query.VistaDbQueryBuilder.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Crud.Query.VistaDbQueryBuilder"/> class.
+            </summary>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+        </member>
+        <member name="M:Coddie.Crud.Query.VistaDbQueryBuilder.BuildQuery``1(Coddie.Crud.Enums.QueryTypes,Coddie.Crud.Parameter.RocketParameter)">
+            <summary>
+            The BuildQuery.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="queryType">The queryType <see cref="T:Coddie.Crud.Enums.QueryTypes"/>.</param>
+            <param name="rocketParameter">The rocketParameter <see cref="T:Coddie.Crud.Parameter.RocketParameter"/>.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Query.VistaDbQueryBuilder.GetIdentityInsertFormat">
+            <summary>
+            The GetIdentityInsertFormat.
+            </summary>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Scripts.ScriptCreator">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Scripts.ScriptCreator"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Scripts.ScriptCreator.CreateDDL``1(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            The CreateDDL.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="connectionType">The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="M:Coddie.Crud.Scripts.ScriptCreator.GetInnerScript(System.Reflection.PropertyInfo[],System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            The GetInnerScript.
+            </summary>
+            <param name="properties">The properties <see cref="!:PropertyInfo[]"/>.</param>
+            <param name="columns">The columns <see cref="!:IDictionary&lt;string, string&gt;"/>.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="T:Coddie.Crud.Scripts.ScriptCreatorHelper">
+            <summary>
+            Defines the <see cref="T:Coddie.Crud.Scripts.ScriptCreatorHelper"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Crud.Scripts.ScriptCreatorHelper.CreateDDL``1(System.Data.IDbConnection)">
+            <summary>
+            The CreateDDL.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="dbConnection">The dbConnection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+    </members>
+</doc>
