@@ -1,21 +1,25 @@
-using Pagila.Business.Interfaces;
-using Pagila.ViewModel;
-using SimpleInfra.Common.Core;
-using Gsb.IoC;
+
+using Pagila.ViewModel;using SI.CommandBus.Core;using SI.QueryBus.Core;
+
+
 using SimpleInfra.Common.Response;
 using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Web.Mvc;
 
-namespace Pagila.Web.Controllers
+namespace Pagila.WebUI.Controllers
 {
-    public class CityController : OzelYurtBaseController
+    public class CityController : PagilaBaseController
     {
         private ICityBusiness iCityBusiness;
+        private ICommandBus commandBus;
+        private IQueryBus queryBus;
 
-        public CityController(ICityBusiness iCityBusiness = null)
+        public CityController(ICityBusiness iCityBusiness = null, ICommandBus commandBus, IQueryBus queryBus)
         {
+            this.commandBus = commandBus;
+            this.queryBus = queryBus;
             this.iCityBusiness = iCityBusiness ??
                 GsbIoC.Instance.GetInstance<ICityBusiness>();
         }

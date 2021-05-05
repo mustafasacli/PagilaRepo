@@ -1,21 +1,25 @@
-using Pagila.Business.Interfaces;
-using Pagila.ViewModel;
-using SimpleInfra.Common.Core;
-using Gsb.IoC;
+
+using Pagila.ViewModel;using SI.CommandBus.Core;using SI.QueryBus.Core;
+
+
 using SimpleInfra.Common.Response;
 using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Web.Mvc;
 
-namespace Pagila.Web.Controllers
+namespace Pagila.WebUI.Controllers
 {
-    public class StoreController : OzelYurtBaseController
+    public class StoreController : PagilaBaseController
     {
         private IStoreBusiness iStoreBusiness;
+        private ICommandBus commandBus;
+        private IQueryBus queryBus;
 
-        public StoreController(IStoreBusiness iStoreBusiness = null)
+        public StoreController(IStoreBusiness iStoreBusiness = null, ICommandBus commandBus, IQueryBus queryBus)
         {
+            this.commandBus = commandBus;
+            this.queryBus = queryBus;
             this.iStoreBusiness = iStoreBusiness ??
                 GsbIoC.Instance.GetInstance<IStoreBusiness>();
         }

@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Pagila.Entity
 {
     [Table("customer", Schema = "public")]
-    public class Customer
+    public class CustomerEntity
     {
         /// <summary>
         /// Gets or Sets the CustomerId
@@ -88,14 +88,14 @@ namespace Pagila.Entity
         { get; set; }
 
         [ForeignKey("StoreId")]
-        public virtual Store Store
+        public virtual StoreEntity Store
         { get; set; }
 
         [ForeignKey("AddressId")]
-        public virtual Address Address
+        public virtual AddressEntity Address
         { get; set; }
 
-        public virtual ICollection<Rental> RentalList
+        public virtual ICollection<RentalEntity> RentalList
         { get; set; }
     }
 }

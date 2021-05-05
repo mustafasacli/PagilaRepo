@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Pagila.Entity
 {
     [Table("language", Schema = "public")]
-    public class Language
+    public class LanguageEntity
     {
         /// <summary>
         /// Gets or Sets the LanguageId
@@ -34,7 +34,7 @@ namespace Pagila.Entity
         public DateTime LastUpdate
         { get; set; }
 
-        public virtual ICollection<Film> FilmList
+        public virtual ICollection<FilmEntity> FilmList
         { get; set; }
     }
 }

@@ -1,21 +1,25 @@
-using Pagila.Business.Interfaces;
-using Pagila.ViewModel;
-using SimpleInfra.Common.Core;
-using Gsb.IoC;
+
+using Pagila.ViewModel;using SI.CommandBus.Core;using SI.QueryBus.Core;
+
+
 using SimpleInfra.Common.Response;
 using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Web.Mvc;
 
-namespace Pagila.Web.Controllers
+namespace Pagila.WebUI.Controllers
 {
-    public class FilmController : OzelYurtBaseController
+    public class FilmController : PagilaBaseController
     {
         private IFilmBusiness iFilmBusiness;
+        private ICommandBus commandBus;
+        private IQueryBus queryBus;
 
-        public FilmController(IFilmBusiness iFilmBusiness = null)
+        public FilmController(IFilmBusiness iFilmBusiness = null, ICommandBus commandBus, IQueryBus queryBus)
         {
+            this.commandBus = commandBus;
+            this.queryBus = queryBus;
             this.iFilmBusiness = iFilmBusiness ??
                 GsbIoC.Instance.GetInstance<IFilmBusiness>();
         }

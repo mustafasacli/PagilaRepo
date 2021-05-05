@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Pagila.Entity
 {
     [Table("payment", Schema = "public")]
-    public class Payment
+    public class PaymentEntity
     {
         /// <summary>
         /// Gets or Sets the PaymentId

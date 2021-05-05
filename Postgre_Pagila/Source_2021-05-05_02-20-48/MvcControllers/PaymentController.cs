@@ -1,21 +1,25 @@
-using Pagila.Business.Interfaces;
-using Pagila.ViewModel;
-using SimpleInfra.Common.Core;
-using Gsb.IoC;
+
+using Pagila.ViewModel;using SI.CommandBus.Core;using SI.QueryBus.Core;
+
+
 using SimpleInfra.Common.Response;
 using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Web.Mvc;
 
-namespace Pagila.Web.Controllers
+namespace Pagila.WebUI.Controllers
 {
-    public class PaymentController : OzelYurtBaseController
+    public class PaymentController : PagilaBaseController
     {
         private IPaymentBusiness iPaymentBusiness;
+        private ICommandBus commandBus;
+        private IQueryBus queryBus;
 
-        public PaymentController(IPaymentBusiness iPaymentBusiness = null)
+        public PaymentController(IPaymentBusiness iPaymentBusiness = null, ICommandBus commandBus, IQueryBus queryBus)
         {
+            this.commandBus = commandBus;
+            this.queryBus = queryBus;
             this.iPaymentBusiness = iPaymentBusiness ??
                 GsbIoC.Instance.GetInstance<IPaymentBusiness>();
         }

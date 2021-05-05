@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Pagila.Entity
 {
     [Table("film_actor", Schema = "public")]
-    public class FilmActor
+    public class FilmActorEntity
     {
         /// <summary>
         /// Gets or Sets the ActorId
@@ -34,11 +34,11 @@ namespace Pagila.Entity
         { get; set; }
 
         [ForeignKey("FilmId")]
-        public virtual Film Film
+        public virtual FilmEntity Film
         { get; set; }
 
         [ForeignKey("ActorId")]
-        public virtual Actor Actor
+        public virtual ActorEntity Actor
         { get; set; }
     }
 }

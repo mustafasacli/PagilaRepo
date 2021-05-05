@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Pagila.Entity
 {
     [Table("category", Schema = "public")]
-    public class Category
+    public class CategoryEntity
     {
         /// <summary>
         /// Gets or Sets the CategoryId
@@ -34,7 +34,7 @@ namespace Pagila.Entity
         public DateTime LastUpdate
         { get; set; }
 
-        public virtual ICollection<FilmCategory> FilmCategoryList
+        public virtual ICollection<FilmCategoryEntity> FilmCategoryList
         { get; set; }
     }
 }

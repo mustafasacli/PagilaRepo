@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Pagila.Entity
 {
     [Table("country", Schema = "public")]
-    public class Country
+    public class CountryEntity
     {
         /// <summary>
         /// Gets or Sets the CountryId
@@ -34,7 +34,7 @@ namespace Pagila.Entity
         public DateTime LastUpdate
         { get; set; }
 
-        public virtual ICollection<City> CityList
+        public virtual ICollection<CityEntity> CityList
         { get; set; }
     }
 }

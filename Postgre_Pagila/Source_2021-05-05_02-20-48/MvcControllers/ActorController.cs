@@ -1,21 +1,26 @@
-using Pagila.Business.Interfaces;
+
+using Pagila.Query.Actor;
 using Pagila.ViewModel;
-using SimpleInfra.Common.Core;
-using Gsb.IoC;
+using SI.CommandBus.Core;
+using SI.QueryBus.Core;
 using SimpleInfra.Common.Response;
 using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Web.Mvc;
 
-namespace Pagila.Web.Controllers
+namespace Pagila.WebUI.Controllers
 {
-    public class ActorController : OzelYurtBaseController
+    public class ActorController : PagilaBaseController
     {
         private IActorBusiness iActorBusiness;
+        private ICommandBus commandBus;
+        private IQueryBus queryBus;
 
-        public ActorController(IActorBusiness iActorBusiness = null)
+        public ActorController(IActorBusiness iActorBusiness = null, ICommandBus commandBus, IQueryBus queryBus)
         {
+            this.commandBus = commandBus;
+            this.queryBus = queryBus;
             this.iActorBusiness = iActorBusiness ??
                 GsbIoC.Instance.GetInstance<IActorBusiness>();
         }
@@ -23,7 +28,7 @@ namespace Pagila.Web.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            var response = iActorBusiness.ReadAll();
+            var response = queryBus.Send<ActorReadAllQuery, ActorList>(new ActorReadAllQuery());
             return View(response.Data);
         }
 
@@ -65,7 +70,7 @@ namespace Pagila.Web.Controllers
             if (response.Data == null || response.ResponseCode < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
-            return View("Edit",  response.Data);
+            return View("Edit", response.Data);
         }
 
         [HttpPost]

@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Pagila.Entity
 {
     [Table("film", Schema = "public")]
-    public class Film
+    public class FilmEntity
     {
         /// <summary>
         /// Gets or Sets the FilmId
@@ -117,20 +117,20 @@ namespace Pagila.Entity
         { get; set; }
 
         [ForeignKey("OriginalLanguageId")]
-        public virtual Language Language_OriginalLanguageId
+        public virtual LanguageEntity Language_OriginalLanguageId
         { get; set; }
 
         [ForeignKey("LanguageId")]
-        public virtual Language Language_LanguageId
+        public virtual LanguageEntity Language_LanguageId
         { get; set; }
 
-        public virtual ICollection<FilmActor> FilmActorList
+        public virtual ICollection<FilmActorEntity> FilmActorList
         { get; set; }
 
-        public virtual ICollection<FilmCategory> FilmCategoryList
+        public virtual ICollection<FilmCategoryEntity> FilmCategoryList
         { get; set; }
 
-        public virtual ICollection<Inventory> InventoryList
+        public virtual ICollection<InventoryEntity> InventoryList
         { get; set; }
     }
 }

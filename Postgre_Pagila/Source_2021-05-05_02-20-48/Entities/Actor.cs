@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Pagila.Entity
 {
     [Table("actor", Schema = "public")]
-    public class Actor
+    public class ActorEntity
     {
         /// <summary>
         /// Gets or Sets the ActorId
@@ -42,7 +42,7 @@ namespace Pagila.Entity
         public DateTime LastUpdate
         { get; set; }
 
-        public virtual ICollection<FilmActor> FilmActorList
+        public virtual ICollection<FilmActorEntity> FilmActorList
         { get; set; }
     }
 }

@@ -1,21 +1,25 @@
-using Pagila.Business.Interfaces;
-using Pagila.ViewModel;
-using SimpleInfra.Common.Core;
-using Gsb.IoC;
+
+using Pagila.ViewModel;using SI.CommandBus.Core;using SI.QueryBus.Core;
+
+
 using SimpleInfra.Common.Response;
 using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Web.Mvc;
 
-namespace Pagila.Web.Controllers
+namespace Pagila.WebUI.Controllers
 {
-    public class CountryController : OzelYurtBaseController
+    public class CountryController : PagilaBaseController
     {
         private ICountryBusiness iCountryBusiness;
+        private ICommandBus commandBus;
+        private IQueryBus queryBus;
 
-        public CountryController(ICountryBusiness iCountryBusiness = null)
+        public CountryController(ICountryBusiness iCountryBusiness = null, ICommandBus commandBus, IQueryBus queryBus)
         {
+            this.commandBus = commandBus;
+            this.queryBus = queryBus;
             this.iCountryBusiness = iCountryBusiness ??
                 GsbIoC.Instance.GetInstance<ICountryBusiness>();
         }
