@@ -42,49 +42,49 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-09-19\Dtos\ActorDto.cs">
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\Dtos\ActorDto.cs">
       <Link>Dtos\ActorDto.cs</Link>
     </Compile>
-    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-09-19\Dtos\AddressDto.cs">
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\Dtos\AddressDto.cs">
       <Link>Dtos\AddressDto.cs</Link>
     </Compile>
-    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-09-19\Dtos\CategoryDto.cs">
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\Dtos\CategoryDto.cs">
       <Link>Dtos\CategoryDto.cs</Link>
     </Compile>
-    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-09-19\Dtos\CityDto.cs">
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\Dtos\CityDto.cs">
       <Link>Dtos\CityDto.cs</Link>
     </Compile>
-    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-09-19\Dtos\CountryDto.cs">
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\Dtos\CountryDto.cs">
       <Link>Dtos\CountryDto.cs</Link>
     </Compile>
-    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-09-19\Dtos\CustomerDto.cs">
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\Dtos\CustomerDto.cs">
       <Link>Dtos\CustomerDto.cs</Link>
     </Compile>
-    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-09-19\Dtos\FilmActorDto.cs">
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\Dtos\FilmActorDto.cs">
       <Link>Dtos\FilmActorDto.cs</Link>
     </Compile>
-    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-09-19\Dtos\FilmCategoryDto.cs">
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\Dtos\FilmCategoryDto.cs">
       <Link>Dtos\FilmCategoryDto.cs</Link>
     </Compile>
-    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-09-19\Dtos\FilmDto.cs">
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\Dtos\FilmDto.cs">
       <Link>Dtos\FilmDto.cs</Link>
     </Compile>
-    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-09-19\Dtos\InventoryDto.cs">
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\Dtos\InventoryDto.cs">
       <Link>Dtos\InventoryDto.cs</Link>
     </Compile>
-    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-09-19\Dtos\LanguageDto.cs">
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\Dtos\LanguageDto.cs">
       <Link>Dtos\LanguageDto.cs</Link>
     </Compile>
-    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-09-19\Dtos\PaymentDto.cs">
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\Dtos\PaymentDto.cs">
       <Link>Dtos\PaymentDto.cs</Link>
     </Compile>
-    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-09-19\Dtos\RentalDto.cs">
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\Dtos\RentalDto.cs">
       <Link>Dtos\RentalDto.cs</Link>
     </Compile>
-    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-09-19\Dtos\StaffDto.cs">
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\Dtos\StaffDto.cs">
       <Link>Dtos\StaffDto.cs</Link>
     </Compile>
-    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-09-19\Dtos\StoreDto.cs">
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\Dtos\StoreDto.cs">
       <Link>Dtos\StoreDto.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

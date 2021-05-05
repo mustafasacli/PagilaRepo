@@ -1,11 +1,11 @@
-using SimpleInfra.Dto.Core;
+
 using System;
 using System.Runtime.Serialization;
 
 namespace Pagila.Dtos
 {
     [DataContract]
-    public class FilmDto : SimpleBaseDto
+    public class FilmDto
     {
         [DataMember]
         public int FilmId

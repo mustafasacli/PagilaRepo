@@ -42,49 +42,49 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-09-19\ViewModels\ActorViewModel.cs">
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\ViewModels\ActorViewModel.cs">
       <Link>ViewModels\ActorViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-09-19\ViewModels\AddressViewModel.cs">
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\ViewModels\AddressViewModel.cs">
       <Link>ViewModels\AddressViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-09-19\ViewModels\CategoryViewModel.cs">
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\ViewModels\CategoryViewModel.cs">
       <Link>ViewModels\CategoryViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-09-19\ViewModels\CityViewModel.cs">
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\ViewModels\CityViewModel.cs">
       <Link>ViewModels\CityViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-09-19\ViewModels\CountryViewModel.cs">
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\ViewModels\CountryViewModel.cs">
       <Link>ViewModels\CountryViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-09-19\ViewModels\CustomerViewModel.cs">
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\ViewModels\CustomerViewModel.cs">
       <Link>ViewModels\CustomerViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-09-19\ViewModels\FilmActorViewModel.cs">
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\ViewModels\FilmActorViewModel.cs">
       <Link>ViewModels\FilmActorViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-09-19\ViewModels\FilmCategoryViewModel.cs">
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\ViewModels\FilmCategoryViewModel.cs">
       <Link>ViewModels\FilmCategoryViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-09-19\ViewModels\FilmViewModel.cs">
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\ViewModels\FilmViewModel.cs">
       <Link>ViewModels\FilmViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-09-19\ViewModels\InventoryViewModel.cs">
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\ViewModels\InventoryViewModel.cs">
       <Link>ViewModels\InventoryViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-09-19\ViewModels\LanguageViewModel.cs">
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\ViewModels\LanguageViewModel.cs">
       <Link>ViewModels\LanguageViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-09-19\ViewModels\PaymentViewModel.cs">
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\ViewModels\PaymentViewModel.cs">
       <Link>ViewModels\PaymentViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-09-19\ViewModels\RentalViewModel.cs">
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\ViewModels\RentalViewModel.cs">
       <Link>ViewModels\RentalViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-09-19\ViewModels\StaffViewModel.cs">
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\ViewModels\StaffViewModel.cs">
       <Link>ViewModels\StaffViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-09-19\ViewModels\StoreViewModel.cs">
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\ViewModels\StoreViewModel.cs">
       <Link>ViewModels\StoreViewModel.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
