@@ -46,6 +46,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SimpleFileLogging, Version=2.4.0.0, Culture=neutral, PublicKeyToken=3473942f32152fab, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleFileLogging.dll.2.4.0\lib\net45\SimpleFileLogging.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInfra.Common.Response, Version=1.3.0.0, Culture=neutral, PublicKeyToken=c1ce61cdd45628f7, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInfra.Common.Response.dll.1.3.0\lib\net40\SimpleInfra.Common.Response.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -117,9 +123,55 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\MvcControllers\ActorController.cs">
+      <Link>Controllers\ActorController.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\MvcControllers\AddressController.cs">
+      <Link>Controllers\AddressController.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\MvcControllers\CategoryController.cs">
+      <Link>Controllers\CategoryController.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\MvcControllers\CityController.cs">
+      <Link>Controllers\CityController.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\MvcControllers\CountryController.cs">
+      <Link>Controllers\CountryController.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\MvcControllers\CustomerController.cs">
+      <Link>Controllers\CustomerController.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\MvcControllers\FilmActorController.cs">
+      <Link>Controllers\FilmActorController.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\MvcControllers\FilmCategoryController.cs">
+      <Link>Controllers\FilmCategoryController.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\MvcControllers\FilmController.cs">
+      <Link>Controllers\FilmController.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\MvcControllers\InventoryController.cs">
+      <Link>Controllers\InventoryController.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\MvcControllers\LanguageController.cs">
+      <Link>Controllers\LanguageController.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\MvcControllers\PaymentController.cs">
+      <Link>Controllers\PaymentController.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\MvcControllers\RentalController.cs">
+      <Link>Controllers\RentalController.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\MvcControllers\StaffController.cs">
+      <Link>Controllers\StaffController.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\MvcControllers\StoreController.cs">
+      <Link>Controllers\StoreController.cs</Link>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\PagilaBaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -179,6 +231,52 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\SI.CQRS.Repository\SI.CQRS.Sln\NetFramework\SI.CommandBus.Core\SI.CommandBus.Core.csproj">
+      <Project>{981b8737-b77f-4629-951c-b2addbc4fc22}</Project>
+      <Name>SI.CommandBus.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SI.CQRS.Repository\SI.CQRS.Sln\NetFramework\SI.CommandBus\SI.CommandBus.csproj">
+      <Project>{0914cdf6-a20e-48b6-9807-04a38d3d6cd1}</Project>
+      <Name>SI.CommandBus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SI.CQRS.Repository\SI.CQRS.Sln\NetFramework\SI.CommandHandler.Factory\SI.CommandHandler.Factory.csproj">
+      <Project>{90eb3184-d168-43a2-9663-58334f4f108f}</Project>
+      <Name>SI.CommandHandler.Factory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SI.CQRS.Repository\SI.CQRS.Sln\NetFramework\SI.Query.Core\SI.Query.Core.csproj">
+      <Project>{076741E2-4702-45F8-8CAF-71EC86C4F1EB}</Project>
+      <Name>SI.Query.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SI.CQRS.Repository\SI.CQRS.Sln\NetFramework\SI.QueryBus.Core\SI.QueryBus.Core.csproj">
+      <Project>{ef4af97b-ae4b-4a1a-9e48-e02891882a44}</Project>
+      <Name>SI.QueryBus.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SI.CQRS.Repository\SI.CQRS.Sln\NetFramework\SI.QueryBus\SI.QueryBus.csproj">
+      <Project>{2c25bf28-565d-479f-b7d1-8566dcfd271a}</Project>
+      <Name>SI.QueryBus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SI.CQRS.Repository\SI.CQRS.Sln\NetFramework\SI.QueryHandler.Factory\SI.QueryHandler.Factory.csproj">
+      <Project>{8d4e2a6b-f2e9-4e0e-af53-c9d89f0ac785}</Project>
+      <Name>SI.QueryHandler.Factory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pagila.CommandHandlers\Pagila.CommandHandlers.csproj">
+      <Project>{63dc69ef-5729-4d50-956f-1400b2b9ff60}</Project>
+      <Name>Pagila.CommandHandlers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pagila.QueryHandlers\Pagila.QueryHandlers.csproj">
+      <Project>{aab2ec68-28b5-4377-ab79-3ef6f10ae788}</Project>
+      <Name>Pagila.QueryHandlers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pagila.Query\Pagila.Query.csproj">
+      <Project>{4028EBA9-38DA-46A7-8605-54F99F7B58FE}</Project>
+      <Name>Pagila.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pagila.ViewModel\Pagila.ViewModel.csproj">
+      <Project>{05976d77-efd7-4e74-b586-1349940de5a4}</Project>
+      <Name>Pagila.ViewModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

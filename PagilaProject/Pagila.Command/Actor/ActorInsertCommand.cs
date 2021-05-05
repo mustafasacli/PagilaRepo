@@ -1,6 +1,8 @@
-﻿namespace Pagila.Command.Insert
+﻿using Pagila.Command.Base;
+
+namespace Pagila.Command.Actor
 {
-    public class ActorInsertCommand
+    public class ActorInsertCommand : BaseInsertCommand
     {
         public string FirstName
         { get; set; }

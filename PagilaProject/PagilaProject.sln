@@ -56,6 +56,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pagila.Dto", "Pagila.Dto\Pa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pagila.WebUI", "Pagila.WebUI\Pagila.WebUI.csproj", "{4BDC7CF0-8FE4-4480-BDF6-053F97DB459C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pagila.Command.Base", "Pagila.Command.Base\Pagila.Command.Base.csproj", "{1B9B2565-09F2-46A0-8DF5-30220BA9F4CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -142,6 +144,10 @@ Global
 		{4BDC7CF0-8FE4-4480-BDF6-053F97DB459C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BDC7CF0-8FE4-4480-BDF6-053F97DB459C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BDC7CF0-8FE4-4480-BDF6-053F97DB459C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B9B2565-09F2-46A0-8DF5-30220BA9F4CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B9B2565-09F2-46A0-8DF5-30220BA9F4CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B9B2565-09F2-46A0-8DF5-30220BA9F4CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B9B2565-09F2-46A0-8DF5-30220BA9F4CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -167,6 +173,7 @@ Global
 		{90EB3184-D168-43A2-9663-58334F4F108F} = {F4CD9B54-AF5D-46DA-98F3-9C4279EED9FB}
 		{9347DB21-F757-4CE8-84A4-C7159FB6FADF} = {DB998874-5899-4A1F-873F-73D409DEDFC2}
 		{4BDC7CF0-8FE4-4480-BDF6-053F97DB459C} = {DB998874-5899-4A1F-873F-73D409DEDFC2}
+		{1B9B2565-09F2-46A0-8DF5-30220BA9F4CE} = {DB998874-5899-4A1F-873F-73D409DEDFC2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {80D7CC23-B61E-4556-8D28-4CCD9F280D20}

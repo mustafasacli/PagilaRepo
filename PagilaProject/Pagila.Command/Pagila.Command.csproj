@@ -41,12 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Insert\ActorInsertCommand.cs" />
+    <Compile Include="Actor\ActorDeleteCommand.cs" />
+    <Compile Include="Actor\ActorInsertCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Actor\ActorUpdateCommand.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Delete\" />
-    <Folder Include="Update\" />
+    <ProjectReference Include="..\Pagila.Command.Base\Pagila.Command.Base.csproj">
+      <Project>{1B9B2565-09F2-46A0-8DF5-30220BA9F4CE}</Project>
+      <Name>Pagila.Command.Base</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

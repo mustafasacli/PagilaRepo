@@ -31,6 +31,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Coddie.Common">
+      <HintPath>..\..\ExternalDlls\Coddie.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Coddie.Crud">
+      <HintPath>..\..\ExternalDlls\Coddie.Crud.dll</HintPath>
+    </Reference>
+    <Reference Include="Coddie.Data">
+      <HintPath>..\..\ExternalDlls\Coddie.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleFileLogging, Version=2.4.0.0, Culture=neutral, PublicKeyToken=3473942f32152fab, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleFileLogging.dll.2.4.0\lib\net45\SimpleFileLogging.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInfra.Common.Response, Version=1.3.0.0, Culture=neutral, PublicKeyToken=c1ce61cdd45628f7, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInfra.Common.Response.dll.1.3.0\lib\net40\SimpleInfra.Common.Response.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,10 +56,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actor\ActorReadAllQueryHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="QueryObjects\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\SI.CQRS.Repository\SI.CQRS.Sln\NetFramework\SI.Query.Core\SI.Query.Core.csproj">
+      <Project>{076741E2-4702-45F8-8CAF-71EC86C4F1EB}</Project>
+      <Name>SI.Query.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SI.CQRS.Repository\SI.CQRS.Sln\NetFramework\SI.QueryHandler.Base\SI.QueryHandler.Base.csproj">
+      <Project>{AAEB4D4E-553A-4F7C-A91D-90507B15BFC3}</Project>
+      <Name>SI.QueryHandler.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pagila.Entity\Pagila.Entity.csproj">
+      <Project>{2B73FEA8-36B7-4EDF-B592-68B240ECF096}</Project>
+      <Name>Pagila.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pagila.Query\Pagila.Query.csproj">
+      <Project>{4028EBA9-38DA-46A7-8605-54F99F7B58FE}</Project>
+      <Name>Pagila.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pagila.ViewModel\Pagila.ViewModel.csproj">
+      <Project>{05976d77-efd7-4e74-b586-1349940de5a4}</Project>
+      <Name>Pagila.ViewModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
