@@ -1,11 +1,9 @@
-
+using Pagila.Command.Actor;
+using Pagila.Command.Base.Result;
 using Pagila.Query.Actor;
 using Pagila.ViewModel;
 using SI.CommandBus.Core;
 using SI.QueryBus.Core;
-using SimpleInfra.Common.Response;
-using System;
-using System.Collections.Generic;
 using System.Net;
 using System.Web.Mvc;
 
@@ -13,16 +11,13 @@ namespace Pagila.WebUI.Controllers
 {
     public class ActorController : PagilaBaseController
     {
-        private IActorBusiness iActorBusiness;
         private ICommandBus commandBus;
         private IQueryBus queryBus;
 
-        public ActorController(IActorBusiness iActorBusiness = null, ICommandBus commandBus, IQueryBus queryBus)
+        public ActorController(ICommandBus commandBus, IQueryBus queryBus)
         {
             this.commandBus = commandBus;
             this.queryBus = queryBus;
-            this.iActorBusiness = iActorBusiness ??
-                GsbIoC.Instance.GetInstance<IActorBusiness>();
         }
 
         [HttpGet]
@@ -41,7 +36,8 @@ namespace Pagila.WebUI.Controllers
         [HttpPost]
         public ActionResult CreatePost(ActorViewModel model)
         {
-            var response = iActorBusiness.Create(model);
+            var command = GetCommandFromViewModel<ActorInsertCommand, ActorViewModel>(model);
+            var response = commandBus.Send<ActorInsertCommand, LongCommandResult>(command);
 
             if (response.ResponseCode > 0)
             { return RedirectToAction("Index"); }
@@ -53,30 +49,31 @@ namespace Pagila.WebUI.Controllers
         }
 
         [HttpGet]
-        public ActionResult Detail(int actorId)
+        public ActionResult Detail(int? actorId)
         {
-            var response = iActorBusiness.Read(actorId);
+            var response = queryBus.Send<ActorReadByIdQuery, ActorResult>(new ActorReadByIdQuery { Id = actorId });
 
-            if (response.Data == null || response.ResponseCode < 1)
+            if (response.Data?.Actor == null || response.ResponseCode < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
-            return View(response.Data);
+            return View(response.Data.Actor);
         }
 
         public ActionResult Edit(int actorId)
         {
-            var response = iActorBusiness.Read(actorId);
+            var response = queryBus.Send<ActorReadByIdQuery, ActorResult>(new ActorReadByIdQuery { Id = actorId });
 
-            if (response.Data == null || response.ResponseCode < 1)
+            if (response.Data?.Actor == null || response.ResponseCode < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
-            return View("Edit", response.Data);
+            return View("Edit", response.Data.Actor);
         }
 
         [HttpPost]
         public ActionResult UpdatePost(ActorViewModel model)
         {
-            var response = iActorBusiness.Update(model);
+            var command = GetCommandFromViewModel<ActorUpdateCommand, ActorViewModel>(model);
+            var response = commandBus.Send<ActorUpdateCommand, LongCommandResult>(command);
 
             if (response.ResponseCode > 0)
             { return RedirectToAction("Index"); }
@@ -89,18 +86,18 @@ namespace Pagila.WebUI.Controllers
 
         public ActionResult Delete(int actorId)
         {
-            var response = iActorBusiness.Read(actorId);
+            var response = queryBus.Send<ActorReadByIdQuery, ActorResult>(new ActorReadByIdQuery { Id = actorId });
 
-            if (response.Data == null || response.ResponseCode < 1)
+            if (response.Data?.Actor == null || response.ResponseCode < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
-            return View("Delete", response.Data);
+            return View("Delete", response.Data.Actor);
         }
 
         [HttpPost]
-        public ActionResult DeletePost(int actorId)
+        public ActionResult DeletePost(int? actorId)
         {
-            var response = iActorBusiness.Delete(actorId);
+            var response = commandBus.Send<ActorDeleteCommand, LongCommandResult>(new ActorDeleteCommand { Id = actorId });
 
             if (response.ResponseCode > 0)
             { return RedirectToAction("Index"); }
@@ -114,7 +111,7 @@ namespace Pagila.WebUI.Controllers
         [HttpGet]
         public ActionResult ReadAll()
         {
-            var response = iActorBusiness.ReadAll();
+            var response = queryBus.Send<ActorReadAllQuery, ActorList>(new ActorReadAllQuery());
             return Json(response, JsonRequestBehavior.AllowGet);
         }
     }

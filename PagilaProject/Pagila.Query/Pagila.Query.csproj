@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="Actor\ActorList.cs" />
     <Compile Include="Actor\ActorReadAllQuery.cs" />
+    <Compile Include="Actor\ActorReadByIdQuery.cs" />
+    <Compile Include="Actor\ActorResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

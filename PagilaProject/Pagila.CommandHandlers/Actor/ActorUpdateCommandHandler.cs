@@ -26,7 +26,6 @@ namespace Pagila.CommandHandlers.Actor
                         {
                             command.FirstName,
                             command.LastName,
-                            command.Active,
                             command.LastUpdate
                         }, p => p.ActorId == command.ActorId);
                         response.ResponseCode = result;

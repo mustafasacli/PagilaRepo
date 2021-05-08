@@ -46,7 +46,7 @@ namespace Pagila.CommandHandlers.Actor
         {
             SimpleResponse response = new SimpleResponse();
 
-            if (command.Id < 1)
+            if (command.Id == null || command.Id < 1)
             {
                 response.ResponseCode = -100;
                 response.ResponseMessage = "Invalid id value";

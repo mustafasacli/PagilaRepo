@@ -4,7 +4,7 @@ namespace Pagila.Command.Actor
 {
     public class ActorDeleteCommand : BaseDeleteCommand
     {
-        public int Id
+        public int? Id
         { get; set; }
     }
 }

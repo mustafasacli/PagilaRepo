@@ -26,7 +26,7 @@ namespace Pagila.CommandHandlers.Actor
                         var result = connection.PartialInsertAndReturnId<ActorEntity>(new { command.FirstName, command.LastName });
                         response.ResponseCode = (int)result.Result;
                         response.RCode = result.ToString();
-                        response.Data = new LongCommandResult { ReturnValue = result.ToLongNullable() };
+                        response.Data = new LongCommandResult { ReturnValue = result.Result.ToLongNullable() };
                     }
                     finally
                     {
