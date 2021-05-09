@@ -11,7 +11,7 @@ using System.Linq;
 
 namespace Pagila.QueryHandlers.Actor
 {
-    public class ActorReadAllQueryHandler : BaseQueryHandler<ActorReadAllQuery, ActorList>
+    public class ActorReadAllQueryHandler : PagilaBaseQueryHandler<ActorReadAllQuery, ActorList>
     {
         public override SimpleResponse<ActorList> Handle(ActorReadAllQuery query)
         {

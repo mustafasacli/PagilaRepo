@@ -10,7 +10,7 @@ using System;
 
 namespace Pagila.CommandHandlers.Actor
 {
-    public class ActorInsertCommandHandler : BaseCommandHandler<ActorInsertCommand, LongCommandResult>
+    public class ActorInsertCommandHandler : PagilaBaseCommandHandler<ActorInsertCommand, LongCommandResult>
     {
         public override SimpleResponse<LongCommandResult> Handle(ActorInsertCommand command)
         {

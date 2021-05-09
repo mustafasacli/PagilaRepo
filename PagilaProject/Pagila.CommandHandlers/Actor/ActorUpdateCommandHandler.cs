@@ -9,7 +9,7 @@ using System;
 
 namespace Pagila.CommandHandlers.Actor
 {
-    public class ActorUpdateCommandHandler : BaseCommandHandler<ActorUpdateCommand, LongCommandResult>
+    public class ActorUpdateCommandHandler : PagilaBaseCommandHandler<ActorUpdateCommand, LongCommandResult>
     {
         public override SimpleResponse<LongCommandResult> Handle(ActorUpdateCommand command)
         {

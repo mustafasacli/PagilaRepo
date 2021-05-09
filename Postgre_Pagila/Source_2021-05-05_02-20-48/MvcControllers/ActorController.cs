@@ -24,7 +24,7 @@ namespace Pagila.WebUI.Controllers
         public ActionResult Index()
         {
             var response = queryBus.Send<ActorReadAllQuery, ActorList>(new ActorReadAllQuery());
-            return View(response.Data);
+            return View(response.Data.Actors);
         }
 
         public ActionResult Create()

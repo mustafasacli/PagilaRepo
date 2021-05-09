@@ -9,7 +9,7 @@ using System;
 
 namespace Pagila.CommandHandlers.Actor
 {
-    public class ActorDeleteCommandHandler : BaseCommandHandler<ActorDeleteCommand, LongCommandResult>
+    public class ActorDeleteCommandHandler : PagilaBaseCommandHandler<ActorDeleteCommand, LongCommandResult>
     {
         public override SimpleResponse<LongCommandResult> Handle(ActorDeleteCommand command)
         {
