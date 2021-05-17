@@ -43,6 +43,18 @@
   <ItemGroup>
     <Compile Include="Actor\ActorDeleteCommand.cs" />
     <Compile Include="Actor\ActorInsertCommand.cs" />
+    <Compile Include="Address\AddressDeleteCommand.cs" />
+    <Compile Include="Address\AddressInsertCommand.cs" />
+    <Compile Include="Address\AddressUpdateCommand.cs" />
+    <Compile Include="Category\CategoryDeleteCommand.cs" />
+    <Compile Include="Category\CategoryInsertCommand.cs" />
+    <Compile Include="Category\CategoryUpdateCommand.cs" />
+    <Compile Include="City\CityDeleteCommand.cs" />
+    <Compile Include="City\CityInsertCommand.cs" />
+    <Compile Include="City\CityUpdateCommand.cs" />
+    <Compile Include="Country\CountryDeleteCommand.cs" />
+    <Compile Include="Country\CountryInsertCommand.cs" />
+    <Compile Include="Country\CountryUpdateCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Actor\ActorUpdateCommand.cs" />
   </ItemGroup>

@@ -93,6 +93,18 @@
   <ItemGroup>
     <Compile Include="Actor\ActorDeleteCommandHandler.cs" />
     <Compile Include="Actor\ActorInsertCommandHandler.cs" />
+    <Compile Include="Address\AddressDeleteCommandHandler.cs" />
+    <Compile Include="Address\AddressInsertCommandHandler.cs" />
+    <Compile Include="Address\AddressUpdateCommandHandler.cs" />
+    <Compile Include="Category\CategoryDeleteCommandHandler.cs" />
+    <Compile Include="Category\CategoryInsertCommandHandler.cs" />
+    <Compile Include="Category\CategoryUpdateCommandHandler.cs" />
+    <Compile Include="City\CityDeleteCommandHandler.cs" />
+    <Compile Include="City\CityInsertCommandHandler.cs" />
+    <Compile Include="City\CityUpdateCommandHandler.cs" />
+    <Compile Include="Country\CountryDeleteCommandHandler.cs" />
+    <Compile Include="Country\CountryInsertCommandHandler.cs" />
+    <Compile Include="Country\CountryUpdateCommandHandler.cs" />
     <Compile Include="PagilaBaseCommandHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Actor\ActorUpdateCommandHandler.cs" />

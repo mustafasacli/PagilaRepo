@@ -93,10 +93,17 @@
   <ItemGroup>
     <Compile Include="Actor\ActorReadAllQueryHandler.cs" />
     <Compile Include="Actor\ActorReadByIdQueryHandler.cs" />
+    <Compile Include="Address\AddressReadAllQueryHandler.cs" />
+    <Compile Include="Address\AddressReadByIdQueryHandler.cs" />
+    <Compile Include="Category\CategoryReadAllQueryHandler.cs" />
+    <Compile Include="Category\CategoryReadByIdQueryHandler.cs" />
+    <Compile Include="Country\CountryReadAllQueryHandler.cs" />
+    <Compile Include="Country\CountryReadByIdQueryHandler.cs" />
     <Compile Include="PagilaBaseQueryHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="City\" />
     <Folder Include="QueryObjects\" />
   </ItemGroup>
   <ItemGroup>

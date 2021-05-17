@@ -45,6 +45,22 @@
     <Compile Include="Actor\ActorReadAllQuery.cs" />
     <Compile Include="Actor\ActorReadByIdQuery.cs" />
     <Compile Include="Actor\ActorResult.cs" />
+    <Compile Include="Address\AddressList.cs" />
+    <Compile Include="Address\AddressReadAllQuery.cs" />
+    <Compile Include="Address\AddressReadByIdQuery.cs" />
+    <Compile Include="Address\AddressResult.cs" />
+    <Compile Include="Category\CategoryList.cs" />
+    <Compile Include="Category\CategoryReadAllQuery.cs" />
+    <Compile Include="Category\CategoryReadByIdQuery.cs" />
+    <Compile Include="Category\CategoryResult.cs" />
+    <Compile Include="City\CityList.cs" />
+    <Compile Include="City\CityReadAllQuery.cs" />
+    <Compile Include="City\CityReadByIdQuery.cs" />
+    <Compile Include="City\CityResult.cs" />
+    <Compile Include="Country\CountryList.cs" />
+    <Compile Include="Country\CountryReadAllQuery.cs" />
+    <Compile Include="Country\CountryReadByIdQuery.cs" />
+    <Compile Include="Country\CountryResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
