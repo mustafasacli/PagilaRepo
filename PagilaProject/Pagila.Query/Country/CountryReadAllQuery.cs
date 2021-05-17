@@ -7,5 +7,10 @@ namespace Pagila.Query.Country
         public CountryReadAllQuery()
         {
         }
+
+        public static CountryReadAllQuery GetEmptyInstance()
+        {
+            return new CountryReadAllQuery();
+        }
     }
 }

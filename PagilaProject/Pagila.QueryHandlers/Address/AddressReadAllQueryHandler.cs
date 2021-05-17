@@ -27,7 +27,7 @@ namespace Pagila.QueryHandlers.Address
                         // var result = connection.QueryList<Syp.Entity.ServiceDetailType>("select * from service_detail_type where is_deleted = false and lower(detail_type_name) like '%' || :name || '%'", new { name = query.Name.ToLowerInvariant() });
                         response.Data = new AddressList
                         {
-                            Actors = actorEntList.Select(p => new AddressViewModel
+                            Addresses = actorEntList.Select(p => new AddressViewModel
                             {
                                 AddressId = p.AddressId,
                                 Address = p.Address,
@@ -39,7 +39,7 @@ namespace Pagila.QueryHandlers.Address
                                 LastUpdate = p.LastUpdate
                             }).ToList() ?? new List<AddressViewModel>()
                         };
-                        response.ResponseCode = response.Data?.Actors?.Count ?? 0;
+                        response.ResponseCode = response.Data?.Addresses?.Count ?? 0;
                         response.RCode = response.ResponseCode.ToString();
                     }
                     finally

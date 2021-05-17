@@ -7,5 +7,10 @@ namespace Pagila.Query.Actor
         public ActorReadAllQuery()
         {
         }
+
+        public static ActorReadAllQuery GetEmptyInstance()
+        {
+            return new ActorReadAllQuery();
+        }
     }
 }

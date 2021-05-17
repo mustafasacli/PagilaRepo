@@ -7,5 +7,10 @@ namespace Pagila.Query.Category
         public CategoryReadAllQuery()
         {
         }
+
+        public static CategoryReadAllQuery GetEmptyInstance()
+        {
+            return new CategoryReadAllQuery();
+        }
     }
 }

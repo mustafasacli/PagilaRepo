@@ -1,43 +1,41 @@
 ﻿using Coddie.Crud;
 using Coddie.Data;
 using Pagila.Entity;
-using Pagila.Query.Country;
+using Pagila.Query.City;
 using Pagila.ViewModel;
 using SimpleInfra.Common.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Pagila.QueryHandlers.Country
+namespace Pagila.QueryHandlers.City
 {
-    public class CountryReadByIdQueryHandler : PagilaBaseQueryHandler<CountryReadByIdQuery, CountryResult>
+    public class CityReadAllQueryHandler : PagilaBaseQueryHandler<CityReadAllQuery, CityList>
     {
-        public override SimpleResponse<CountryResult> Handle(CountryReadByIdQuery query)
+        public override SimpleResponse<CityList> Handle(CityReadAllQuery query)
         {
-            var response = new SimpleResponse<CountryResult>();
+            var response = new SimpleResponse<CityList>();
 
             try
             {
-                if (query.Id == null) return response;
-
-                if ((query.Id ?? 0) < 1) return response;
-
                 using (var connection = GetDbConnection())
                 {
                     try
                     {
                         connection.OpenIfNot();
-                        var actorEntList = connection.Select<CountryEntity>(p => p.CountryId == query.Id)?.ToList() ?? new List<CountryEntity>();
-                        response.Data = new CountryResult
+                        var actorEntList = connection.GetAll<CityEntity>();
+                        // var result = connection.QueryList<Syp.Entity.ServiceDetailType>("select * from service_detail_type where is_deleted = false and lower(detail_type_name) like '%' || :name || '%'", new { name = query.Name.ToLowerInvariant() });
+                        response.Data = new CityList
                         {
-                            Country = (actorEntList.Select(p => new CountryViewModel
+                            Cities = actorEntList.Select(p => new CityViewModel
                             {
+                                CityId = p.CityId,
+                                City = p.City,
                                 CountryId = p.CountryId,
-                                Country = p.Country,
                                 LastUpdate = p.LastUpdate
-                            }).ToList() ?? new List<CountryViewModel>()).FirstOrDefault()
+                            }).ToList() ?? new List<CityViewModel>()
                         };
-                        response.ResponseCode = response.Data != null ? 1 : 0;
+                        response.ResponseCode = response.Data?.Cities?.Count ?? 0;
                         response.RCode = response.ResponseCode.ToString();
                     }
                     finally
@@ -56,4 +54,3 @@ namespace Pagila.QueryHandlers.Country
         }
     }
 }
-

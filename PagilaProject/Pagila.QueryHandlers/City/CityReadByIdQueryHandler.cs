@@ -1,20 +1,20 @@
 ﻿using Coddie.Crud;
 using Coddie.Data;
 using Pagila.Entity;
-using Pagila.Query.Country;
+using Pagila.Query.City;
 using Pagila.ViewModel;
 using SimpleInfra.Common.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Pagila.QueryHandlers.Country
+namespace Pagila.QueryHandlers.City
 {
-    public class CountryReadByIdQueryHandler : PagilaBaseQueryHandler<CountryReadByIdQuery, CountryResult>
+    public class CityReadByIdQueryHandler : PagilaBaseQueryHandler<CityReadByIdQuery, CityResult>
     {
-        public override SimpleResponse<CountryResult> Handle(CountryReadByIdQuery query)
+        public override SimpleResponse<CityResult> Handle(CityReadByIdQuery query)
         {
-            var response = new SimpleResponse<CountryResult>();
+            var response = new SimpleResponse<CityResult>();
 
             try
             {
@@ -27,15 +27,16 @@ namespace Pagila.QueryHandlers.Country
                     try
                     {
                         connection.OpenIfNot();
-                        var actorEntList = connection.Select<CountryEntity>(p => p.CountryId == query.Id)?.ToList() ?? new List<CountryEntity>();
-                        response.Data = new CountryResult
+                        var actorEntList = connection.Select<CityEntity>(p => p.CityId == query.Id)?.ToList() ?? new List<CityEntity>();
+                        response.Data = new CityResult
                         {
-                            Country = (actorEntList.Select(p => new CountryViewModel
+                            City = (actorEntList.Select(p => new CityViewModel
                             {
+                                CityId = p.CityId,
+                                City = p.City,
                                 CountryId = p.CountryId,
-                                Country = p.Country,
                                 LastUpdate = p.LastUpdate
-                            }).ToList() ?? new List<CountryViewModel>()).FirstOrDefault()
+                            }).ToList() ?? new List<CityViewModel>()).FirstOrDefault()
                         };
                         response.ResponseCode = response.Data != null ? 1 : 0;
                         response.RCode = response.ResponseCode.ToString();

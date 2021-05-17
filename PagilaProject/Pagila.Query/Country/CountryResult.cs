@@ -5,7 +5,7 @@ namespace Pagila.Query.Country
 {
     public class CountryResult : IQueryResult
     {
-        public CountryViewModel Actor
+        public CountryViewModel Country
         { get; set; }
     }
 }

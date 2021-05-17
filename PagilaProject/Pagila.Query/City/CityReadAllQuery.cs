@@ -7,5 +7,10 @@ namespace Pagila.Query.City
         public CityReadAllQuery()
         {
         }
+
+        public static CityReadAllQuery GetEmptyInstance()
+        {
+            return new CityReadAllQuery();
+        }
     }
 }

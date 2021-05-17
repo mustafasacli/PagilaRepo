@@ -6,7 +6,7 @@ namespace Pagila.Query.Address
 {
     public class AddressList : IQueryResult
     {
-        public List<AddressViewModel> Actors
+        public List<AddressViewModel> Addresses
         { get; set; }
     }
 }

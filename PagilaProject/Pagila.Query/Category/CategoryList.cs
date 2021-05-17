@@ -6,7 +6,7 @@ namespace Pagila.Query.Category
 {
     public class CategoryList : IQueryResult
     {
-        public List<CategoryViewModel> Actors
+        public List<CategoryViewModel> Categories
         { get; set; }
     }
 }

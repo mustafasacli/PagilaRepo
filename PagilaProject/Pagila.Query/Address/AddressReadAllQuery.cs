@@ -7,5 +7,10 @@ namespace Pagila.Query.Address
         public AddressReadAllQuery()
         {
         }
+
+        public static AddressReadAllQuery GetEmptyInstance()
+        {
+            return new AddressReadAllQuery();
+        }
     }
 }

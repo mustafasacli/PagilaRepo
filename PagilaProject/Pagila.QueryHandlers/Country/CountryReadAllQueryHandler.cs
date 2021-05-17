@@ -27,13 +27,14 @@ namespace Pagila.QueryHandlers.Country
                         // var result = connection.QueryList<Syp.Entity.ServiceDetailType>("select * from service_detail_type where is_deleted = false and lower(detail_type_name) like '%' || :name || '%'", new { name = query.Name.ToLowerInvariant() });
                         response.Data = new CountryList
                         {
-                            Actors = actorEntList.Select(p => new CountryViewModel
+                            Countries = actorEntList.Select(p => new CountryViewModel
                             {
                                 CountryId = p.CountryId,
-                                Country = p.Country
+                                Country = p.Country,
+                                LastUpdate = p.LastUpdate
                             }).ToList() ?? new List<CountryViewModel>()
                         };
-                        response.ResponseCode = response.Data?.Actors?.Count ?? 0;
+                        response.ResponseCode = response.Data?.Countries?.Count ?? 0;
                         response.RCode = response.ResponseCode.ToString();
                     }
                     finally

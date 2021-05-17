@@ -5,7 +5,7 @@ namespace Pagila.Query.City
 {
     public class CityResult : IQueryResult
     {
-        public CityViewModel Actor
+        public CityViewModel City
         { get; set; }
     }
 }

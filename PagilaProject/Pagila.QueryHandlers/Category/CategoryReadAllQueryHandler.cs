@@ -28,14 +28,14 @@ namespace Pagila.QueryHandlers.Category
                         // var result = connection.QueryList<Syp.Entity.ServiceDetailType>("select * from service_detail_type where is_deleted = false and lower(detail_type_name) like '%' || :name || '%'", new { name = query.Name.ToLowerInvariant() });
                         response.Data = new CategoryList
                         {
-                            Actors = actorEntList.Select(p => new CategoryViewModel
+                            Categories = actorEntList.Select(p => new CategoryViewModel
                             {
                                 CategoryId = p.CategoryId,
                                 Name = p.Name,
                                 LastUpdate = p.LastUpdate
                             }).ToList() ?? new List<CategoryViewModel>()
                         };
-                        response.ResponseCode = response.Data?.Actors?.Count ?? 0;
+                        response.ResponseCode = response.Data?.Categories?.Count ?? 0;
                         response.RCode = response.ResponseCode.ToString();
                     }
                     finally

@@ -111,7 +111,7 @@ namespace Pagila.WebUI.Controllers
         [HttpGet]
         public ActionResult ReadAll()
         {
-            var response = queryBus.Send<ActorReadAllQuery, ActorList>(new ActorReadAllQuery());
+            var response = queryBus.Send<ActorReadAllQuery, ActorList>(ActorReadAllQuery.GetEmptyInstance());
             return Json(response, JsonRequestBehavior.AllowGet);
         }
     }
