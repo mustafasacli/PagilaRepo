@@ -1,10 +1,9 @@
-
-using Pagila.ViewModel;using SI.CommandBus.Core;using SI.QueryBus.Core;
-
-
-using SimpleInfra.Common.Response;
-using System;
-using System.Collections.Generic;
+using Pagila.Command.Address;
+using Pagila.Command.Base.Result;
+using Pagila.Query.Address;
+using Pagila.ViewModel;
+using SI.CommandBus.Core;
+using SI.QueryBus.Core;
 using System.Net;
 using System.Web.Mvc;
 
@@ -12,23 +11,20 @@ namespace Pagila.WebUI.Controllers
 {
     public class AddressController : PagilaBaseController
     {
-        private IAddressBusiness iAddressBusiness;
         private ICommandBus commandBus;
         private IQueryBus queryBus;
 
-        public AddressController(IAddressBusiness iAddressBusiness = null, ICommandBus commandBus, IQueryBus queryBus)
+        public AddressController(ICommandBus commandBus, IQueryBus queryBus)
         {
             this.commandBus = commandBus;
             this.queryBus = queryBus;
-            this.iAddressBusiness = iAddressBusiness ??
-                GsbIoC.Instance.GetInstance<IAddressBusiness>();
         }
 
         [HttpGet]
         public ActionResult Index()
         {
-            var response = iAddressBusiness.ReadAll();
-            return View(response.Data);
+            var response = queryBus.Send<AddressReadAllQuery, AddressList>(new AddressReadAllQuery());
+            return View(response.Data.Addresses);
         }
 
         public ActionResult Create()
@@ -40,7 +36,8 @@ namespace Pagila.WebUI.Controllers
         [HttpPost]
         public ActionResult CreatePost(AddressViewModel model)
         {
-            var response = iAddressBusiness.Create(model);
+            var command = GetCommandFromViewModel<AddressInsertCommand, AddressViewModel>(model);
+            var response = commandBus.Send<AddressInsertCommand, LongCommandResult>(command);
 
             if (response.ResponseCode > 0)
             { return RedirectToAction("Index"); }
@@ -52,30 +49,31 @@ namespace Pagila.WebUI.Controllers
         }
 
         [HttpGet]
-        public ActionResult Detail(int addressId)
+        public ActionResult Detail(int? AddressId)
         {
-            var response = iAddressBusiness.Read(addressId);
+            var response = queryBus.Send<AddressReadByIdQuery, AddressResult>(new AddressReadByIdQuery { Id = AddressId });
 
-            if (response.Data == null || response.ResponseCode < 1)
+            if (response.Data?.Address == null || response.ResponseCode < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
-            return View(response.Data);
+            return View(response.Data.Address);
         }
 
-        public ActionResult Edit(int addressId)
+        public ActionResult Edit(int AddressId)
         {
-            var response = iAddressBusiness.Read(addressId);
+            var response = queryBus.Send<AddressReadByIdQuery, AddressResult>(new AddressReadByIdQuery { Id = AddressId });
 
-            if (response.Data == null || response.ResponseCode < 1)
+            if (response.Data?.Address == null || response.ResponseCode < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
-            return View("Edit",  response.Data);
+            return View("Edit", response.Data.Address);
         }
 
         [HttpPost]
         public ActionResult UpdatePost(AddressViewModel model)
         {
-            var response = iAddressBusiness.Update(model);
+            var command = GetCommandFromViewModel<AddressUpdateCommand, AddressViewModel>(model);
+            var response = commandBus.Send<AddressUpdateCommand, LongCommandResult>(command);
 
             if (response.ResponseCode > 0)
             { return RedirectToAction("Index"); }
@@ -86,34 +84,34 @@ namespace Pagila.WebUI.Controllers
             }
         }
 
-        public ActionResult Delete(int addressId)
+        public ActionResult Delete(int AddressId)
         {
-            var response = iAddressBusiness.Read(addressId);
+            var response = queryBus.Send<AddressReadByIdQuery, AddressResult>(new AddressReadByIdQuery { Id = AddressId });
 
-            if (response.Data == null || response.ResponseCode < 1)
+            if (response.Data?.Address == null || response.ResponseCode < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
-            return View("Delete", response.Data);
+            return View("Delete", response.Data.Address);
         }
 
         [HttpPost]
-        public ActionResult DeletePost(int addressId)
+        public ActionResult DeletePost(int? AddressId)
         {
-            var response = iAddressBusiness.Delete(addressId);
+            var response = commandBus.Send<AddressDeleteCommand, LongCommandResult>(new AddressDeleteCommand { Id = AddressId });
 
             if (response.ResponseCode > 0)
             { return RedirectToAction("Index"); }
             else
             {
                 ModelState.AddModelError(string.Empty, response.ResponseMessage);
-                return RedirectToAction("Delete", new { addressId });
+                return RedirectToAction("Delete", new { AddressId });
             }
         }
 
         [HttpGet]
         public ActionResult ReadAll()
         {
-            var response = iAddressBusiness.ReadAll();
+            var response = queryBus.Send<AddressReadAllQuery, AddressList>(AddressReadAllQuery.GetEmptyInstance());
             return Json(response, JsonRequestBehavior.AllowGet);
         }
     }

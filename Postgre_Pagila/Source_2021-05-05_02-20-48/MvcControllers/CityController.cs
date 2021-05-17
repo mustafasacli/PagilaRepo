@@ -1,10 +1,9 @@
-
-using Pagila.ViewModel;using SI.CommandBus.Core;using SI.QueryBus.Core;
-
-
-using SimpleInfra.Common.Response;
-using System;
-using System.Collections.Generic;
+using Pagila.Command.Base.Result;
+using Pagila.Command.City;
+using Pagila.Query.City;
+using Pagila.ViewModel;
+using SI.CommandBus.Core;
+using SI.QueryBus.Core;
 using System.Net;
 using System.Web.Mvc;
 
@@ -12,23 +11,20 @@ namespace Pagila.WebUI.Controllers
 {
     public class CityController : PagilaBaseController
     {
-        private ICityBusiness iCityBusiness;
         private ICommandBus commandBus;
         private IQueryBus queryBus;
 
-        public CityController(ICityBusiness iCityBusiness = null, ICommandBus commandBus, IQueryBus queryBus)
+        public CityController(ICommandBus commandBus, IQueryBus queryBus)
         {
             this.commandBus = commandBus;
             this.queryBus = queryBus;
-            this.iCityBusiness = iCityBusiness ??
-                GsbIoC.Instance.GetInstance<ICityBusiness>();
         }
 
         [HttpGet]
         public ActionResult Index()
         {
-            var response = iCityBusiness.ReadAll();
-            return View(response.Data);
+            var response = queryBus.Send<CityReadAllQuery, CityList>(new CityReadAllQuery());
+            return View(response.Data.Cities);
         }
 
         public ActionResult Create()
@@ -40,7 +36,8 @@ namespace Pagila.WebUI.Controllers
         [HttpPost]
         public ActionResult CreatePost(CityViewModel model)
         {
-            var response = iCityBusiness.Create(model);
+            var command = GetCommandFromViewModel<CityInsertCommand, CityViewModel>(model);
+            var response = commandBus.Send<CityInsertCommand, LongCommandResult>(command);
 
             if (response.ResponseCode > 0)
             { return RedirectToAction("Index"); }
@@ -52,30 +49,31 @@ namespace Pagila.WebUI.Controllers
         }
 
         [HttpGet]
-        public ActionResult Detail(int cityId)
+        public ActionResult Detail(int? CityId)
         {
-            var response = iCityBusiness.Read(cityId);
+            var response = queryBus.Send<CityReadByIdQuery, CityResult>(new CityReadByIdQuery { Id = CityId });
 
-            if (response.Data == null || response.ResponseCode < 1)
+            if (response.Data?.City == null || response.ResponseCode < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
-            return View(response.Data);
+            return View(response.Data.City);
         }
 
-        public ActionResult Edit(int cityId)
+        public ActionResult Edit(int CityId)
         {
-            var response = iCityBusiness.Read(cityId);
+            var response = queryBus.Send<CityReadByIdQuery, CityResult>(new CityReadByIdQuery { Id = CityId });
 
-            if (response.Data == null || response.ResponseCode < 1)
+            if (response.Data?.City == null || response.ResponseCode < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
-            return View("Edit",  response.Data);
+            return View("Edit", response.Data.City);
         }
 
         [HttpPost]
         public ActionResult UpdatePost(CityViewModel model)
         {
-            var response = iCityBusiness.Update(model);
+            var command = GetCommandFromViewModel<CityUpdateCommand, CityViewModel>(model);
+            var response = commandBus.Send<CityUpdateCommand, LongCommandResult>(command);
 
             if (response.ResponseCode > 0)
             { return RedirectToAction("Index"); }
@@ -86,34 +84,34 @@ namespace Pagila.WebUI.Controllers
             }
         }
 
-        public ActionResult Delete(int cityId)
+        public ActionResult Delete(int CityId)
         {
-            var response = iCityBusiness.Read(cityId);
+            var response = queryBus.Send<CityReadByIdQuery, CityResult>(new CityReadByIdQuery { Id = CityId });
 
-            if (response.Data == null || response.ResponseCode < 1)
+            if (response.Data?.City == null || response.ResponseCode < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
-            return View("Delete", response.Data);
+            return View("Delete", response.Data.City);
         }
 
         [HttpPost]
-        public ActionResult DeletePost(int cityId)
+        public ActionResult DeletePost(int? CityId)
         {
-            var response = iCityBusiness.Delete(cityId);
+            var response = commandBus.Send<CityDeleteCommand, LongCommandResult>(new CityDeleteCommand { Id = CityId });
 
             if (response.ResponseCode > 0)
             { return RedirectToAction("Index"); }
             else
             {
                 ModelState.AddModelError(string.Empty, response.ResponseMessage);
-                return RedirectToAction("Delete", new { cityId });
+                return RedirectToAction("Delete", new { CityId });
             }
         }
 
         [HttpGet]
         public ActionResult ReadAll()
         {
-            var response = iCityBusiness.ReadAll();
+            var response = queryBus.Send<CityReadAllQuery, CityList>( CityReadAllQuery.GetEmptyInstance());
             return Json(response, JsonRequestBehavior.AllowGet);
         }
     }

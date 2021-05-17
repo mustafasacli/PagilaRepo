@@ -1,10 +1,9 @@
-
-using Pagila.ViewModel;using SI.CommandBus.Core;using SI.QueryBus.Core;
-
-
-using SimpleInfra.Common.Response;
-using System;
-using System.Collections.Generic;
+using Pagila.Command.Base.Result;
+using Pagila.Command.Category;
+using Pagila.Query.Category;
+using Pagila.ViewModel;
+using SI.CommandBus.Core;
+using SI.QueryBus.Core;
 using System.Net;
 using System.Web.Mvc;
 
@@ -12,23 +11,20 @@ namespace Pagila.WebUI.Controllers
 {
     public class CategoryController : PagilaBaseController
     {
-        private ICategoryBusiness iCategoryBusiness;
         private ICommandBus commandBus;
         private IQueryBus queryBus;
 
-        public CategoryController(ICategoryBusiness iCategoryBusiness = null, ICommandBus commandBus, IQueryBus queryBus)
+        public CategoryController(ICommandBus commandBus, IQueryBus queryBus)
         {
             this.commandBus = commandBus;
             this.queryBus = queryBus;
-            this.iCategoryBusiness = iCategoryBusiness ??
-                GsbIoC.Instance.GetInstance<ICategoryBusiness>();
         }
 
         [HttpGet]
         public ActionResult Index()
         {
-            var response = iCategoryBusiness.ReadAll();
-            return View(response.Data);
+            var response = queryBus.Send<CategoryReadAllQuery, CategoryList>(new CategoryReadAllQuery());
+            return View(response.Data.Categories);
         }
 
         public ActionResult Create()
@@ -40,7 +36,8 @@ namespace Pagila.WebUI.Controllers
         [HttpPost]
         public ActionResult CreatePost(CategoryViewModel model)
         {
-            var response = iCategoryBusiness.Create(model);
+            var command = GetCommandFromViewModel<CategoryInsertCommand, CategoryViewModel>(model);
+            var response = commandBus.Send<CategoryInsertCommand, LongCommandResult>(command);
 
             if (response.ResponseCode > 0)
             { return RedirectToAction("Index"); }
@@ -52,30 +49,31 @@ namespace Pagila.WebUI.Controllers
         }
 
         [HttpGet]
-        public ActionResult Detail(int categoryId)
+        public ActionResult Detail(int? CategoryId)
         {
-            var response = iCategoryBusiness.Read(categoryId);
+            var response = queryBus.Send<CategoryReadByIdQuery, CategoryResult>(new CategoryReadByIdQuery { Id = CategoryId });
 
-            if (response.Data == null || response.ResponseCode < 1)
+            if (response.Data?.Category == null || response.ResponseCode < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
-            return View(response.Data);
+            return View(response.Data.Category);
         }
 
-        public ActionResult Edit(int categoryId)
+        public ActionResult Edit(int CategoryId)
         {
-            var response = iCategoryBusiness.Read(categoryId);
+            var response = queryBus.Send<CategoryReadByIdQuery, CategoryResult>(new CategoryReadByIdQuery { Id = CategoryId });
 
-            if (response.Data == null || response.ResponseCode < 1)
+            if (response.Data?.Category == null || response.ResponseCode < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
-            return View("Edit",  response.Data);
+            return View("Edit", response.Data.Category);
         }
 
         [HttpPost]
         public ActionResult UpdatePost(CategoryViewModel model)
         {
-            var response = iCategoryBusiness.Update(model);
+            var command = GetCommandFromViewModel<CategoryUpdateCommand, CategoryViewModel>(model);
+            var response = commandBus.Send<CategoryUpdateCommand, LongCommandResult>(command);
 
             if (response.ResponseCode > 0)
             { return RedirectToAction("Index"); }
@@ -86,34 +84,34 @@ namespace Pagila.WebUI.Controllers
             }
         }
 
-        public ActionResult Delete(int categoryId)
+        public ActionResult Delete(int CategoryId)
         {
-            var response = iCategoryBusiness.Read(categoryId);
+            var response = queryBus.Send<CategoryReadByIdQuery, CategoryResult>(new CategoryReadByIdQuery { Id = CategoryId });
 
-            if (response.Data == null || response.ResponseCode < 1)
+            if (response.Data?.Category == null || response.ResponseCode < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
-            return View("Delete", response.Data);
+            return View("Delete", response.Data.Category);
         }
 
         [HttpPost]
-        public ActionResult DeletePost(int categoryId)
+        public ActionResult DeletePost(int? CategoryId)
         {
-            var response = iCategoryBusiness.Delete(categoryId);
+            var response = commandBus.Send<CategoryDeleteCommand, LongCommandResult>(new CategoryDeleteCommand { Id = CategoryId });
 
             if (response.ResponseCode > 0)
             { return RedirectToAction("Index"); }
             else
             {
                 ModelState.AddModelError(string.Empty, response.ResponseMessage);
-                return RedirectToAction("Delete", new { categoryId });
+                return RedirectToAction("Delete", new { CategoryId });
             }
         }
 
         [HttpGet]
         public ActionResult ReadAll()
         {
-            var response = iCategoryBusiness.ReadAll();
+            var response = queryBus.Send<CategoryReadAllQuery, CategoryList>(CategoryReadAllQuery.GetEmptyInstance());
             return Json(response, JsonRequestBehavior.AllowGet);
         }
     }

@@ -172,13 +172,21 @@
     <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\MvcControllers\ActorController.cs">
       <Link>Controllers\ActorController.cs</Link>
     </Compile>
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\MvcControllers\AddressController.cs">
+      <Link>Controllers\AddressController.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\MvcControllers\CategoryController.cs">
+      <Link>Controllers\CategoryController.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\MvcControllers\CityController.cs">
+      <Link>Controllers\CityController.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Postgre_Pagila\Source_2021-05-05_02-20-48\MvcControllers\CountryController.cs">
+      <Link>Controllers\CountryController.cs</Link>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AddressController.cs" />
-    <Compile Include="Controllers\CategoryController.cs" />
-    <Compile Include="Controllers\CityController.cs" />
-    <Compile Include="Controllers\CountryController.cs" />
     <Compile Include="Controllers\PagilaBaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
