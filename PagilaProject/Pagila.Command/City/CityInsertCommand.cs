@@ -4,7 +4,10 @@ namespace Pagila.Command.City
 {
     public class CityInsertCommand : BaseInsertCommand
     {
-        public string Name
+        public int CountryId
+        { get; set; }
+
+        public string City
         { get; set; }
     }
 }

@@ -25,6 +25,10 @@ namespace Pagila.WebUI
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/common").Include("~/Scripts/common/general_*"));
+
+            bundles.Add(new ScriptBundle("~/bundles/webui").Include("~/Scripts/webui/*.js"));
         }
     }
 }

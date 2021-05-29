@@ -10,7 +10,10 @@ namespace Pagila.Command.City
         /// <summary>
         /// Gets or Sets the Name
         /// </summary>
-        public string Name
+        public string City
+        { get; set; }
+
+        public int CountryId
         { get; set; }
     }
 }

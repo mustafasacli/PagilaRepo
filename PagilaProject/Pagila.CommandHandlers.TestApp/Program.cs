@@ -1,19 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Pagila.Command.Actor;
+using Pagila.Command.Base.Result;
+using Pagila.Query.Actor;
 using SI.CommandBus;
 using SI.CommandBus.Core;
 using SI.QueryBus;
 using SI.QueryBus.Core;
-using Pagila.Command.Base.Result;
-using Pagila.CommandHandlers;
 using System;
 using System.Threading;
-using SimpleInfra.Common.Response;
-using Pagila.Query.Actor;
-using Pagila.Command.Actor;
 
 namespace Pagila.CommandHandlers.TestApp
 {

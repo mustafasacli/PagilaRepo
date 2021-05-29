@@ -22,7 +22,7 @@ namespace Pagila.CommandHandlers.City
                     try
                     {
                         connection.OpenIfNot();
-                        var result = connection.PartialInsertAndReturnId<CityEntity>(new { command.Name });
+                        var result = connection.PartialInsertAndReturnId<CityEntity>(new { City = command.City, CountryId = command.CountryId });
                         response.ResponseCode = (int)result.Result;
                         response.RCode = result.ToString();
                         response.Data = new LongCommandResult { ReturnValue = result.Result.ToLongNullable() };

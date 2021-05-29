@@ -23,7 +23,8 @@ namespace Pagila.CommandHandlers.City
                         connection.OpenIfNot();
                         var result = connection.PartialUpdate<CityEntity>(new
                         {
-                            command.Name
+                            command.City,
+                            command.CountryId
                         }, p => p.CityId == command.CityId);
                         response.ResponseCode = result;
                         response.RCode = result.ToString();
