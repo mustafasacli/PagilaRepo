@@ -112,7 +112,7 @@ namespace Pagila.WebUI.Controllers
         public ActionResult ReadAll()
         {
             var response = queryBus.Send<CityReadAllQuery, CityList>( CityReadAllQuery.GetEmptyInstance());
-            return Json(response, JsonRequestBehavior.AllowGet);
+            return Json(response.Data.Cities, JsonRequestBehavior.AllowGet);
         }
     }
 }
