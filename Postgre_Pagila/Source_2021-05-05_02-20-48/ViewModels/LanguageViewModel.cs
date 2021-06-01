@@ -17,7 +17,7 @@ namespace Pagila.ViewModel
         /// Gets or Sets the Name
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessage = "Name alanýna veri girilmelidir.")]
-        public char Name
+        public string Name
         { get; set; }
 
         /// <summary>

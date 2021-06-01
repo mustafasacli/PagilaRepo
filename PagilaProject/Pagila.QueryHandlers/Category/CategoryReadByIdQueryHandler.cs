@@ -3,7 +3,6 @@ using Coddie.Data;
 using Pagila.Entity;
 using Pagila.Query.Category;
 using Pagila.ViewModel;
-using SI.QueryHandler.Base;
 using SimpleInfra.Common.Response;
 using System;
 using System.Collections.Generic;
@@ -57,4 +56,3 @@ namespace Pagila.QueryHandlers.Category
         }
     }
 }
-

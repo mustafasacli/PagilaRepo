@@ -23,7 +23,7 @@ namespace Pagila.Entity
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessage = "Name alanýna veri girilmelidir.")]
         [Column("name", Order = 2, TypeName = "bpchar")]
-        public char Name
+        public string Name
         { get; set; }
 
         /// <summary>

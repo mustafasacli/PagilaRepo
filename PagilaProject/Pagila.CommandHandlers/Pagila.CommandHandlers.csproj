@@ -105,11 +105,38 @@
     <Compile Include="Country\CountryDeleteCommandHandler.cs" />
     <Compile Include="Country\CountryInsertCommandHandler.cs" />
     <Compile Include="Country\CountryUpdateCommandHandler.cs" />
+    <Compile Include="Customer\CustomerDeleteCommandHandler.cs" />
+    <Compile Include="Customer\CustomerInsertCommandHandler.cs" />
+    <Compile Include="Customer\CustomerUpdateCommandHandler.cs" />
+    <Compile Include="Film\FilmDeleteCommandHandler.cs" />
+    <Compile Include="Film\FilmInsertCommandHandler.cs" />
+    <Compile Include="Film\FilmUpdateCommandHandler.cs" />
+    <Compile Include="Inventory\InventoryDeleteCommandHandler.cs" />
+    <Compile Include="Inventory\InventoryInsertCommandHandler.cs" />
+    <Compile Include="Inventory\InventoryUpdateCommandHandler.cs" />
+    <Compile Include="Language\LanguageDeleteCommandHandler.cs" />
+    <Compile Include="Language\LanguageInsertCommandHandler.cs" />
+    <Compile Include="Language\LanguageUpdateCommandHandler.cs" />
     <Compile Include="PagilaBaseCommandHandler.cs" />
+    <Compile Include="Payment\PaymentDeleteCommandHandler.cs" />
+    <Compile Include="Payment\PaymentInsertCommandHandler.cs" />
+    <Compile Include="Payment\PaymentUpdateCommandHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Actor\ActorUpdateCommandHandler.cs" />
+    <Compile Include="Rental\RentalDeleteCommandHandler.cs" />
+    <Compile Include="Rental\RentalInsertCommandHandler.cs" />
+    <Compile Include="Rental\RentalUpdateCommandHandler.cs" />
+    <Compile Include="Staff\StaffDeleteCommandHandler.cs" />
+    <Compile Include="Staff\StaffInsertCommandHandler.cs" />
+    <Compile Include="Staff\StaffUpdateCommandHandler.cs" />
+    <Compile Include="Store\StoreDeleteCommandHandler.cs" />
+    <Compile Include="Store\StoreInsertCommandHandler.cs" />
+    <Compile Include="Store\StoreUpdateCommandHandler.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="FilmActor\" />
+    <Folder Include="FilmCategory\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\SI.CQRS.Repository\SI.CQRS.Sln\NetFramework\SI.Command.Core\SI.Command.Core.csproj">
       <Project>{CD63CF39-40A9-493E-86A3-A07BA7F72373}</Project>

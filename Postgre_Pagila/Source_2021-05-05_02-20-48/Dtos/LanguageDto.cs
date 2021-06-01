@@ -12,7 +12,7 @@ namespace Pagila.Dtos
         { get; set; }
 
         [DataMember]
-        public char Name
+        public string Name
         { get; set; }
 
         [DataMember]

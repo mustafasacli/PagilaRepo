@@ -55,10 +55,37 @@
     <Compile Include="Country\CountryDeleteCommand.cs" />
     <Compile Include="Country\CountryInsertCommand.cs" />
     <Compile Include="Country\CountryUpdateCommand.cs" />
+    <Compile Include="Customer\CustomerDeleteCommand.cs" />
+    <Compile Include="Customer\CustomerInsertCommand.cs" />
+    <Compile Include="Customer\CustomerUpdateCommand.cs" />
+    <Compile Include="Film\FilmDeleteCommand.cs" />
+    <Compile Include="Film\FilmInsertCommand.cs" />
+    <Compile Include="Film\FilmUpdateCommand.cs" />
+    <Compile Include="Inventory\InventoryDeleteCommand.cs" />
+    <Compile Include="Inventory\InventoryInsertCommand.cs" />
+    <Compile Include="Inventory\InventoryUpdateCommand.cs" />
+    <Compile Include="Language\LanguageDeleteCommand.cs" />
+    <Compile Include="Language\LanguageInsertCommand.cs" />
+    <Compile Include="Language\LanguageUpdateCommand.cs" />
+    <Compile Include="Payment\PaymentDeleteCommand.cs" />
+    <Compile Include="Payment\PaymentInsertCommand.cs" />
+    <Compile Include="Payment\PaymentUpdateCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Actor\ActorUpdateCommand.cs" />
+    <Compile Include="Rental\RentalDeleteCommand.cs" />
+    <Compile Include="Rental\RentalInsertCommand.cs" />
+    <Compile Include="Rental\RentalUpdateCommand.cs" />
+    <Compile Include="Staff\StaffDeleteCommand.cs" />
+    <Compile Include="Staff\StaffInsertCommand.cs" />
+    <Compile Include="Staff\StaffUpdateCommand.cs" />
+    <Compile Include="Store\StoreDeleteCommand.cs" />
+    <Compile Include="Store\StoreInsertCommand.cs" />
+    <Compile Include="Store\StoreUpdateCommand.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="FilmActor\" />
+    <Folder Include="FilmCategory\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Pagila.Command.Base\Pagila.Command.Base.csproj">
       <Project>{1B9B2565-09F2-46A0-8DF5-30220BA9F4CE}</Project>

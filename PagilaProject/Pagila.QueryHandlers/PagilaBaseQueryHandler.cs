@@ -1,11 +1,7 @@
 ﻿using SI.Query.Core;
 using SI.QueryHandler.Base;
-using System;
-using System.Collections.Generic;
+using SimpleInfra.Mapping;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Pagila.QueryHandlers
 {
@@ -17,6 +13,14 @@ namespace Pagila.QueryHandlers
         {
             return new Npgsql.NpgsqlConnection { ConnectionString = "server = 127.0.0.1; Database = pagila; user id = postgres; password = 123456;" };
             //return base.GetDbConnection();
+        }
+
+        protected TViewModel Map<TEntity, TViewModel>(TEntity entity)
+            where TEntity : class
+            where TViewModel : class, new()
+        {
+            TViewModel model = SimpleMapper.Map<TEntity, TViewModel>(entity);
+            return model;
         }
     }
 }

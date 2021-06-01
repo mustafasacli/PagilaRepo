@@ -61,9 +61,44 @@
     <Compile Include="Country\CountryReadAllQuery.cs" />
     <Compile Include="Country\CountryReadByIdQuery.cs" />
     <Compile Include="Country\CountryResult.cs" />
+    <Compile Include="Customer\CustomerList.cs" />
+    <Compile Include="Customer\CustomerReadAllQuery.cs" />
+    <Compile Include="Customer\CustomerReadByIdQuery.cs" />
+    <Compile Include="Customer\CustomerResult.cs" />
+    <Compile Include="Film\FilmList.cs" />
+    <Compile Include="Film\FilmReadAllQuery.cs" />
+    <Compile Include="Film\FilmReadByIdQuery.cs" />
+    <Compile Include="Film\FilmResult.cs" />
+    <Compile Include="Inventory\InventoryList.cs" />
+    <Compile Include="Inventory\InventoryReadAllQuery.cs" />
+    <Compile Include="Inventory\InventoryReadByIdQuery.cs" />
+    <Compile Include="Inventory\InventoryResult.cs" />
+    <Compile Include="Language\ActorList.cs" />
+    <Compile Include="Language\ActorReadAllQuery.cs" />
+    <Compile Include="Language\ActorReadByIdQuery.cs" />
+    <Compile Include="Language\ActorResult.cs" />
+    <Compile Include="Payment\PaymentList.cs" />
+    <Compile Include="Payment\PaymentReadAllQuery.cs" />
+    <Compile Include="Payment\PaymentReadByIdQuery.cs" />
+    <Compile Include="Payment\PaymentResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rental\RentalList.cs" />
+    <Compile Include="Rental\RentalReadAllQuery.cs" />
+    <Compile Include="Rental\RentalReadByIdQuery.cs" />
+    <Compile Include="Rental\RentalResult.cs" />
+    <Compile Include="Staff\StaffList.cs" />
+    <Compile Include="Staff\StaffReadAllQuery.cs" />
+    <Compile Include="Staff\StaffReadByIdQuery.cs" />
+    <Compile Include="Staff\StaffResult.cs" />
+    <Compile Include="Store\StoreList.cs" />
+    <Compile Include="Store\StoreReadAllQuery.cs" />
+    <Compile Include="Store\StoreReadByIdQuery.cs" />
+    <Compile Include="Store\StoreResult.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="FilmActor\" />
+    <Folder Include="FilmCategory\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\SI.CQRS.Repository\SI.CQRS.Sln\NetFramework\SI.Query.Core\SI.Query.Core.csproj">
       <Project>{076741E2-4702-45F8-8CAF-71EC86C4F1EB}</Project>

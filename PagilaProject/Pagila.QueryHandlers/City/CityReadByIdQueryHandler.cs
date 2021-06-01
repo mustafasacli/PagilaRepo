@@ -57,4 +57,3 @@ namespace Pagila.QueryHandlers.City
         }
     }
 }
-
