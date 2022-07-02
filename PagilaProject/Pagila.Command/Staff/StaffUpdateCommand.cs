@@ -1,5 +1,4 @@
 ﻿using Pagila.Command.Base;
-using System;
 
 namespace Pagila.Command.Staff
 {
@@ -30,12 +29,6 @@ namespace Pagila.Command.Staff
         /// Gets or Sets the StoreId
         /// </summary>
         public int StoreId
-        { get; set; }
-
-        /// <summary>
-        /// Gets or Sets the Active
-        /// </summary>
-        public bool Active
         { get; set; }
 
         /// <summary>

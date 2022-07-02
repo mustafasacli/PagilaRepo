@@ -5,7 +5,6 @@ using Pagila.Command.Base.Result;
 using Pagila.Command.Staff;
 using Pagila.Entity;
 using SimpleInfra.Common.Response;
-using System;
 
 namespace Pagila.CommandHandlers.Staff
 {
@@ -15,40 +14,32 @@ namespace Pagila.CommandHandlers.Staff
         {
             var response = new SimpleResponse<LongCommandResult>();
 
-            try
+            using (var connection = GetDbConnection())
             {
-                using (var connection = GetDbConnection())
+                try
                 {
-                    try
+                    connection.OpenIfNot();
+                    var result = connection.PartialInsertAndReturnId<StaffEntity>(new
                     {
-                        connection.OpenIfNot();
-                        var result = connection.PartialInsertAndReturnId<StaffEntity>(new
-                        {
-                            command.FirstName,
-                            command.LastName,
-                            command.AddressId,
-                            command.Email,
-                            command.StoreId,
-                            command.Active,
-                            command.Username,
-                            command.Password,
-                            command.LastUpdate,
-                            command.Picture
-                        });
-                        response.ResponseCode = (int)result.Result;
-                        response.RCode = result.ToString();
-                        response.Data = new LongCommandResult { ReturnValue = result.Result.ToLongNullable() };
-                    }
-                    finally
-                    {
-                        connection.CloseIfNot();
-                    }
+                        command.FirstName,
+                        command.LastName,
+                        command.AddressId,
+                        command.Email,
+                        command.StoreId,
+                        command.Active,
+                        command.Username,
+                        command.Password,
+                        command.LastUpdate,
+                        command.Picture
+                    });
+                    response.ResponseCode = (int)result.Result;
+                    response.RCode = result.ToString();
+                    response.Data = new LongCommandResult { ReturnValue = result.Result.ToLongNullable() };
                 }
-            }
-            catch (Exception ex)
-            {
-                response.ResponseCode = -500;
-                DayLogger.Error(ex);
+                finally
+                {
+                    connection.CloseIfNot();
+                }
             }
 
             return response;

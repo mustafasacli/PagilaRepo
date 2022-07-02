@@ -1,10 +1,9 @@
-
-using Pagila.ViewModel;using SI.CommandBus.Core;using SI.QueryBus.Core;
-
-
-using SimpleInfra.Common.Response;
-using System;
-using System.Collections.Generic;
+using Pagila.Command.Base.Result;
+using Pagila.Command.Staff;
+using Pagila.Query.Staff;
+using Pagila.ViewModel;
+using SI.CommandBus.Core;
+using SI.QueryBus.Core;
 using System.Net;
 using System.Web.Mvc;
 
@@ -12,109 +11,108 @@ namespace Pagila.WebUI.Controllers
 {
     public class StaffController : PagilaBaseController
     {
-        private IStaffBusiness iStaffBusiness;
-        private ICommandBus commandBus;
-        private IQueryBus queryBus;
+        private readonly ICommandBus commandBus;
+        private readonly IQueryBus queryBus;
 
-        public StaffController(IStaffBusiness iStaffBusiness = null, ICommandBus commandBus, IQueryBus queryBus)
+        public StaffController(ICommandBus commandBus, IQueryBus queryBus)
         {
             this.commandBus = commandBus;
             this.queryBus = queryBus;
-            this.iStaffBusiness = iStaffBusiness ??
-                GsbIoC.Instance.GetInstance<IStaffBusiness>();
         }
 
         [HttpGet]
         public ActionResult Index()
         {
-            var response = iStaffBusiness.ReadAll();
-            return View(response.Data);
+            var response = queryBus.Send<StaffReadAllQuery, StaffList>(new StaffReadAllQuery());
+            return View(response.Data.Staffs);
         }
 
         public ActionResult Create()
         {
             var model = new StaffViewModel();
-            return View("Create", model);
+            return View(nameof(Create), model);
         }
 
         [HttpPost]
         public ActionResult CreatePost(StaffViewModel model)
         {
-            var response = iStaffBusiness.Create(model);
+            var command = GetCommandFromViewModel<StaffInsertCommand, StaffViewModel>(model);
+            var response = commandBus.Send<StaffInsertCommand, LongCommandResult>(command);
 
             if (response.ResponseCode > 0)
-            { return RedirectToAction("Index"); }
+            { return RedirectToAction(nameof(Index)); }
             else
             {
                 ModelState.AddModelError(string.Empty, response.ResponseMessage);
-                return View("Create", model);
+                return View(nameof(Create), model);
             }
         }
 
         [HttpGet]
-        public ActionResult Detail(int staffId)
+        public ActionResult Detail(int? StaffId)
         {
-            var response = iStaffBusiness.Read(staffId);
+            var response = queryBus.Send<StaffReadByIdQuery, StaffResult>(new StaffReadByIdQuery { Id = StaffId });
 
-            if (response.Data == null || response.ResponseCode < 1)
+            if (response.Data?.Staff == null || response.ResponseCode < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
-            return View(response.Data);
+            return View(response.Data.Staff);
         }
 
-        public ActionResult Edit(int staffId)
+        public ActionResult Edit(int StaffId)
         {
-            var response = iStaffBusiness.Read(staffId);
+            var response = queryBus.Send<StaffReadByIdQuery, StaffResult>(new StaffReadByIdQuery { Id = StaffId });
 
-            if (response.Data == null || response.ResponseCode < 1)
+            if (response.Data?.Staff == null || response.ResponseCode < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
-            return View("Edit",  response.Data);
+            return View(nameof(Edit), response.Data.Staff);
         }
 
         [HttpPost]
         public ActionResult UpdatePost(StaffViewModel model)
         {
-            var response = iStaffBusiness.Update(model);
+            var command = GetCommandFromViewModel<StaffUpdateCommand, StaffViewModel>(model);
+            var response = commandBus.Send<StaffUpdateCommand, LongCommandResult>(command);
 
             if (response.ResponseCode > 0)
-            { return RedirectToAction("Index"); }
+            { return RedirectToAction(nameof(Index)); }
             else
             {
                 ModelState.AddModelError(string.Empty, response.ResponseMessage);
-                return View("Edit", model);
+                return View(nameof(Edit), model);
             }
         }
 
-        public ActionResult Delete(int staffId)
+        public ActionResult Delete(int StaffId)
         {
-            var response = iStaffBusiness.Read(staffId);
+            var response = queryBus.Send<StaffReadByIdQuery, StaffResult>(new StaffReadByIdQuery { Id = StaffId });
 
-            if (response.Data == null || response.ResponseCode < 1)
+            if (response.Data?.Staff == null || response.ResponseCode < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
-            return View("Delete", response.Data);
+            return View(nameof(Delete), response.Data.Staff);
         }
 
         [HttpPost]
-        public ActionResult DeletePost(int staffId)
+        public ActionResult DeletePost(int? StaffId)
         {
-            var response = iStaffBusiness.Delete(staffId);
+            var response = commandBus.Send<StaffDeleteCommand, LongCommandResult>(new StaffDeleteCommand { Id = StaffId });
 
             if (response.ResponseCode > 0)
-            { return RedirectToAction("Index"); }
+            { return RedirectToAction(nameof(Index)); }
             else
             {
                 ModelState.AddModelError(string.Empty, response.ResponseMessage);
-                return RedirectToAction("Delete", new { staffId });
+                return RedirectToAction(nameof(Delete), new { StaffId });
             }
         }
 
         [HttpGet]
         public ActionResult ReadAll()
         {
-            var response = iStaffBusiness.ReadAll();
-            return Json(response, JsonRequestBehavior.AllowGet);
+            var response = queryBus.Send<StaffReadAllQuery, StaffList>(StaffReadAllQuery.GetEmptyInstance());
+            return Json(response.Data.Staffs, JsonRequestBehavior.AllowGet);
         }
     }
 }

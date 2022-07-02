@@ -4,7 +4,6 @@ namespace Pagila.Command.Inventory
 {
     public class InventoryInsertCommand : BaseInsertCommand
     {
-
         /// <summary>
         /// Gets or Sets the FilmId
         /// </summary>

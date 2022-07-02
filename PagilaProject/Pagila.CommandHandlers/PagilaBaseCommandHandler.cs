@@ -17,7 +17,7 @@ namespace Pagila.CommandHandlers
     {
         protected override IDbConnection GetDbConnection()
         {
-            return new Npgsql.NpgsqlConnection { ConnectionString= "server = 127.0.0.1; Database = pagila; user id = postgres; password = 123456;" };
+            return new Npgsql.NpgsqlConnection { ConnectionString= "server = 127.0.0.1; Database = pagila; user id = postgres; password = pg123;" };
             //return base.GetDbConnection();
         }
     }

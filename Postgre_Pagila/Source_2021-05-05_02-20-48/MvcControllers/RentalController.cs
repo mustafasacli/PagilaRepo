@@ -1,10 +1,9 @@
-
-using Pagila.ViewModel;using SI.CommandBus.Core;using SI.QueryBus.Core;
-
-
-using SimpleInfra.Common.Response;
-using System;
-using System.Collections.Generic;
+using Pagila.Command.Base.Result;
+using Pagila.Command.Rental;
+using Pagila.Query.Rental;
+using Pagila.ViewModel;
+using SI.CommandBus.Core;
+using SI.QueryBus.Core;
 using System.Net;
 using System.Web.Mvc;
 
@@ -12,109 +11,108 @@ namespace Pagila.WebUI.Controllers
 {
     public class RentalController : PagilaBaseController
     {
-        private IRentalBusiness iRentalBusiness;
-        private ICommandBus commandBus;
-        private IQueryBus queryBus;
+        private readonly ICommandBus commandBus;
+        private readonly IQueryBus queryBus;
 
-        public RentalController(IRentalBusiness iRentalBusiness = null, ICommandBus commandBus, IQueryBus queryBus)
+        public RentalController(ICommandBus commandBus, IQueryBus queryBus)
         {
             this.commandBus = commandBus;
             this.queryBus = queryBus;
-            this.iRentalBusiness = iRentalBusiness ??
-                GsbIoC.Instance.GetInstance<IRentalBusiness>();
         }
 
         [HttpGet]
         public ActionResult Index()
         {
-            var response = iRentalBusiness.ReadAll();
-            return View(response.Data);
+            var response = queryBus.Send<RentalReadAllQuery, RentalList>(new RentalReadAllQuery());
+            return View(response.Data.Rentals);
         }
 
         public ActionResult Create()
         {
             var model = new RentalViewModel();
-            return View("Create", model);
+            return View(nameof(Create), model);
         }
 
         [HttpPost]
         public ActionResult CreatePost(RentalViewModel model)
         {
-            var response = iRentalBusiness.Create(model);
+            var command = GetCommandFromViewModel<RentalInsertCommand, RentalViewModel>(model);
+            var response = commandBus.Send<RentalInsertCommand, LongCommandResult>(command);
 
             if (response.ResponseCode > 0)
-            { return RedirectToAction("Index"); }
+            { return RedirectToAction(nameof(Index)); }
             else
             {
                 ModelState.AddModelError(string.Empty, response.ResponseMessage);
-                return View("Create", model);
+                return View(nameof(Create), model);
             }
         }
 
         [HttpGet]
-        public ActionResult Detail(int rentalId)
+        public ActionResult Detail(int? RentalId)
         {
-            var response = iRentalBusiness.Read(rentalId);
+            var response = queryBus.Send<RentalReadByIdQuery, RentalResult>(new RentalReadByIdQuery { Id = RentalId });
 
-            if (response.Data == null || response.ResponseCode < 1)
+            if (response.Data?.Rental == null || response.ResponseCode < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
-            return View(response.Data);
+            return View(response.Data.Rental);
         }
 
-        public ActionResult Edit(int rentalId)
+        public ActionResult Edit(int RentalId)
         {
-            var response = iRentalBusiness.Read(rentalId);
+            var response = queryBus.Send<RentalReadByIdQuery, RentalResult>(new RentalReadByIdQuery { Id = RentalId });
 
-            if (response.Data == null || response.ResponseCode < 1)
+            if (response.Data?.Rental == null || response.ResponseCode < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
-            return View("Edit",  response.Data);
+            return View(nameof(Edit), response.Data.Rental);
         }
 
         [HttpPost]
         public ActionResult UpdatePost(RentalViewModel model)
         {
-            var response = iRentalBusiness.Update(model);
+            var command = GetCommandFromViewModel<RentalUpdateCommand, RentalViewModel>(model);
+            var response = commandBus.Send<RentalUpdateCommand, LongCommandResult>(command);
 
             if (response.ResponseCode > 0)
-            { return RedirectToAction("Index"); }
+            { return RedirectToAction(nameof(Index)); }
             else
             {
                 ModelState.AddModelError(string.Empty, response.ResponseMessage);
-                return View("Edit", model);
+                return View(nameof(Edit), model);
             }
         }
 
-        public ActionResult Delete(int rentalId)
+        public ActionResult Delete(int RentalId)
         {
-            var response = iRentalBusiness.Read(rentalId);
+            var response = queryBus.Send<RentalReadByIdQuery, RentalResult>(new RentalReadByIdQuery { Id = RentalId });
 
-            if (response.Data == null || response.ResponseCode < 1)
+            if (response.Data?.Rental == null || response.ResponseCode < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
-            return View("Delete", response.Data);
+            return View(nameof(Delete), response.Data.Rental);
         }
 
         [HttpPost]
-        public ActionResult DeletePost(int rentalId)
+        public ActionResult DeletePost(int? RentalId)
         {
-            var response = iRentalBusiness.Delete(rentalId);
+            var response = commandBus.Send<RentalDeleteCommand, LongCommandResult>(new RentalDeleteCommand { Id = RentalId });
 
             if (response.ResponseCode > 0)
-            { return RedirectToAction("Index"); }
+            { return RedirectToAction(nameof(Index)); }
             else
             {
                 ModelState.AddModelError(string.Empty, response.ResponseMessage);
-                return RedirectToAction("Delete", new { rentalId });
+                return RedirectToAction(nameof(Delete), new { RentalId });
             }
         }
 
         [HttpGet]
         public ActionResult ReadAll()
         {
-            var response = iRentalBusiness.ReadAll();
-            return Json(response, JsonRequestBehavior.AllowGet);
+            var response = queryBus.Send<RentalReadAllQuery, RentalList>(RentalReadAllQuery.GetEmptyInstance());
+            return Json(response.Data.Rentals, JsonRequestBehavior.AllowGet);
         }
     }
 }

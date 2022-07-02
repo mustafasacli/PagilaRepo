@@ -30,12 +30,6 @@ namespace Pagila.Command.Staff
         { get; set; }
 
         /// <summary>
-        /// Gets or Sets the Active
-        /// </summary>
-        public bool Active
-        { get; set; }
-
-        /// <summary>
         /// Gets or Sets the Username
         /// </summary>
         public string Username
@@ -45,12 +39,6 @@ namespace Pagila.Command.Staff
         /// Gets or Sets the Password
         /// </summary>
         public string Password
-        { get; set; }
-
-        /// <summary>
-        /// Gets or Sets the LastUpdate
-        /// </summary>
-        public DateTime LastUpdate
         { get; set; }
 
         /// <summary>

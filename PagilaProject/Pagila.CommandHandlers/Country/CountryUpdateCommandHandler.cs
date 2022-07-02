@@ -4,7 +4,6 @@ using Pagila.Command.Base.Result;
 using Pagila.Command.Country;
 using Pagila.Entity;
 using SimpleInfra.Common.Response;
-using System;
 
 namespace Pagila.CommandHandlers.Country
 {
@@ -14,31 +13,23 @@ namespace Pagila.CommandHandlers.Country
         {
             var response = new SimpleResponse<LongCommandResult>();
 
-            try
+            using (var connection = GetDbConnection())
             {
-                using (var connection = GetDbConnection())
+                try
                 {
-                    try
+                    connection.OpenIfNot();
+                    var result = connection.PartialUpdate<CountryEntity>(new
                     {
-                        connection.OpenIfNot();
-                        var result = connection.PartialUpdate<CountryEntity>(new
-                        {
-                            command.Country
-                        }, p => p.CountryId == command.CountryId);
-                        response.ResponseCode = result;
-                        response.RCode = result.ToString();
-                        response.Data = new LongCommandResult { ReturnValue = command.CountryId };
-                    }
-                    finally
-                    {
-                        connection.CloseIfNot();
-                    }
+                        command.Country
+                    }, p => p.CountryId == command.CountryId);
+                    response.ResponseCode = result;
+                    response.RCode = result.ToString();
+                    response.Data = new LongCommandResult { ReturnValue = command.CountryId };
                 }
-            }
-            catch (Exception ex)
-            {
-                response.ResponseCode = -500;
-                DayLogger.Error(ex);
+                finally
+                {
+                    connection.CloseIfNot();
+                }
             }
 
             return response;

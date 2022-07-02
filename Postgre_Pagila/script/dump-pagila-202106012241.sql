@@ -658,9 +658,7 @@ FROM staff s
 alter table staff_list
     owner to postgres;
 
-create
-functıon _group_concat(text, text) returns text
-	ımmutable
+create function group_concat(text, text) returns text
 	language sql
 as $$
 SELECT CASE
@@ -670,11 +668,9 @@ SELECT CASE
 END
 $$;
 
-alter
-functıon _group_concat(text, text) owner to postgres;
+alter function _group_concat(text, text) owner to postgres;
 
-create
-functıon film_in_stock(p_film_id integer, p_store_id integer, OUT p_film_count integer) returns SETOF integer
+create function film_in_stock(p_film_id integer, p_store_id integer, OUT p_film_count integer) returns SETOF integer
 	language sql
 as $$
      SELECT inventory_id
@@ -685,10 +681,10 @@ as $$
 $$;
 
 alter
-functıon film_in_stock(integer, integer, out integer) owner to postgres;
+function film_in_stock(integer, integer, out integer) owner to postgres;
 
 create
-functıon film_not_in_stock(p_film_id integer, p_store_id integer, OUT p_film_count integer) returns SETOF integer
+function film_not_in_stock(p_film_id integer, p_store_id integer, OUT p_film_count integer) returns SETOF integer
 	language sql
 as $$
     SELECT inventory_id
@@ -699,10 +695,10 @@ as $$
 $$;
 
 alter
-functıon film_not_in_stock(integer, integer, out integer) owner to postgres;
+function film_not_in_stock(integer, integer, out integer) owner to postgres;
 
 create
-functıon get_customer_balance(p_customer_id integer, p_effective_date timestamp with time zone) returns numeric
+function get_customer_balance(p_customer_id integer, p_effective_date timestamp with time zone) returns numeric
 	language plpgsql
 as $$
        --#OK, WE NEED TO CALCULATE THE CURRENT BALANCE GIVEN A CUSTOMER_ID AND A DATE
@@ -741,10 +737,10 @@ END
 $$;
 
 alter
-functıon get_customer_balance(integer, timestamp with time zone) owner to postgres;
+function get_customer_balance(integer, timestamp with time zone) owner to postgres;
 
 create
-functıon inventory_held_by_customer(p_inventory_id integer) returns integer
+function inventory_held_by_customer(p_inventory_id integer) returns integer
 	language plpgsql
 as $$
 DECLARE
@@ -761,10 +757,10 @@ END
 $$;
 
 alter
-functıon inventory_held_by_customer(integer) owner to postgres;
+function inventory_held_by_customer(integer) owner to postgres;
 
 create
-functıon inventory_in_stock(p_inventory_id integer) returns boolean
+function inventory_in_stock(p_inventory_id integer) returns boolean
 	language plpgsql
 as $$
 DECLARE
@@ -796,10 +792,10 @@ END
 $$;
 
 alter
-functıon inventory_in_stock(integer) owner to postgres;
+function inventory_in_stock(integer) owner to postgres;
 
 create
-functıon last_day(timestamp with time zone) returns date
+function last_day(timestamp with time zone) returns date
 	ımmutable
 	strict
 	language sql
@@ -813,10 +809,10 @@ as $$
 $$;
 
 alter
-functıon last_day(timestamp with time zone) owner to postgres;
+function last_day(timestamp with time zone) owner to postgres;
 
 create
-functıon last_updated() returns trigger
+function last_updated() returns trigger
 	language plpgsql
 as $$
 BEGIN
@@ -826,7 +822,7 @@ END
 $$;
 
 alter
-functıon last_updated() owner to postgres;
+function last_updated() owner to postgres;
 
 create trigger last_updated
     before update
@@ -913,7 +909,7 @@ create trigger last_updated
 execute procedure last_updated();
 
 create
-functıon rewards_report(min_monthly_purchases integer, min_dollar_amount_purchased numeric) returns SETOF customer
+function rewards_report(min_monthly_purchases integer, min_dollar_amount_purchased numeric) returns SETOF customer
 security definer
     language plpgsql
     as $$
@@ -972,7 +968,7 @@ END
 $$;
 
 alter
-functıon rewards_report(integer, numeric) owner to postgres;
+function rewards_report(integer, numeric) owner to postgres;
 
 create aggregate group_concat(text) (
     sfunc = _group_concat,

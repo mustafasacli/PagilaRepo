@@ -58,6 +58,8 @@
     <Compile Include="Customer\CustomerDeleteCommand.cs" />
     <Compile Include="Customer\CustomerInsertCommand.cs" />
     <Compile Include="Customer\CustomerUpdateCommand.cs" />
+    <Compile Include="FilmActor\FilmActorSaveCommand.cs" />
+    <Compile Include="FilmCategory\FilmCategorySaveCommand.cs" />
     <Compile Include="Film\FilmDeleteCommand.cs" />
     <Compile Include="Film\FilmInsertCommand.cs" />
     <Compile Include="Film\FilmUpdateCommand.cs" />
@@ -82,10 +84,7 @@
     <Compile Include="Store\StoreInsertCommand.cs" />
     <Compile Include="Store\StoreUpdateCommand.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="FilmActor\" />
-    <Folder Include="FilmCategory\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Pagila.Command.Base\Pagila.Command.Base.csproj">
       <Project>{1B9B2565-09F2-46A0-8DF5-30220BA9F4CE}</Project>

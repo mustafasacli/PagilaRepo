@@ -1,10 +1,9 @@
-
-using Pagila.ViewModel;using SI.CommandBus.Core;using SI.QueryBus.Core;
-
-
-using SimpleInfra.Common.Response;
-using System;
-using System.Collections.Generic;
+using Pagila.Command.Base.Result;
+using Pagila.Command.Store;
+using Pagila.Query.Store;
+using Pagila.ViewModel;
+using SI.CommandBus.Core;
+using SI.QueryBus.Core;
 using System.Net;
 using System.Web.Mvc;
 
@@ -12,109 +11,108 @@ namespace Pagila.WebUI.Controllers
 {
     public class StoreController : PagilaBaseController
     {
-        private IStoreBusiness iStoreBusiness;
-        private ICommandBus commandBus;
-        private IQueryBus queryBus;
+        private readonly ICommandBus commandBus;
+        private readonly IQueryBus queryBus;
 
-        public StoreController(IStoreBusiness iStoreBusiness = null, ICommandBus commandBus, IQueryBus queryBus)
+        public StoreController(ICommandBus commandBus, IQueryBus queryBus)
         {
             this.commandBus = commandBus;
             this.queryBus = queryBus;
-            this.iStoreBusiness = iStoreBusiness ??
-                GsbIoC.Instance.GetInstance<IStoreBusiness>();
         }
 
         [HttpGet]
         public ActionResult Index()
         {
-            var response = iStoreBusiness.ReadAll();
-            return View(response.Data);
+            var response = queryBus.Send<StoreReadAllQuery, StoreList>(new StoreReadAllQuery());
+            return View(response.Data.Stores);
         }
 
         public ActionResult Create()
         {
             var model = new StoreViewModel();
-            return View("Create", model);
+            return View(nameof(Create), model);
         }
 
         [HttpPost]
         public ActionResult CreatePost(StoreViewModel model)
         {
-            var response = iStoreBusiness.Create(model);
+            var command = GetCommandFromViewModel<StoreInsertCommand, StoreViewModel>(model);
+            var response = commandBus.Send<StoreInsertCommand, LongCommandResult>(command);
 
             if (response.ResponseCode > 0)
-            { return RedirectToAction("Index"); }
+            { return RedirectToAction(nameof(Index)); }
             else
             {
                 ModelState.AddModelError(string.Empty, response.ResponseMessage);
-                return View("Create", model);
+                return View(nameof(Create), model);
             }
         }
 
         [HttpGet]
-        public ActionResult Detail(int storeId)
+        public ActionResult Detail(int? StoreId)
         {
-            var response = iStoreBusiness.Read(storeId);
+            var response = queryBus.Send<StoreReadByIdQuery, StoreResult>(new StoreReadByIdQuery { Id = StoreId });
 
-            if (response.Data == null || response.ResponseCode < 1)
+            if (response.Data?.Store == null || response.ResponseCode < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
-            return View(response.Data);
+            return View(response.Data.Store);
         }
 
-        public ActionResult Edit(int storeId)
+        public ActionResult Edit(int StoreId)
         {
-            var response = iStoreBusiness.Read(storeId);
+            var response = queryBus.Send<StoreReadByIdQuery, StoreResult>(new StoreReadByIdQuery { Id = StoreId });
 
-            if (response.Data == null || response.ResponseCode < 1)
+            if (response.Data?.Store == null || response.ResponseCode < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
-            return View("Edit",  response.Data);
+            return View(nameof(Edit), response.Data.Store);
         }
 
         [HttpPost]
         public ActionResult UpdatePost(StoreViewModel model)
         {
-            var response = iStoreBusiness.Update(model);
+            var command = GetCommandFromViewModel<StoreUpdateCommand, StoreViewModel>(model);
+            var response = commandBus.Send<StoreUpdateCommand, LongCommandResult>(command);
 
             if (response.ResponseCode > 0)
-            { return RedirectToAction("Index"); }
+            { return RedirectToAction(nameof(Index)); }
             else
             {
                 ModelState.AddModelError(string.Empty, response.ResponseMessage);
-                return View("Edit", model);
+                return View(nameof(Edit), model);
             }
         }
 
-        public ActionResult Delete(int storeId)
+        public ActionResult Delete(int StoreId)
         {
-            var response = iStoreBusiness.Read(storeId);
+            var response = queryBus.Send<StoreReadByIdQuery, StoreResult>(new StoreReadByIdQuery { Id = StoreId });
 
-            if (response.Data == null || response.ResponseCode < 1)
+            if (response.Data?.Store == null || response.ResponseCode < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
-            return View("Delete", response.Data);
+            return View(nameof(Delete), response.Data.Store);
         }
 
         [HttpPost]
-        public ActionResult DeletePost(int storeId)
+        public ActionResult DeletePost(int? StoreId)
         {
-            var response = iStoreBusiness.Delete(storeId);
+            var response = commandBus.Send<StoreDeleteCommand, LongCommandResult>(new StoreDeleteCommand { Id = StoreId });
 
             if (response.ResponseCode > 0)
-            { return RedirectToAction("Index"); }
+            { return RedirectToAction(nameof(Index)); }
             else
             {
                 ModelState.AddModelError(string.Empty, response.ResponseMessage);
-                return RedirectToAction("Delete", new { storeId });
+                return RedirectToAction(nameof(Delete), new { StoreId });
             }
         }
 
         [HttpGet]
         public ActionResult ReadAll()
         {
-            var response = iStoreBusiness.ReadAll();
-            return Json(response, JsonRequestBehavior.AllowGet);
+            var response = queryBus.Send<StoreReadAllQuery, StoreList>(StoreReadAllQuery.GetEmptyInstance());
+            return Json(response.Data.Stores, JsonRequestBehavior.AllowGet);
         }
     }
 }

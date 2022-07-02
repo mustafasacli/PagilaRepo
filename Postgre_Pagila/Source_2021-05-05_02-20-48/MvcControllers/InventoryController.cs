@@ -1,10 +1,9 @@
-
-using Pagila.ViewModel;using SI.CommandBus.Core;using SI.QueryBus.Core;
-
-
-using SimpleInfra.Common.Response;
-using System;
-using System.Collections.Generic;
+using Pagila.Command.Base.Result;
+using Pagila.Command.Inventory;
+using Pagila.Query.Inventory;
+using Pagila.ViewModel;
+using SI.CommandBus.Core;
+using SI.QueryBus.Core;
 using System.Net;
 using System.Web.Mvc;
 
@@ -12,109 +11,108 @@ namespace Pagila.WebUI.Controllers
 {
     public class InventoryController : PagilaBaseController
     {
-        private IInventoryBusiness iInventoryBusiness;
-        private ICommandBus commandBus;
-        private IQueryBus queryBus;
+        private readonly ICommandBus commandBus;
+        private readonly IQueryBus queryBus;
 
-        public InventoryController(IInventoryBusiness iInventoryBusiness = null, ICommandBus commandBus, IQueryBus queryBus)
+        public InventoryController(ICommandBus commandBus, IQueryBus queryBus)
         {
             this.commandBus = commandBus;
             this.queryBus = queryBus;
-            this.iInventoryBusiness = iInventoryBusiness ??
-                GsbIoC.Instance.GetInstance<IInventoryBusiness>();
         }
 
         [HttpGet]
         public ActionResult Index()
         {
-            var response = iInventoryBusiness.ReadAll();
-            return View(response.Data);
+            var response = queryBus.Send<InventoryReadAllQuery, InventoryList>(new InventoryReadAllQuery());
+            return View(response.Data.Inventories);
         }
 
         public ActionResult Create()
         {
             var model = new InventoryViewModel();
-            return View("Create", model);
+            return View(nameof(Create), model);
         }
 
         [HttpPost]
         public ActionResult CreatePost(InventoryViewModel model)
         {
-            var response = iInventoryBusiness.Create(model);
+            var command = GetCommandFromViewModel<InventoryInsertCommand, InventoryViewModel>(model);
+            var response = commandBus.Send<InventoryInsertCommand, LongCommandResult>(command);
 
             if (response.ResponseCode > 0)
-            { return RedirectToAction("Index"); }
+            { return RedirectToAction(nameof(Index)); }
             else
             {
                 ModelState.AddModelError(string.Empty, response.ResponseMessage);
-                return View("Create", model);
+                return View(nameof(Create), model);
             }
         }
 
         [HttpGet]
-        public ActionResult Detail(int inventoryId)
+        public ActionResult Detail(int? InventoryId)
         {
-            var response = iInventoryBusiness.Read(inventoryId);
+            var response = queryBus.Send<InventoryReadByIdQuery, InventoryResult>(new InventoryReadByIdQuery { Id = InventoryId });
 
-            if (response.Data == null || response.ResponseCode < 1)
+            if (response.Data?.Inventory == null || response.ResponseCode < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
-            return View(response.Data);
+            return View(response.Data.Inventory);
         }
 
-        public ActionResult Edit(int inventoryId)
+        public ActionResult Edit(int InventoryId)
         {
-            var response = iInventoryBusiness.Read(inventoryId);
+            var response = queryBus.Send<InventoryReadByIdQuery, InventoryResult>(new InventoryReadByIdQuery { Id = InventoryId });
 
-            if (response.Data == null || response.ResponseCode < 1)
+            if (response.Data?.Inventory == null || response.ResponseCode < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
-            return View("Edit",  response.Data);
+            return View(nameof(Edit), response.Data.Inventory);
         }
 
         [HttpPost]
         public ActionResult UpdatePost(InventoryViewModel model)
         {
-            var response = iInventoryBusiness.Update(model);
+            var command = GetCommandFromViewModel<InventoryUpdateCommand, InventoryViewModel>(model);
+            var response = commandBus.Send<InventoryUpdateCommand, LongCommandResult>(command);
 
             if (response.ResponseCode > 0)
-            { return RedirectToAction("Index"); }
+            { return RedirectToAction(nameof(Index)); }
             else
             {
                 ModelState.AddModelError(string.Empty, response.ResponseMessage);
-                return View("Edit", model);
+                return View(nameof(Edit), model);
             }
         }
 
-        public ActionResult Delete(int inventoryId)
+        public ActionResult Delete(int InventoryId)
         {
-            var response = iInventoryBusiness.Read(inventoryId);
+            var response = queryBus.Send<InventoryReadByIdQuery, InventoryResult>(new InventoryReadByIdQuery { Id = InventoryId });
 
-            if (response.Data == null || response.ResponseCode < 1)
+            if (response.Data?.Inventory == null || response.ResponseCode < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
-            return View("Delete", response.Data);
+            return View(nameof(Delete), response.Data.Inventory);
         }
 
         [HttpPost]
-        public ActionResult DeletePost(int inventoryId)
+        public ActionResult DeletePost(int? InventoryId)
         {
-            var response = iInventoryBusiness.Delete(inventoryId);
+            var response = commandBus.Send<InventoryDeleteCommand, LongCommandResult>(new InventoryDeleteCommand { Id = InventoryId });
 
             if (response.ResponseCode > 0)
-            { return RedirectToAction("Index"); }
+            { return RedirectToAction(nameof(Index)); }
             else
             {
                 ModelState.AddModelError(string.Empty, response.ResponseMessage);
-                return RedirectToAction("Delete", new { inventoryId });
+                return RedirectToAction(nameof(Delete), new { InventoryId });
             }
         }
 
         [HttpGet]
         public ActionResult ReadAll()
         {
-            var response = iInventoryBusiness.ReadAll();
-            return Json(response, JsonRequestBehavior.AllowGet);
+            var response = queryBus.Send<InventoryReadAllQuery, InventoryList>(InventoryReadAllQuery.GetEmptyInstance());
+            return Json(response.Data.Inventories, JsonRequestBehavior.AllowGet);
         }
     }
 }

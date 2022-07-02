@@ -6,7 +6,7 @@ namespace Pagila.Query.Inventory
 {
     public class InventoryList : IQueryResult
     {
-        public List<InventoryViewModel> Inventorys
+        public List<InventoryViewModel> Inventories
         { get; set; }
     }
 }

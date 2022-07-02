@@ -4,7 +4,6 @@ using Pagila.Command.Actor;
 using Pagila.Command.Base.Result;
 using Pagila.Entity;
 using SimpleInfra.Common.Response;
-using System;
 
 namespace Pagila.CommandHandlers.Actor
 {
@@ -14,33 +13,25 @@ namespace Pagila.CommandHandlers.Actor
         {
             var response = new SimpleResponse<LongCommandResult>();
 
-            try
+            using (var connection = GetDbConnection())
             {
-                using (var connection = GetDbConnection())
+                try
                 {
-                    try
+                    connection.OpenIfNot();
+                    var result = connection.PartialUpdate<ActorEntity>(new
                     {
-                        connection.OpenIfNot();
-                        var result = connection.PartialUpdate<ActorEntity>(new
-                        {
-                            command.FirstName,
-                            command.LastName,
-                            command.LastUpdate
-                        }, p => p.ActorId == command.ActorId);
-                        response.ResponseCode = result;
-                        response.RCode = result.ToString();
-                        response.Data = new LongCommandResult { ReturnValue = command.ActorId };
-                    }
-                    finally
-                    {
-                        connection.CloseIfNot();
-                    }
+                        command.FirstName,
+                        command.LastName,
+                        command.LastUpdate
+                    }, p => p.ActorId == command.ActorId);
+                    response.ResponseCode = result;
+                    response.RCode = result.ToString();
+                    response.Data = new LongCommandResult { ReturnValue = command.ActorId };
                 }
-            }
-            catch (Exception ex)
-            {
-                response.ResponseCode = -500;
-                DayLogger.Error(ex);
+                finally
+                {
+                    connection.CloseIfNot();
+                }
             }
 
             return response;

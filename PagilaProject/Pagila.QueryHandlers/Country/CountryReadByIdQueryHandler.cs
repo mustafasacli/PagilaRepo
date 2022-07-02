@@ -4,7 +4,6 @@ using Pagila.Entity;
 using Pagila.Query.Country;
 using Pagila.ViewModel;
 using SimpleInfra.Common.Response;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -16,40 +15,32 @@ namespace Pagila.QueryHandlers.Country
         {
             var response = new SimpleResponse<CountryResult>();
 
-            try
+            if (query.Id == null) return response;
+
+            if ((query.Id ?? 0) < 1) return response;
+
+            using (var connection = GetDbConnection())
             {
-                if (query.Id == null) return response;
-
-                if ((query.Id ?? 0) < 1) return response;
-
-                using (var connection = GetDbConnection())
+                try
                 {
-                    try
+                    connection.OpenIfNot();
+                    var actorEntList = connection.Select<CountryEntity>(p => p.CountryId == query.Id)?.ToList() ?? new List<CountryEntity>();
+                    response.Data = new CountryResult
                     {
-                        connection.OpenIfNot();
-                        var actorEntList = connection.Select<CountryEntity>(p => p.CountryId == query.Id)?.ToList() ?? new List<CountryEntity>();
-                        response.Data = new CountryResult
+                        Country = (actorEntList.Select(p => new CountryViewModel
                         {
-                            Country = (actorEntList.Select(p => new CountryViewModel
-                            {
-                                CountryId = p.CountryId,
-                                Country = p.Country,
-                                LastUpdate = p.LastUpdate
-                            }).ToList() ?? new List<CountryViewModel>()).FirstOrDefault()
-                        };
-                        response.ResponseCode = response.Data != null ? 1 : 0;
-                        response.RCode = response.ResponseCode.ToString();
-                    }
-                    finally
-                    {
-                        connection.CloseIfNot();
-                    }
+                            CountryId = p.CountryId,
+                            Country = p.Country,
+                            LastUpdate = p.LastUpdate
+                        }).ToList() ?? new List<CountryViewModel>()).FirstOrDefault()
+                    };
+                    response.ResponseCode = response.Data != null ? 1 : 0;
+                    response.RCode = response.ResponseCode.ToString();
                 }
-            }
-            catch (Exception ex)
-            {
-                response.ResponseCode = -500;
-                DayLogger.Error(ex);
+                finally
+                {
+                    connection.CloseIfNot();
+                }
             }
 
             return response;

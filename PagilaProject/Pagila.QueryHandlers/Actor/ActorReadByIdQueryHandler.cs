@@ -4,7 +4,6 @@ using Pagila.Entity;
 using Pagila.Query.Actor;
 using Pagila.ViewModel;
 using SimpleInfra.Common.Response;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -16,41 +15,33 @@ namespace Pagila.QueryHandlers.Actor
         {
             var response = new SimpleResponse<ActorResult>();
 
-            try
+            if (query.Id == null) return response;
+
+            if ((query.Id ?? 0) < 1) return response;
+
+            using (var connection = GetDbConnection())
             {
-                if (query.Id == null) return response;
-
-                if ((query.Id ?? 0) < 1) return response;
-
-                using (var connection = GetDbConnection())
+                try
                 {
-                    try
+                    connection.OpenIfNot();
+                    var actorEntList = connection.Select<ActorEntity>(p => p.ActorId == query.Id)?.ToList() ?? new List<ActorEntity>();
+                    response.Data = new ActorResult
                     {
-                        connection.OpenIfNot();
-                        var actorEntList = connection.Select<ActorEntity>(p => p.ActorId == query.Id)?.ToList() ?? new List<ActorEntity>();
-                        response.Data = new ActorResult
+                        Actor = (actorEntList.Select(p => new ActorViewModel
                         {
-                            Actor = (actorEntList.Select(p => new ActorViewModel
-                            {
-                                ActorId = p.ActorId,
-                                FirstName = p.FirstName,
-                                LastName = p.LastName,
-                                LastUpdate = p.LastUpdate
-                            }).ToList() ?? new List<ActorViewModel>()).FirstOrDefault()
-                        };
-                        response.ResponseCode = response.Data != null ? 1 : 0;
-                        response.RCode = response.ResponseCode.ToString();
-                    }
-                    finally
-                    {
-                        connection.CloseIfNot();
-                    }
+                            ActorId = p.ActorId,
+                            FirstName = p.FirstName,
+                            LastName = p.LastName,
+                            LastUpdate = p.LastUpdate
+                        }).ToList() ?? new List<ActorViewModel>()).FirstOrDefault()
+                    };
+                    response.ResponseCode = response.Data != null ? 1 : 0;
+                    response.RCode = response.ResponseCode.ToString();
                 }
-            }
-            catch (Exception ex)
-            {
-                response.ResponseCode = -500;
-                DayLogger.Error(ex);
+                finally
+                {
+                    connection.CloseIfNot();
+                }
             }
 
             return response;

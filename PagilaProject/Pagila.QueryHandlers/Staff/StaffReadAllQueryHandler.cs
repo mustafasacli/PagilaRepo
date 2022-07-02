@@ -4,7 +4,6 @@ using Pagila.Entity;
 using Pagila.Query.Staff;
 using Pagila.ViewModel;
 using SimpleInfra.Common.Response;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -16,32 +15,23 @@ namespace Pagila.QueryHandlers.Staff
         {
             var response = new SimpleResponse<StaffList>();
 
-            try
+            using (var connection = GetDbConnection())
             {
-                using (var connection = GetDbConnection())
+                try
                 {
-                    try
+                    connection.OpenIfNot();
+                    var StaffEntList = connection.GetAll<StaffEntity>();
+                    response.Data = new StaffList
                     {
-                        connection.OpenIfNot();
-                        var StaffEntList = connection.GetAll<StaffEntity>();
-                        // var result = connection.QueryList<Syp.Entity.ServiceDetailType>("select * from service_detail_type where is_deleted = false and lower(detail_type_name) like '%' || :name || '%'", new { name = query.Name.ToLowerInvariant() });
-                        response.Data = new StaffList
-                        {
-                            Staffs = StaffEntList.Select(p => Map<StaffEntity, StaffViewModel>(p)).ToList() ?? new List<StaffViewModel>()
-                        };
-                        response.ResponseCode = response.Data?.Staffs?.Count ?? 0;
-                        response.RCode = response.ResponseCode.ToString();
-                    }
-                    finally
-                    {
-                        connection.CloseIfNot();
-                    }
+                        Staffs = StaffEntList.Select(p => Map<StaffEntity, StaffViewModel>(p)).ToList() ?? new List<StaffViewModel>()
+                    };
+                    response.ResponseCode = response.Data?.Staffs?.Count ?? 0;
+                    response.RCode = response.ResponseCode.ToString();
                 }
-            }
-            catch (Exception ex)
-            {
-                response.ResponseCode = -500;
-                DayLogger.Error(ex);
+                finally
+                {
+                    connection.CloseIfNot();
+                }
             }
 
             return response;

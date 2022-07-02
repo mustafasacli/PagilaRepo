@@ -60,6 +60,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pagila.Command.Base", "Pagi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pagila.CommandHandlers.TestApp", "Pagila.CommandHandlers.TestApp\Pagila.CommandHandlers.TestApp.csproj", "{7496FDFA-D6A2-40D8-8526-7E224C78586C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logging", "Logging", "{64EF0A70-A766-4FFC-92D5-6E949EFC8E51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SI.Logging", "..\..\SI.CQRS.Repository\SI.CQRS.Sln\NetFramework\SI.Logging\SI.Logging.csproj", "{B4E3AE75-2AC9-44D0-9F31-FB122DA94248}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -154,6 +158,10 @@ Global
 		{7496FDFA-D6A2-40D8-8526-7E224C78586C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7496FDFA-D6A2-40D8-8526-7E224C78586C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7496FDFA-D6A2-40D8-8526-7E224C78586C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4E3AE75-2AC9-44D0-9F31-FB122DA94248}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4E3AE75-2AC9-44D0-9F31-FB122DA94248}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4E3AE75-2AC9-44D0-9F31-FB122DA94248}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4E3AE75-2AC9-44D0-9F31-FB122DA94248}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -181,6 +189,7 @@ Global
 		{4BDC7CF0-8FE4-4480-BDF6-053F97DB459C} = {DB998874-5899-4A1F-873F-73D409DEDFC2}
 		{1B9B2565-09F2-46A0-8DF5-30220BA9F4CE} = {DB998874-5899-4A1F-873F-73D409DEDFC2}
 		{7496FDFA-D6A2-40D8-8526-7E224C78586C} = {DB998874-5899-4A1F-873F-73D409DEDFC2}
+		{B4E3AE75-2AC9-44D0-9F31-FB122DA94248} = {64EF0A70-A766-4FFC-92D5-6E949EFC8E51}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {80D7CC23-B61E-4556-8D28-4CCD9F280D20}

@@ -11,8 +11,8 @@ namespace Pagila.WebUI.Controllers
 {
     public class CountryController : PagilaBaseController
     {
-        private ICommandBus commandBus;
-        private IQueryBus queryBus;
+        private readonly ICommandBus commandBus;
+        private readonly IQueryBus queryBus;
 
         public CountryController(ICommandBus commandBus, IQueryBus queryBus)
         {
@@ -30,7 +30,7 @@ namespace Pagila.WebUI.Controllers
         public ActionResult Create()
         {
             var model = new CountryViewModel();
-            return View("Create", model);
+            return View(nameof(Create), model);
         }
 
         [HttpPost]
@@ -40,11 +40,11 @@ namespace Pagila.WebUI.Controllers
             var response = commandBus.Send<CountryInsertCommand, LongCommandResult>(command);
 
             if (response.ResponseCode > 0)
-            { return RedirectToAction("Index"); }
+            { return RedirectToAction(nameof(Index)); }
             else
             {
                 ModelState.AddModelError(string.Empty, response.ResponseMessage);
-                return View("Create", model);
+                return View(nameof(Create), model);
             }
         }
 
@@ -66,7 +66,7 @@ namespace Pagila.WebUI.Controllers
             if (response.Data?.Country == null || response.ResponseCode < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
-            return View("Edit", response.Data.Country);
+            return View(nameof(Edit), response.Data.Country);
         }
 
         [HttpPost]
@@ -76,11 +76,11 @@ namespace Pagila.WebUI.Controllers
             var response = commandBus.Send<CountryUpdateCommand, LongCommandResult>(command);
 
             if (response.ResponseCode > 0)
-            { return RedirectToAction("Index"); }
+            { return RedirectToAction(nameof(Index)); }
             else
             {
                 ModelState.AddModelError(string.Empty, response.ResponseMessage);
-                return View("Edit", model);
+                return View(nameof(Edit), model);
             }
         }
 
@@ -91,7 +91,7 @@ namespace Pagila.WebUI.Controllers
             if (response.Data?.Country == null || response.ResponseCode < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
-            return View("Delete", response.Data.Country);
+            return View(nameof(Delete), response.Data.Country);
         }
 
         [HttpPost]
@@ -100,11 +100,11 @@ namespace Pagila.WebUI.Controllers
             var response = commandBus.Send<CountryDeleteCommand, LongCommandResult>(new CountryDeleteCommand { Id = CountryId });
 
             if (response.ResponseCode > 0)
-            { return RedirectToAction("Index"); }
+            { return RedirectToAction(nameof(Index)); }
             else
             {
                 ModelState.AddModelError(string.Empty, response.ResponseMessage);
-                return RedirectToAction("Delete", new { CountryId });
+                return RedirectToAction(nameof(Delete), new { CountryId });
             }
         }
 

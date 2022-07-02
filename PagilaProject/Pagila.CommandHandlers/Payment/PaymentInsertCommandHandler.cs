@@ -5,7 +5,6 @@ using Pagila.Command.Base.Result;
 using Pagila.Command.Payment;
 using Pagila.Entity;
 using SimpleInfra.Common.Response;
-using System;
 
 namespace Pagila.CommandHandlers.Payment
 {
@@ -15,36 +14,28 @@ namespace Pagila.CommandHandlers.Payment
         {
             var response = new SimpleResponse<LongCommandResult>();
 
-            try
+            using (var connection = GetDbConnection())
             {
-                using (var connection = GetDbConnection())
+                try
                 {
-                    try
+                    connection.OpenIfNot();
+                    var result = connection.PartialInsertAndReturnId<PaymentEntity>(new
                     {
-                        connection.OpenIfNot();
-                        var result = connection.PartialInsertAndReturnId<PaymentEntity>(new
-                        {
-                            command.CustomerId,
-                            command.StaffId,
-                            command.RentalId,
-                            command.Amount,
-                            command.PaymentDate,
-                            command.LastUpdate
-                        });
-                        response.ResponseCode = (int)result.Result;
-                        response.RCode = result.ToString();
-                        response.Data = new LongCommandResult { ReturnValue = result.Result.ToLongNullable() };
-                    }
-                    finally
-                    {
-                        connection.CloseIfNot();
-                    }
+                        command.CustomerId,
+                        command.StaffId,
+                        command.RentalId,
+                        command.Amount,
+                        command.PaymentDate,
+                        command.LastUpdate
+                    });
+                    response.ResponseCode = (int)result.Result;
+                    response.RCode = result.ToString();
+                    response.Data = new LongCommandResult { ReturnValue = result.Result.ToLongNullable() };
                 }
-            }
-            catch (Exception ex)
-            {
-                response.ResponseCode = -500;
-                DayLogger.Error(ex);
+                finally
+                {
+                    connection.CloseIfNot();
+                }
             }
 
             return response;

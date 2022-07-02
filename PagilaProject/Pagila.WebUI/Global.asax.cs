@@ -1,19 +1,14 @@
 ﻿using SI.CommandBus;
 using SI.CommandBus.Core;
+using SI.Logging;
 using SI.QueryBus;
 using SI.QueryBus.Core;
-using SimpleFileLogging;
-using SimpleFileLogging.Enums;
-using SimpleFileLogging.Interfaces;
 using SimpleInjector;
 using SimpleInjector.Integration.Web;
 using SimpleInjector.Integration.Web.Mvc;
 using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -31,29 +26,16 @@ namespace Pagila.WebUI
             BootstrapSimpleInjector();
         }
 
-        /// <summary>
-        /// ISimpleLogger instance.
-        /// </summary>
-        protected ISimpleLogger Logger
-        {
-            get
-            {
-                var _logger = SimpleFileLogger.Instance;
-                _logger.LogDateFormatType = SimpleLogDateFormats.Hour;
-                return _logger;
-            }
-        }
-
         protected void Application_Error()
         {
             try
             {
                 var error = Server.GetLastError();
                 if (error != null)
-                    Logger?.Error(error);
+                    SimpleCommonLogger.DayLogger?.Error(error);
             }
             catch (Exception ex)
-            { Logger?.Error(ex); }
+            { SimpleCommonLogger.DayLogger?.Error(ex); }
         }
 
         protected void BootstrapSimpleInjector()
@@ -103,7 +85,7 @@ namespace Pagila.WebUI
             */
             }
             catch (Exception ex2)
-            { Logger?.Error(ex2); }
+            { SimpleCommonLogger.DayLogger?.Error(ex2); }
             //container.Verify();
             // This is an extension method from the integration package.
             container.RegisterMvcControllers(Assembly.GetExecutingAssembly());
@@ -118,7 +100,7 @@ namespace Pagila.WebUI
                 .GetExportedTypes()
                 .Where(type => type.IsClass && !type.IsAbstract
                 && type.Namespace.Contains(".Business.")
-                && type.Namespace.Contains(".Business.Interfaces.") == false)
+                && !type.Namespace.Contains(".Business.Interfaces."))
                 .Select(q => new { service = (q.GetInterfaces() ?? new Type[0]).LastOrDefault(), implementation = q })
                 .ToList();
 

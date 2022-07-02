@@ -4,7 +4,6 @@ using Pagila.Entity;
 using Pagila.Query.Film;
 using Pagila.ViewModel;
 using SimpleInfra.Common.Response;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -16,35 +15,27 @@ namespace Pagila.QueryHandlers.Film
         {
             var response = new SimpleResponse<FilmResult>();
 
-            try
+            if (query.Id == null) return response;
+
+            if ((query.Id ?? 0) < 1) return response;
+
+            using (var connection = GetDbConnection())
             {
-                if (query.Id == null) return response;
-
-                if ((query.Id ?? 0) < 1) return response;
-
-                using (var connection = GetDbConnection())
+                try
                 {
-                    try
+                    connection.OpenIfNot();
+                    var FilmEntList = connection.Select<FilmEntity>(p => p.FilmId == query.Id)?.ToList() ?? new List<FilmEntity>();
+                    response.Data = new FilmResult
                     {
-                        connection.OpenIfNot();
-                        var FilmEntList = connection.Select<FilmEntity>(p => p.FilmId == query.Id)?.ToList() ?? new List<FilmEntity>();
-                        response.Data = new FilmResult
-                        {
-                            Film = (FilmEntList.Select(p => Map<FilmEntity, FilmViewModel>(p)).ToList() ?? new List<FilmViewModel>()).FirstOrDefault()
-                        };
-                        response.ResponseCode = response.Data != null ? 1 : 0;
-                        response.RCode = response.ResponseCode.ToString();
-                    }
-                    finally
-                    {
-                        connection.CloseIfNot();
-                    }
+                        Film = (FilmEntList.Select(p => Map<FilmEntity, FilmViewModel>(p)).ToList() ?? new List<FilmViewModel>()).FirstOrDefault()
+                    };
+                    response.ResponseCode = response.Data != null ? 1 : 0;
+                    response.RCode = response.ResponseCode.ToString();
                 }
-            }
-            catch (Exception ex)
-            {
-                response.ResponseCode = -500;
-                DayLogger.Error(ex);
+                finally
+                {
+                    connection.CloseIfNot();
+                }
             }
 
             return response;

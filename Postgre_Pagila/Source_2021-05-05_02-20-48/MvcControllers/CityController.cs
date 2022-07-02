@@ -11,8 +11,8 @@ namespace Pagila.WebUI.Controllers
 {
     public class CityController : PagilaBaseController
     {
-        private ICommandBus commandBus;
-        private IQueryBus queryBus;
+        private readonly ICommandBus commandBus;
+        private readonly IQueryBus queryBus;
 
         public CityController(ICommandBus commandBus, IQueryBus queryBus)
         {
@@ -30,7 +30,7 @@ namespace Pagila.WebUI.Controllers
         public ActionResult Create()
         {
             var model = new CityViewModel();
-            return View("Create", model);
+            return View(nameof(Create), model);
         }
 
         [HttpPost]
@@ -40,11 +40,11 @@ namespace Pagila.WebUI.Controllers
             var response = commandBus.Send<CityInsertCommand, LongCommandResult>(command);
 
             if (response.ResponseCode > 0)
-            { return RedirectToAction("Index"); }
+            { return RedirectToAction(nameof(Index)); }
             else
             {
                 ModelState.AddModelError(string.Empty, response.ResponseMessage);
-                return View("Create", model);
+                return View(nameof(Create), model);
             }
         }
 
@@ -66,7 +66,7 @@ namespace Pagila.WebUI.Controllers
             if (response.Data?.City == null || response.ResponseCode < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
-            return View("Edit", response.Data.City);
+            return View(nameof(Edit), response.Data.City);
         }
 
         [HttpPost]
@@ -76,11 +76,11 @@ namespace Pagila.WebUI.Controllers
             var response = commandBus.Send<CityUpdateCommand, LongCommandResult>(command);
 
             if (response.ResponseCode > 0)
-            { return RedirectToAction("Index"); }
+            { return RedirectToAction(nameof(Index)); }
             else
             {
                 ModelState.AddModelError(string.Empty, response.ResponseMessage);
-                return View("Edit", model);
+                return View(nameof(Edit), model);
             }
         }
 
@@ -91,7 +91,7 @@ namespace Pagila.WebUI.Controllers
             if (response.Data?.City == null || response.ResponseCode < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
-            return View("Delete", response.Data.City);
+            return View(nameof(Delete), response.Data.City);
         }
 
         [HttpPost]
@@ -100,18 +100,18 @@ namespace Pagila.WebUI.Controllers
             var response = commandBus.Send<CityDeleteCommand, LongCommandResult>(new CityDeleteCommand { Id = CityId });
 
             if (response.ResponseCode > 0)
-            { return RedirectToAction("Index"); }
+            { return RedirectToAction(nameof(Index)); }
             else
             {
                 ModelState.AddModelError(string.Empty, response.ResponseMessage);
-                return RedirectToAction("Delete", new { CityId });
+                return RedirectToAction(nameof(Delete), new { CityId });
             }
         }
 
         [HttpGet]
         public ActionResult ReadAll()
         {
-            var response = queryBus.Send<CityReadAllQuery, CityList>( CityReadAllQuery.GetEmptyInstance());
+            var response = queryBus.Send<CityReadAllQuery, CityList>(CityReadAllQuery.GetEmptyInstance());
             return Json(response.Data.Cities, JsonRequestBehavior.AllowGet);
         }
     }

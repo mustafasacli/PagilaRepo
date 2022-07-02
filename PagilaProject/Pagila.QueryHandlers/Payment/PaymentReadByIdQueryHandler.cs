@@ -4,7 +4,6 @@ using Pagila.Entity;
 using Pagila.Query.Payment;
 using Pagila.ViewModel;
 using SimpleInfra.Common.Response;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -16,35 +15,27 @@ namespace Pagila.QueryHandlers.Payment
         {
             var response = new SimpleResponse<PaymentResult>();
 
-            try
+            if (query.Id == null) return response;
+
+            if ((query.Id ?? 0) < 1) return response;
+
+            using (var connection = GetDbConnection())
             {
-                if (query.Id == null) return response;
-
-                if ((query.Id ?? 0) < 1) return response;
-
-                using (var connection = GetDbConnection())
+                try
                 {
-                    try
+                    connection.OpenIfNot();
+                    var PaymentEntList = connection.Select<PaymentEntity>(p => p.PaymentId == query.Id)?.ToList() ?? new List<PaymentEntity>();
+                    response.Data = new PaymentResult
                     {
-                        connection.OpenIfNot();
-                        var PaymentEntList = connection.Select<PaymentEntity>(p => p.PaymentId == query.Id)?.ToList() ?? new List<PaymentEntity>();
-                        response.Data = new PaymentResult
-                        {
-                            Payment = (PaymentEntList.Select(p => Map<PaymentEntity, PaymentViewModel>(p)).ToList() ?? new List<PaymentViewModel>()).FirstOrDefault()
-                        };
-                        response.ResponseCode = response.Data != null ? 1 : 0;
-                        response.RCode = response.ResponseCode.ToString();
-                    }
-                    finally
-                    {
-                        connection.CloseIfNot();
-                    }
+                        Payment = (PaymentEntList.Select(p => Map<PaymentEntity, PaymentViewModel>(p)).ToList() ?? new List<PaymentViewModel>()).FirstOrDefault()
+                    };
+                    response.ResponseCode = response.Data != null ? 1 : 0;
+                    response.RCode = response.ResponseCode.ToString();
                 }
-            }
-            catch (Exception ex)
-            {
-                response.ResponseCode = -500;
-                DayLogger.Error(ex);
+                finally
+                {
+                    connection.CloseIfNot();
+                }
             }
 
             return response;

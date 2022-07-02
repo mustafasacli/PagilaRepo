@@ -5,7 +5,6 @@ using Pagila.Command.Address;
 using Pagila.Command.Base.Result;
 using Pagila.Entity;
 using SimpleInfra.Common.Response;
-using System;
 
 namespace Pagila.CommandHandlers.Address
 {
@@ -15,36 +14,28 @@ namespace Pagila.CommandHandlers.Address
         {
             var response = new SimpleResponse<LongCommandResult>();
 
-            try
+            using (var connection = GetDbConnection())
             {
-                using (var connection = GetDbConnection())
+                try
                 {
-                    try
+                    connection.OpenIfNot();
+                    var result = connection.PartialInsertAndReturnId<AddressEntity>(new
                     {
-                        connection.OpenIfNot();
-                        var result = connection.PartialInsertAndReturnId<AddressEntity>(new
-                        {
-                            command.Address,
-                            command.Address2,
-                            command.CityId,
-                            command.District,
-                            command.PostalCode,
-                            command.Phone
-                        });
-                        response.ResponseCode = (int)result.Result;
-                        response.RCode = result.ToString();
-                        response.Data = new LongCommandResult { ReturnValue = result.Result.ToLongNullable() };
-                    }
-                    finally
-                    {
-                        connection.CloseIfNot();
-                    }
+                        command.Address,
+                        command.Address2,
+                        command.CityId,
+                        command.District,
+                        command.PostalCode,
+                        command.Phone
+                    });
+                    response.ResponseCode = (int)result.Result;
+                    response.RCode = result.ToString();
+                    response.Data = new LongCommandResult { ReturnValue = result.Result.ToLongNullable() };
                 }
-            }
-            catch (Exception ex)
-            {
-                response.ResponseCode = -500;
-                DayLogger.Error(ex);
+                finally
+                {
+                    connection.CloseIfNot();
+                }
             }
 
             return response;

@@ -65,6 +65,10 @@
     <Compile Include="Customer\CustomerReadAllQuery.cs" />
     <Compile Include="Customer\CustomerReadByIdQuery.cs" />
     <Compile Include="Customer\CustomerResult.cs" />
+    <Compile Include="FilmActor\FilmActorList.cs" />
+    <Compile Include="FilmActor\FilmActorReadAllQuery.cs" />
+    <Compile Include="FilmCategory\FilmCategoryList.cs" />
+    <Compile Include="FilmCategory\FilmCategoryReadByFilmIdQuery.cs" />
     <Compile Include="Film\FilmList.cs" />
     <Compile Include="Film\FilmReadAllQuery.cs" />
     <Compile Include="Film\FilmReadByIdQuery.cs" />
@@ -95,10 +99,7 @@
     <Compile Include="Store\StoreReadByIdQuery.cs" />
     <Compile Include="Store\StoreResult.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="FilmActor\" />
-    <Folder Include="FilmCategory\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\..\SI.CQRS.Repository\SI.CQRS.Sln\NetFramework\SI.Query.Core\SI.Query.Core.csproj">
       <Project>{076741E2-4702-45F8-8CAF-71EC86C4F1EB}</Project>
