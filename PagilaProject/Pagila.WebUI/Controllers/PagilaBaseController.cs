@@ -160,5 +160,10 @@ namespace Pagila.WebUI.Controllers
         {
             return httpRequest.Headers["X-Requested-With"] == "XMLHttpRequest";
         }
+
+        protected JsonResult JsonResponse(object data, JsonRequestBehavior requestBehavior = JsonRequestBehavior.AllowGet)
+        {
+            return Json(data, requestBehavior);
+        }
     }
 }
