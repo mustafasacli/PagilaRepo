@@ -7,7 +7,7 @@
 function loadCountryList() {
     try {
         loadDropDown(
-            'CountrySelect', $('#countryListUrl').val(), $('#CountryId').val(), "Seçiniz", "CountryId", "Country", false
+            'CountrySelect2', $('#countryListUrl').val(), $('#CountryId').val(), "Seçiniz", "CountryId", "Country", false
         );
     } catch (e) {
         console.error(e);
@@ -15,5 +15,9 @@ function loadCountryList() {
 }
 
 function countryChanged() {
-    $('#CountryId').val($('#CountrySelect').val());
+    $('#CountryId').val($('#CountrySelect2').val());
+}
+
+function countryIdDefVal() {
+    return $('#CountryId').val();
 }
