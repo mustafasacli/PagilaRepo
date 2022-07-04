@@ -29,7 +29,6 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CountryId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="form-group col-md-12">
-                @*<select id="CountrySelect2" class="form-control select select2 tooltips simple-ajax-call"*@
                 <select id="CountrySelect2" class="select tooltips simple-ajax-call" style="width:%100"
                         action_url="@countryListUrl" text_item="Country" value_item="CountryId" default_value="@Model.CountryId" 
                         default_value_function="" default_text="Seçiniz" default_text_value=""
