@@ -70,7 +70,7 @@ namespace Pagila.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult UpdatePost(CityViewModel model)
+        public ActionResult UpdatePost([Bind(Include = "CityId,City,CountryId")] CityViewModel model)
         {
             var command = GetCommandFromViewModel<CityUpdateCommand, CityViewModel>(model);
             var response = commandBus.Send<CityUpdateCommand, LongCommandResult>(command);

@@ -56,8 +56,8 @@ function loadDropDownWithOps(dropDownId, dropDownUrl, selectedValue, defaultText
             // debugger;
             if (isNotNullAndUndefined(selectedValue) && isNullOrWhiteSpace(toNullString(selectedValue)) === false) {
                 setTimeout(function () {
-                dropDown.val(selectedValue);
-                }, 100);
+                    dropDown.val(selectedValue);
+                }, 10);
                 // console.log(selectedValue);
             } else {
                 dropDown.prop('selectedIndex', 0);
@@ -101,7 +101,7 @@ function rebuildDropDown(dropdownElement) {
             <div class="form-group form-md-line-input form-md-floating-label">
                 <label for="dropDownId" class="control-label">Choice: </label>
                 <select id="dropDownId" class="form-control select2 tooltips simple-ajax-call"
-                action_url="" text_item="" value_item="" default_value_function="" default_text="" default_text_value=""
+                action_url="" text_item="" value_item="" default_value="" default_value_function="" default_text="" default_text_value=""
                 value_dictionary_function="" error_function="" pre_action="" post_action=""></select>
             </div>
         </div>
@@ -111,6 +111,7 @@ function rebuildDropDown(dropdownElement) {
         let action_url_value = dropdownElement.getAttribute('action_url');
         let text_item_value = dropdownElement.getAttribute('text_item');
         let value_item_value = dropdownElement.getAttribute('value_item');
+        let default_value = dropdownElement.getAttribute('default_value');
         let default_value_function = dropdownElement.getAttribute('default_value_function');
         let default_text = toNullString(dropdownElement.getAttribute('default_text'));
         let default_text_value = toNullString(dropdownElement.getAttribute('default_text_value'));
@@ -123,16 +124,22 @@ function rebuildDropDown(dropdownElement) {
         if (isNotNullAndUndefined(value_dictionary_function) && isNullOrWhiteSpace(toNullString(value_dictionary_function)) === false) {
             values = window[value_dictionary_function]();
         }
-        let default_value = null;
-        if (isNotNullAndUndefined(default_value_function) && isNullOrWhiteSpace(toNullString(default_value_function)) === false) {
-            default_value = window[default_value_function]();
-            if(isNotNullAndUndefined(default_value) === false){
-                default_value = default_value_function;
+        let def_value = null;
+
+        try {
+            if (isNotNullAndUndefined(default_value_function) && isNullOrWhiteSpace(toNullString(default_value_function)) === false) {
+                def_value = window[default_value_function]();
             }
+        } catch (err2) {
+            console.error(err2);
         }
-        
+
+        if (isNotNullAndUndefined(def_value) === false && isNullOrWhiteSpace(toNullString(default_value)) === false) {
+            def_value = toNullString(default_value);
+        }
+
         loadDropDownWithOps(
-            dropdownElement.id, action_url_value, default_value, toNullString(default_text), default_text_value,
+            dropdownElement.id, action_url_value, def_value, toNullString(default_text), default_text_value,
             value_item_value, text_item_value, values, function () {
                 console.log('Error at loading drop down with ' + dropdownElement.id + ' id.');
 
@@ -151,7 +158,7 @@ function rebuildDropDown(dropdownElement) {
             <div class="form-group form-md-line-input form-md-floating-label">
                 <label for="VergiDairesiId2" class="control-label">Vergi Dairesi: </label>
                 <select id="VergiDairesiId2" class="form-control select2 tooltips simple-ajax-call"
-                        action_url="@vergiDairesiListeUrl" text_item="Text" value_item="Value" default_value="@Model.VergiDairesiId" default_text="Seçiniz"
+                        action_url="@vergiDairesiListeUrl" text_item="Text" value_item="Value" default_value="@Model.VergiDairesiId" default_value_function="" default_text="Seçiniz"
                         default_text_value="" value_dictionary_function="" error_function="" pre_action="" post_action=""></select>
             </div>
         </div>

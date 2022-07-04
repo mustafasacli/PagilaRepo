@@ -27,8 +27,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CountryId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <select id="CountrySelect" class="form-control select select2 tooltips simple-ajax-call"
-                        action_url="@countryListUrl" text_item="Country" value_item="CountryId" default_value_function="countryIdDefVal" default_text="Seçiniz" default_text_value=""
+                <select id="CountrySelect2" class="form-control select select2 tooltips simple-ajax-call"
+                        action_url="@countryListUrl" text_item="Country" value_item="CountryId" default_value="@Model.CountryId" default_value_function="" default_text="Seçiniz" default_text_value=""
                         value_dictionary_function="" error_function="" pre_action="" post_action="" title="* Ülke alaný boþ geçilemez!" onchange="countryChanged()" required></select>
                 @Html.ValidationMessageFor(model => model.CountryId, "", new { @class = "text-danger" })
             </div>
