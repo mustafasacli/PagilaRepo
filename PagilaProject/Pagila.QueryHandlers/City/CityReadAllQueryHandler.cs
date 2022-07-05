@@ -29,7 +29,8 @@ namespace Pagila.QueryHandlers.City
                             City = p.City,
                             CountryId = p.CountryId,
                             LastUpdate = p.LastUpdate
-                        }).ToList() ?? new List<CityViewModel>()
+                        }).OrderByDescending(p => p.LastUpdate)
+                        .ToList() ?? new List<CityViewModel>()
                     };
                     response.ResponseCode = response.Data?.Cities?.Count ?? 0;
                     response.RCode = response.ResponseCode.ToString();
