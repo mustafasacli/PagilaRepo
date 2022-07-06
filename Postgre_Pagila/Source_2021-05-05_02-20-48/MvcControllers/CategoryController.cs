@@ -4,6 +4,7 @@ using Pagila.Query.Category;
 using Pagila.ViewModel;
 using SI.CommandBus.Core;
 using SI.QueryBus.Core;
+using SimpleInfra.Validation;
 using System.Net;
 using System.Web.Mvc;
 
@@ -36,6 +37,12 @@ namespace Pagila.WebUI.Controllers
         [HttpPost]
         public ActionResult CreatePost(CategoryViewModel model)
         {
+            EntityValidationResult validationResult = model.Validate();
+            if (validationResult.HasError)
+            {
+                ModelState.AddModelError(string.Empty, validationResult.AllValidationMessages);
+                return View(nameof(Create), model);
+            }
             var command = GetCommandFromViewModel<CategoryInsertCommand, CategoryViewModel>(model);
             var response = commandBus.Send<CategoryInsertCommand, LongCommandResult>(command);
 
@@ -72,6 +79,12 @@ namespace Pagila.WebUI.Controllers
         [HttpPost]
         public ActionResult UpdatePost(CategoryViewModel model)
         {
+            EntityValidationResult validationResult = model.Validate();
+            if (validationResult.HasError)
+            {
+                ModelState.AddModelError(string.Empty, validationResult.AllValidationMessages);
+                return View(nameof(Create), model);
+            }
             var command = GetCommandFromViewModel<CategoryUpdateCommand, CategoryViewModel>(model);
             var response = commandBus.Send<CategoryUpdateCommand, LongCommandResult>(command);
 
@@ -109,10 +122,10 @@ namespace Pagila.WebUI.Controllers
         }
 
         [HttpGet]
-        public ActionResult ReadAll()
+        public JsonResult ReadAll()
         {
             var response = queryBus.Send<CategoryReadAllQuery, CategoryList>(CategoryReadAllQuery.GetEmptyInstance());
-            return Json(response, JsonRequestBehavior.AllowGet);
+            return JsonResponse(response.Data.Categories);
         }
     }
 }

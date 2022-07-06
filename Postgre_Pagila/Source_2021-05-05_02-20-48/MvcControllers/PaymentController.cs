@@ -4,6 +4,7 @@ using Pagila.Query.Payment;
 using Pagila.ViewModel;
 using SI.CommandBus.Core;
 using SI.QueryBus.Core;
+using SimpleInfra.Validation;
 using System.Net;
 using System.Web.Mvc;
 
@@ -36,6 +37,12 @@ namespace Pagila.WebUI.Controllers
         [HttpPost]
         public ActionResult CreatePost(PaymentViewModel model)
         {
+            EntityValidationResult validationResult = model.Validate();
+            if (validationResult.HasError)
+            {
+                ModelState.AddModelError(string.Empty, validationResult.AllValidationMessages);
+                return View(nameof(Create), model);
+            }
             var command = GetCommandFromViewModel<PaymentInsertCommand, PaymentViewModel>(model);
             var response = commandBus.Send<PaymentInsertCommand, LongCommandResult>(command);
 
@@ -72,6 +79,12 @@ namespace Pagila.WebUI.Controllers
         [HttpPost]
         public ActionResult UpdatePost(PaymentViewModel model)
         {
+            EntityValidationResult validationResult = model.Validate();
+            if (validationResult.HasError)
+            {
+                ModelState.AddModelError(string.Empty, validationResult.AllValidationMessages);
+                return View(nameof(Create), model);
+            }
             var command = GetCommandFromViewModel<PaymentUpdateCommand, PaymentViewModel>(model);
             var response = commandBus.Send<PaymentUpdateCommand, LongCommandResult>(command);
 
@@ -109,10 +122,10 @@ namespace Pagila.WebUI.Controllers
         }
 
         [HttpGet]
-        public ActionResult ReadAll()
+        public JsonResult ReadAll()
         {
             var response = queryBus.Send<PaymentReadAllQuery, PaymentList>(PaymentReadAllQuery.GetEmptyInstance());
-            return Json(response.Data.Payments, JsonRequestBehavior.AllowGet);
+            return JsonResponse(response.Data.Payments);
         }
     }
 }

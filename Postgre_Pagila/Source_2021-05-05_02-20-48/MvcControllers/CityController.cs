@@ -4,6 +4,7 @@ using Pagila.Query.City;
 using Pagila.ViewModel;
 using SI.CommandBus.Core;
 using SI.QueryBus.Core;
+using SimpleInfra.Validation;
 using System.Net;
 using System.Web.Mvc;
 
@@ -36,6 +37,14 @@ namespace Pagila.WebUI.Controllers
         [HttpPost]
         public ActionResult CreatePost(CityViewModel model)
         {
+            //if (Request.IsAjaxRequest())
+            //{ }
+                EntityValidationResult validationResult = model.Validate();
+            if (validationResult.HasError)
+            {
+                ModelState.AddModelError(string.Empty, validationResult.AllValidationMessages);
+                return View(nameof(Create), model);
+            }
             var command = GetCommandFromViewModel<CityInsertCommand, CityViewModel>(model);
             var response = commandBus.Send<CityInsertCommand, LongCommandResult>(command);
 
@@ -72,6 +81,12 @@ namespace Pagila.WebUI.Controllers
         [HttpPost]
         public ActionResult UpdatePost([Bind(Include = "CityId,City,CountryId")] CityViewModel model)
         {
+            EntityValidationResult validationResult = model.Validate();
+            if (validationResult.HasError)
+            {
+                ModelState.AddModelError(string.Empty, validationResult.AllValidationMessages);
+                return View(nameof(Create), model);
+            }
             var command = GetCommandFromViewModel<CityUpdateCommand, CityViewModel>(model);
             var response = commandBus.Send<CityUpdateCommand, LongCommandResult>(command);
 
@@ -109,10 +124,10 @@ namespace Pagila.WebUI.Controllers
         }
 
         [HttpGet]
-        public ActionResult ReadAll()
+        public JsonResult ReadAll()
         {
             var response = queryBus.Send<CityReadAllQuery, CityList>(CityReadAllQuery.GetEmptyInstance());
-            return Json(response.Data.Cities, JsonRequestBehavior.AllowGet);
+            return JsonResponse(response.Data.Cities);
         }
     }
 }

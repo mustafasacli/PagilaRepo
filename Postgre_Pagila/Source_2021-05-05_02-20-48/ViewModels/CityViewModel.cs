@@ -24,6 +24,7 @@ namespace Pagila.ViewModel
         /// Gets or Sets the CountryId
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessage = "Ülke alanýna veri girilmelidir.")]
+        [Range(minimum: 1, maximum: int.MaxValue, ErrorMessage = "Geçerli bir ülke seçiniz.")]
         public int CountryId
         { get; set; }
 

@@ -4,6 +4,7 @@ using Pagila.Query.Customer;
 using Pagila.ViewModel;
 using SI.CommandBus.Core;
 using SI.QueryBus.Core;
+using SimpleInfra.Validation;
 using System.Net;
 using System.Web.Mvc;
 
@@ -36,6 +37,12 @@ namespace Pagila.WebUI.Controllers
         [HttpPost]
         public ActionResult CreatePost(CustomerViewModel model)
         {
+            EntityValidationResult validationResult = model.Validate();
+            if (validationResult.HasError)
+            {
+                ModelState.AddModelError(string.Empty, validationResult.AllValidationMessages);
+                return View(nameof(Create), model);
+            }
             var command = GetCommandFromViewModel<CustomerInsertCommand, CustomerViewModel>(model);
             var response = commandBus.Send<CustomerInsertCommand, LongCommandResult>(command);
 
@@ -72,6 +79,12 @@ namespace Pagila.WebUI.Controllers
         [HttpPost]
         public ActionResult UpdatePost(CustomerViewModel model)
         {
+            EntityValidationResult validationResult = model.Validate();
+            if (validationResult.HasError)
+            {
+                ModelState.AddModelError(string.Empty, validationResult.AllValidationMessages);
+                return View(nameof(Create), model);
+            }
             var command = GetCommandFromViewModel<CustomerUpdateCommand, CustomerViewModel>(model);
             var response = commandBus.Send<CustomerUpdateCommand, LongCommandResult>(command);
 
@@ -109,10 +122,10 @@ namespace Pagila.WebUI.Controllers
         }
 
         [HttpGet]
-        public ActionResult ReadAll()
+        public JsonResult ReadAll()
         {
             var response = queryBus.Send<CustomerReadAllQuery, CustomerList>(CustomerReadAllQuery.GetEmptyInstance());
-            return Json(response.Data.Customers, JsonRequestBehavior.AllowGet);
+            return JsonResponse(response.Data.Customers);
         }
     }
 }
