@@ -118,8 +118,8 @@
     <Compile Include="Film\FilmReadByIdQueryHandler.cs" />
     <Compile Include="Inventory\InventoryReadAllQueryHandler.cs" />
     <Compile Include="Inventory\InventoryReadByIdQueryHandler.cs" />
-    <Compile Include="Language\ActorReadAllQueryHandler.cs" />
-    <Compile Include="Language\ActorReadByIdQueryHandler.cs" />
+    <Compile Include="Language\LanguageReadAllQueryHandler.cs" />
+    <Compile Include="Language\LanguageReadByIdQueryHandler.cs" />
     <Compile Include="PagilaBaseQueryHandler.cs" />
     <Compile Include="Payment\PaymentReadAllQueryHandler.cs" />
     <Compile Include="Payment\PaymentReadByIdQueryHandler.cs" />
