@@ -12,7 +12,7 @@ $(document).ready(function () {
     }, 500);
 });
 
-function loadDropDownWithOps(dropDownId, dropDownUrl, selectedValue, defaultText = "Seçiniz", default_text_value,
+function loadDropDownWithOptions(dropDownId, dropDownUrl, selectedValue, defaultText = "Seçiniz", default_text_value,
     valueProperty = "Value", textProperty = "Text", url_values, error_function, pre_action, post_action) {
     let dropDown = $('#' + dropDownId);
 
@@ -138,7 +138,7 @@ function rebuildDropDown(dropdownElement) {
             def_value = toNullString(default_value);
         }
 
-        loadDropDownWithOps(
+        loadDropDownWithOptions(
             dropdownElement.id, action_url_value, def_value, toNullString(default_text), default_text_value,
             value_item_value, text_item_value, values, function () {
                 console.log('Error at loading drop down with ' + dropdownElement.id + ' id.');
