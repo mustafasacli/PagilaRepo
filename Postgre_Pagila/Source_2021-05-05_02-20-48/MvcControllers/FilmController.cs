@@ -4,6 +4,7 @@ using Pagila.Query.Film;
 using Pagila.ViewModel;
 using SI.CommandBus.Core;
 using SI.QueryBus.Core;
+using SimpleInfra.Validation;
 using System.Net;
 using System.Web.Mvc;
 
@@ -36,6 +37,12 @@ namespace Pagila.WebUI.Controllers
         [HttpPost]
         public ActionResult CreatePost(FilmViewModel model)
         {
+            EntityValidationResult validationResult = model.Validate();
+            if (validationResult.HasError)
+            {
+                ModelState.AddModelError(string.Empty, validationResult.AllValidationMessages);
+                return View(nameof(Create), model);
+            }
             var command = GetCommandFromViewModel<FilmInsertCommand, FilmViewModel>(model);
             var response = commandBus.Send<FilmInsertCommand, LongCommandResult>(command);
 
@@ -72,6 +79,12 @@ namespace Pagila.WebUI.Controllers
         [HttpPost]
         public ActionResult UpdatePost(FilmViewModel model)
         {
+            EntityValidationResult validationResult = model.Validate();
+            if (validationResult.HasError)
+            {
+                ModelState.AddModelError(string.Empty, validationResult.AllValidationMessages);
+                return View(nameof(Create), model);
+            }
             var command = GetCommandFromViewModel<FilmUpdateCommand, FilmViewModel>(model);
             var response = commandBus.Send<FilmUpdateCommand, LongCommandResult>(command);
 
@@ -109,10 +122,10 @@ namespace Pagila.WebUI.Controllers
         }
 
         [HttpGet]
-        public ActionResult ReadAll()
+        public JsonResult ReadAll()
         {
             var response = queryBus.Send<FilmReadAllQuery, FilmList>(FilmReadAllQuery.GetEmptyInstance());
-            return Json(response.Data.Films, JsonRequestBehavior.AllowGet);
+            return JsonResponse(response.Data.Films);
         }
     }
 }

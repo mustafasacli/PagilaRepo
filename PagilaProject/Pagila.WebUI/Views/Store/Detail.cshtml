@@ -1,0 +1,38 @@
+@model Pagila.ViewModel.StoreViewModel
+
+@{
+}
+
+<h2>Kayýt Detay</h2>
+
+<div>
+    <h4>Kayýt detaylarý</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ManagerStaffId)
+        </dt>
+        <dd>
+            @(Model.ManagerStaffId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddressId)
+        </dt>
+        <dd>
+            @(Model.AddressId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastUpdate)
+        </dt>
+        <dd>
+            @(Model.LastUpdate)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { storeId = Model.StoreId }) |
+    @Html.ActionLink("Sil", "Delete", new { storeId = Model.StoreId }) |
+    @Html.ActionLink("Listeye Dön", "Index")
+</p>

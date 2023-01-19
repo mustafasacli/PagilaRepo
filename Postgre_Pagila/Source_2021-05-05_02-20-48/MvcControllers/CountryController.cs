@@ -4,6 +4,7 @@ using Pagila.Query.Country;
 using Pagila.ViewModel;
 using SI.CommandBus.Core;
 using SI.QueryBus.Core;
+using SimpleInfra.Validation;
 using System.Net;
 using System.Web.Mvc;
 
@@ -36,6 +37,12 @@ namespace Pagila.WebUI.Controllers
         [HttpPost]
         public ActionResult CreatePost(CountryViewModel model)
         {
+            EntityValidationResult validationResult = model.Validate();
+            if (validationResult.HasError)
+            {
+                ModelState.AddModelError(string.Empty, validationResult.AllValidationMessages);
+                return View(nameof(Create), model);
+            }
             var command = GetCommandFromViewModel<CountryInsertCommand, CountryViewModel>(model);
             var response = commandBus.Send<CountryInsertCommand, LongCommandResult>(command);
 
@@ -72,6 +79,12 @@ namespace Pagila.WebUI.Controllers
         [HttpPost]
         public ActionResult UpdatePost(CountryViewModel model)
         {
+            EntityValidationResult validationResult = model.Validate();
+            if (validationResult.HasError)
+            {
+                ModelState.AddModelError(string.Empty, validationResult.AllValidationMessages);
+                return View(nameof(Create), model);
+            }
             var command = GetCommandFromViewModel<CountryUpdateCommand, CountryViewModel>(model);
             var response = commandBus.Send<CountryUpdateCommand, LongCommandResult>(command);
 
@@ -112,7 +125,7 @@ namespace Pagila.WebUI.Controllers
         public JsonResult ReadAll()
         {
             var response = queryBus.Send<CountryReadAllQuery, CountryList>(CountryReadAllQuery.GetEmptyInstance());
-            return Json(response.Data.Countries, JsonRequestBehavior.AllowGet);
+            return JsonResponse(response.Data.Countries);
         }
     }
 }

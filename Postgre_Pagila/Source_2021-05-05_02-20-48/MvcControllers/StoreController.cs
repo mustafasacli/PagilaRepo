@@ -4,6 +4,7 @@ using Pagila.Query.Store;
 using Pagila.ViewModel;
 using SI.CommandBus.Core;
 using SI.QueryBus.Core;
+using SimpleInfra.Validation;
 using System.Net;
 using System.Web.Mvc;
 
@@ -36,6 +37,12 @@ namespace Pagila.WebUI.Controllers
         [HttpPost]
         public ActionResult CreatePost(StoreViewModel model)
         {
+            EntityValidationResult validationResult = model.Validate();
+            if (validationResult.HasError)
+            {
+                ModelState.AddModelError(string.Empty, validationResult.AllValidationMessages);
+                return View(nameof(Create), model);
+            }
             var command = GetCommandFromViewModel<StoreInsertCommand, StoreViewModel>(model);
             var response = commandBus.Send<StoreInsertCommand, LongCommandResult>(command);
 
@@ -72,6 +79,12 @@ namespace Pagila.WebUI.Controllers
         [HttpPost]
         public ActionResult UpdatePost(StoreViewModel model)
         {
+            EntityValidationResult validationResult = model.Validate();
+            if (validationResult.HasError)
+            {
+                ModelState.AddModelError(string.Empty, validationResult.AllValidationMessages);
+                return View(nameof(Create), model);
+            }
             var command = GetCommandFromViewModel<StoreUpdateCommand, StoreViewModel>(model);
             var response = commandBus.Send<StoreUpdateCommand, LongCommandResult>(command);
 
@@ -109,10 +122,10 @@ namespace Pagila.WebUI.Controllers
         }
 
         [HttpGet]
-        public ActionResult ReadAll()
+        public JsonResult ReadAll()
         {
             var response = queryBus.Send<StoreReadAllQuery, StoreList>(StoreReadAllQuery.GetEmptyInstance());
-            return Json(response.Data.Stores, JsonRequestBehavior.AllowGet);
+            return JsonResponse(response.Data.Stores);
         }
     }
 }

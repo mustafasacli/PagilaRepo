@@ -1,0 +1,38 @@
+@model Pagila.ViewModel.InventoryViewModel
+
+@{
+}
+
+<h2>Kayýt Detay</h2>
+
+<div>
+    <h4>Kayýt detaylarý</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FilmId)
+        </dt>
+        <dd>
+            @(Model.FilmId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StoreId)
+        </dt>
+        <dd>
+            @(Model.StoreId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastUpdate)
+        </dt>
+        <dd>
+            @(Model.LastUpdate)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { inventoryId = Model.InventoryId }) |
+    @Html.ActionLink("Sil", "Delete", new { inventoryId = Model.InventoryId }) |
+    @Html.ActionLink("Listeye Dön", "Index")
+</p>
