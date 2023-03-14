@@ -25,7 +25,13 @@ namespace Pagila.CommandHandlers.TestApp
             var result = commandBus.Send<ActorInsertCommand, LongCommandResult>(cmd);
             var response = queryBus.Send<ActorReadAllQuery, ActorList>(new ActorReadAllQuery());
             //var serviceDetailTypeHandler = new ServiceDetailTypeInsertCommandHandler();
-
+            response.Data?.Actors?.ForEach(actor =>
+            {
+                Console.WriteLine("ActorId : " + actor.ActorId);
+                Console.WriteLine("FirstName : " + actor.FirstName);
+                Console.WriteLine("LastName : " + actor.LastName);
+                Console.WriteLine("LastUpdate : " + actor.LastUpdate.ToLongDateString());
+            });
             //var result = serviceDetailTypeHandler.Handle(cmd);
             var id = result.Data.ReturnValue ?? -1L;
             Console.WriteLine("ReturnValue: " + result.Data?.ReturnValue);

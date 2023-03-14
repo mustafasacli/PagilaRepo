@@ -20,8 +20,8 @@ namespace Pagila.CommandHandlers.Actor
                 {
                     connection.OpenIfNot();
                     var result = connection.PartialInsertAndReturnId<ActorEntity>(new { command.FirstName, command.LastName });
-                    response.ResponseCode = (int)result.Result;
-                    response.RCode = result.ToString();
+                    response.ResponseCode = result.Result.ToInt();
+                    response.RCode = result.Result.ToString();
                     response.Data = new LongCommandResult { ReturnValue = result.Result.ToLongNullable() };
                 }
                 finally
