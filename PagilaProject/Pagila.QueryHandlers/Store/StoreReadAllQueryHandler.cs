@@ -1,37 +1,36 @@
-﻿using Coddie.Crud;
-using Coddie.Data;
-using Pagila.Entity;
+﻿using Pagila.Entity;
 using Pagila.Query.Store;
 using Pagila.ViewModel;
 using SimpleInfra.Common.Response;
+using Simply.Crud;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Pagila.QueryHandlers.Store
 {
+    /// <summary>
+    /// The store read all query handler.
+    /// </summary>
     public class StoreReadAllQueryHandler : PagilaBaseQueryHandler<StoreReadAllQuery, StoreList>
     {
+        /// <summary>
+        /// Handles the query.
+        /// </summary>
+        /// <param name="query">The query.</param>
+        /// <returns>A SimpleResponse.</returns>
         public override SimpleResponse<StoreList> Handle(StoreReadAllQuery query)
         {
             var response = new SimpleResponse<StoreList>();
 
-            using (var connection = GetDbConnection())
+            using (var database = GetDatabase())
             {
-                try
+                var StoreEntList = database.GetAll<StoreEntity>();
+                response.Data = new StoreList
                 {
-                    connection.OpenIfNot();
-                    var StoreEntList = connection.GetAll<StoreEntity>();
-                    response.Data = new StoreList
-                    {
-                        Stores = StoreEntList.Select(p => Map<StoreEntity, StoreViewModel>(p)).ToList() ?? new List<StoreViewModel>()
-                    };
-                    response.ResponseCode = response.Data?.Stores?.Count ?? 0;
-                    response.RCode = response.ResponseCode.ToString();
-                }
-                finally
-                {
-                    connection.CloseIfNot();
-                }
+                    Stores = StoreEntList.Select(p => Map<StoreEntity, StoreViewModel>(p)).ToList() ?? new List<StoreViewModel>()
+                };
+                response.ResponseCode = response.Data?.Stores?.Count ?? 0;
+                response.RCode = response.ResponseCode.ToString();
             }
 
             return response;
