@@ -1,37 +1,41 @@
-﻿using Coddie.Crud;
-using Coddie.Data;
-using Pagila.Command.Base.Result;
+﻿using Pagila.Command.Base.Result;
 using Pagila.Command.Staff;
 using Pagila.Entity;
 using SimpleInfra.Common.Response;
+using Simply.Crud;
 
 namespace Pagila.CommandHandlers.Staff
 {
+    /// <summary>
+    /// The staff delete command handler.
+    /// </summary>
     public class StaffDeleteCommandHandler : PagilaBaseCommandHandler<StaffDeleteCommand, LongCommandResult>
     {
+        /// <summary>
+        /// Handles the command.
+        /// </summary>
+        /// <param name="command">The command.</param>
+        /// <returns>A SimpleResponse.</returns>
         public override SimpleResponse<LongCommandResult> Handle(StaffDeleteCommand command)
         {
             var response = new SimpleResponse<LongCommandResult>();
 
-            using (var connection = GetDbConnection())
+            using (var database = GetDatabase())
             {
-                try
-                {
-                    connection.OpenIfNot();
-                    var result = connection.DeleteAll<StaffEntity>(p => p.StaffId == command.Id);
-                    response.ResponseCode = result;
-                    response.RCode = result.ToString();
-                    response.Data = new LongCommandResult { ReturnValue = command.Id };
-                }
-                finally
-                {
-                    connection.CloseIfNot();
-                }
+                var result = database.DeleteAll<StaffEntity>(p => p.StaffId == command.Id);
+                response.ResponseCode = result;
+                response.RCode = result.ToString();
+                response.Data = new LongCommandResult { ReturnValue = command.Id };
             }
 
             return response;
         }
 
+        /// <summary>
+        /// Validates the command.
+        /// </summary>
+        /// <param name="command">The command.</param>
+        /// <returns>A SimpleResponse.</returns>
         public override SimpleResponse Validate(StaffDeleteCommand command)
         {
             SimpleResponse response = new SimpleResponse();

@@ -1,37 +1,41 @@
-﻿using Coddie.Crud;
-using Coddie.Data;
-using Pagila.Command.Base.Result;
+﻿using Pagila.Command.Base.Result;
 using Pagila.Command.Country;
 using Pagila.Entity;
 using SimpleInfra.Common.Response;
+using Simply.Crud;
 
 namespace Pagila.CommandHandlers.Country
 {
+    /// <summary>
+    /// The country delete command handler.
+    /// </summary>
     public class CountryDeleteCommandHandler : PagilaBaseCommandHandler<CountryDeleteCommand, LongCommandResult>
     {
+        /// <summary>
+        /// Handles the command.
+        /// </summary>
+        /// <param name="command">The command.</param>
+        /// <returns>A SimpleResponse.</returns>
         public override SimpleResponse<LongCommandResult> Handle(CountryDeleteCommand command)
         {
             var response = new SimpleResponse<LongCommandResult>();
 
-            using (var connection = GetDbConnection())
+            using (var database = GetDatabase())
             {
-                try
-                {
-                    connection.OpenIfNot();
-                    var result = connection.DeleteAll<CountryEntity>(p => p.CountryId == command.Id);
-                    response.ResponseCode = result;
-                    response.RCode = result.ToString();
-                    response.Data = new LongCommandResult { ReturnValue = command.Id };
-                }
-                finally
-                {
-                    connection.CloseIfNot();
-                }
+                var result = database.DeleteAll<CountryEntity>(p => p.CountryId == command.Id);
+                response.ResponseCode = result;
+                response.RCode = result.ToString();
+                response.Data = new LongCommandResult { ReturnValue = command.Id };
             }
 
             return response;
         }
 
+        /// <summary>
+        /// Validates the command.
+        /// </summary>
+        /// <param name="command">The command.</param>
+        /// <returns>A SimpleResponse.</returns>
         public override SimpleResponse Validate(CountryDeleteCommand command)
         {
             SimpleResponse response = new SimpleResponse();

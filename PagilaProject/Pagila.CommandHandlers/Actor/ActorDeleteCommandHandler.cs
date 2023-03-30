@@ -1,37 +1,41 @@
-﻿using Coddie.Crud;
-using Coddie.Data;
-using Pagila.Command.Actor;
+﻿using Pagila.Command.Actor;
 using Pagila.Command.Base.Result;
 using Pagila.Entity;
 using SimpleInfra.Common.Response;
+using Simply.Crud;
 
 namespace Pagila.CommandHandlers.Actor
 {
+    /// <summary>
+    /// The actor delete command handler.
+    /// </summary>
     public class ActorDeleteCommandHandler : PagilaBaseCommandHandler<ActorDeleteCommand, LongCommandResult>
     {
+        /// <summary>
+        /// Handles the command.
+        /// </summary>
+        /// <param name="command">The command.</param>
+        /// <returns>A SimpleResponse.</returns>
         public override SimpleResponse<LongCommandResult> Handle(ActorDeleteCommand command)
         {
             var response = new SimpleResponse<LongCommandResult>();
 
-            using (var connection = GetDbConnection())
+            using (var database = GetDatabase())
             {
-                try
-                {
-                    connection.OpenIfNot();
-                    var result = connection.DeleteAll<ActorEntity>(p => p.ActorId == command.Id);
-                    response.ResponseCode = result;
-                    response.RCode = result.ToString();
-                    response.Data = new LongCommandResult { ReturnValue = command.Id };
-                }
-                finally
-                {
-                    connection.CloseIfNot();
-                }
+                var result = database.DeleteAll<ActorEntity>(p => p.ActorId == command.Id);
+                response.ResponseCode = result;
+                response.RCode = result.ToString();
+                response.Data = new LongCommandResult { ReturnValue = command.Id };
             }
 
             return response;
         }
 
+        /// <summary>
+        /// Validates the command.
+        /// </summary>
+        /// <param name="command">The command.</param>
+        /// <returns>A SimpleResponse.</returns>
         public override SimpleResponse Validate(ActorDeleteCommand command)
         {
             SimpleResponse response = new SimpleResponse();

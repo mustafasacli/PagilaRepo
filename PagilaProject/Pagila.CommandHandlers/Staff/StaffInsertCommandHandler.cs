@@ -1,50 +1,55 @@
 ﻿using Coddie.Common;
-using Coddie.Crud;
-using Coddie.Data;
+
 using Pagila.Command.Base.Result;
 using Pagila.Command.Staff;
 using Pagila.Entity;
 using SimpleInfra.Common.Response;
+using Simply.Crud;
 
 namespace Pagila.CommandHandlers.Staff
 {
+    /// <summary>
+    /// The staff insert command handler.
+    /// </summary>
     public class StaffInsertCommandHandler : PagilaBaseCommandHandler<StaffInsertCommand, LongCommandResult>
     {
+        /// <summary>
+        /// Handles the command.
+        /// </summary>
+        /// <param name="command">The command.</param>
+        /// <returns>A SimpleResponse.</returns>
         public override SimpleResponse<LongCommandResult> Handle(StaffInsertCommand command)
         {
             var response = new SimpleResponse<LongCommandResult>();
 
-            using (var connection = GetDbConnection())
+            using (var database = GetDatabase())
             {
-                try
+                var result = database.PartialInsertAndReturnId<StaffEntity>(new
                 {
-                    connection.OpenIfNot();
-                    var result = connection.PartialInsertAndReturnId<StaffEntity>(new
-                    {
-                        command.FirstName,
-                        command.LastName,
-                        command.AddressId,
-                        command.Email,
-                        command.StoreId,
-                        command.Active,
-                        command.Username,
-                        command.Password,
-                        command.LastUpdate,
-                        command.Picture
-                    });
-                    response.ResponseCode = (int)result.Result;
-                    response.RCode = result.ToString();
-                    response.Data = new LongCommandResult { ReturnValue = result.Result.ToLongNullable() };
-                }
-                finally
-                {
-                    connection.CloseIfNot();
-                }
+                    command.FirstName,
+                    command.LastName,
+                    command.AddressId,
+                    command.Email,
+                    command.StoreId,
+                    command.Active,
+                    command.Username,
+                    command.Password,
+                    command.LastUpdate,
+                    command.Picture
+                });
+                response.ResponseCode = (int)result.Result;
+                response.RCode = result.ToString();
+                response.Data = new LongCommandResult { ReturnValue = result.Result.ToLongNullable() };
             }
 
             return response;
         }
 
+        /// <summary>
+        /// Validates the command.
+        /// </summary>
+        /// <param name="command">The command.</param>
+        /// <returns>A SimpleResponse.</returns>
         public override SimpleResponse Validate(StaffInsertCommand command)
         {
             SimpleResponse response = new SimpleResponse();
