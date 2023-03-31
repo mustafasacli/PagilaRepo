@@ -34,15 +34,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Coddie.Common">
-      <HintPath>..\..\ExternalDlls\Coddie.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Coddie.Crud">
-      <HintPath>..\..\ExternalDlls\Coddie.Crud.dll</HintPath>
-    </Reference>
-    <Reference Include="Coddie.Data">
-      <HintPath>..\..\ExternalDlls\Coddie.Data.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
