@@ -42,6 +42,10 @@ namespace Pagila.Entity
         public DateTime LastUpdate
         { get; set; }
 
+        [NotMapped]
+        public string CountryName
+        { get; set; }
+
         [ForeignKey("CountryId")]
         public virtual CountryEntity Country
         { get; set; }

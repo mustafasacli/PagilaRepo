@@ -34,5 +34,8 @@ namespace Pagila.ViewModel
         //[Required(AllowEmptyStrings = false, ErrorMessage = "LastUpdate alanýna veri girilmelidir.")]
         public DateTime LastUpdate
         { get; set; }
+
+        public string CountryName
+        { get; set; }
     }
 }
