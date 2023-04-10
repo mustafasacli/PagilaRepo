@@ -3,7 +3,6 @@ using Pagila.Command.FilmCategory;
 using Pagila.Entity;
 using SimpleInfra.Common.Response;
 using Simply.Crud;
-using Simply.Crud.DatabaseExtensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
