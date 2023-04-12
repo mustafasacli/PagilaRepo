@@ -40,7 +40,7 @@ namespace Pagila.QueryHandlers.City
                     .AddJoin(p => p.CountryId, q => q.CountryId),
                     database.Where<CountryEntity>()
                     .AddAndCondition(q => q.CountryId > 0)
-                    .AddPropertyForSelect(q => q.Country, "CountryName")
+                    .AddPropertyForSelect(q => q.Country, nameof(CityEntity.CountryName))
                     );
 
                 var liste = database.PartialSelect(city).ToList();

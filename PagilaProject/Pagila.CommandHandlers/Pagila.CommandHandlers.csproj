@@ -49,6 +49,15 @@
     <Reference Include="SimpleInfra.Common.Response, Version=1.4.0.0, Culture=neutral, PublicKeyToken=c1ce61cdd45628f7, processorArchitecture=MSIL">
       <HintPath>..\packages\SimpleInfra.Common.Response.dll.1.4.0\lib\net40\SimpleInfra.Common.Response.dll</HintPath>
     </Reference>
+    <Reference Include="Simply.Common, Version=1.10.0.0, Culture=neutral, PublicKeyToken=c03dc30a9850669f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Simply.Common.1.10.0\lib\net451\Simply.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Simply.Crud, Version=1.5.1.0, Culture=neutral, PublicKeyToken=8752aac447e1f96a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Simply.Crud.1.5.1\lib\net451\Simply.Crud.dll</HintPath>
+    </Reference>
+    <Reference Include="Simply.Data, Version=4.5.1.0, Culture=neutral, PublicKeyToken=0d4e0a4d073b85f2, processorArchitecture=MSIL">
+      <HintPath>..\packages\Simply.Data.4.5.1\lib\net451\Simply.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -148,18 +157,6 @@
     <ProjectReference Include="..\..\..\SI.CQRS.Repository\SI.CQRS.Sln\NetFramework\SI.CommandHandler.Base\SI.CommandHandler.Base.csproj">
       <Project>{DDF9A38D-0B97-4E0B-919D-C73F4EE8EC71}</Project>
       <Name>SI.CommandHandler.Base</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Simply.crud\Simply.Crud.Soln\Crud\Simply.Crud\Simply.Crud.csproj">
-      <Project>{d8981a88-0e0c-4298-ad61-0a5775ed50a9}</Project>
-      <Name>Simply.Crud</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Simply\Simply.Soln\Simply\Simply.Common\Simply.Common.csproj">
-      <Project>{a81ff695-21ac-48c0-aa35-ba906168b95d}</Project>
-      <Name>Simply.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Simply\Simply.Soln\Simply\Simply.Data\Simply.Data.csproj">
-      <Project>{f374850b-07d2-4e3c-a3ec-bff273dee3c7}</Project>
-      <Name>Simply.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Pagila.Command.Base\Pagila.Command.Base.csproj">
       <Project>{1B9B2565-09F2-46A0-8DF5-30220BA9F4CE}</Project>
