@@ -3,6 +3,7 @@ using Pagila.Command.Language;
 using Pagila.Entity;
 using SimpleInfra.Common.Response;
 using Simply.Crud;
+using System;
 
 namespace Pagila.CommandHandlers.Language
 {
@@ -25,7 +26,7 @@ namespace Pagila.CommandHandlers.Language
                 var result = database.PartialUpdate<LanguageEntity>(new
                 {
                     command.Name,
-                    command.LastUpdate
+                    LastUpdate = DateTime.UtcNow
                 }, p => p.LanguageId == command.LanguageId);
                 response.ResponseCode = result;
                 response.RCode = result.ToString();

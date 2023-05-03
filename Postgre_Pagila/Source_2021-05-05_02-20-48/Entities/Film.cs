@@ -45,14 +45,14 @@ namespace Pagila.Entity
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessage = "LanguageId alanýna veri girilmelidir.")]
         [Column("language_id", Order = 5, TypeName = "int2")]
-        public int LanguageId
+        public short LanguageId
         { get; set; }
 
         /// <summary>
         /// Gets or Sets the OriginalLanguageId
         /// </summary>
         [Column("original_language_id", Order = 6, TypeName = "int2")]
-        public int? OriginalLanguageId
+        public short? OriginalLanguageId
         { get; set; }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Pagila.Entity
         /// Gets or Sets the Length
         /// </summary>
         [Column("length", Order = 9, TypeName = "int2")]
-        public int? Length
+        public short? Length
         { get; set; }
 
         /// <summary>
@@ -131,6 +131,14 @@ namespace Pagila.Entity
         { get; set; }
 
         public virtual ICollection<InventoryEntity> InventoryList
+        { get; set; }
+
+        [NotMapped]
+        public string LanguageName
+        { get; set; }
+
+        [NotMapped]
+        public string OriginalLanguageName
         { get; set; }
     }
 }

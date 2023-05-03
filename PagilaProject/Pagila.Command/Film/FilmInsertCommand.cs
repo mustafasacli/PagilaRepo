@@ -25,13 +25,13 @@ namespace Pagila.Command.Film
         /// <summary>
         /// Gets or Sets the LanguageId
         /// </summary>
-        public int LanguageId
+        public short LanguageId
         { get; set; }
 
         /// <summary>
         /// Gets or Sets the OriginalLanguageId
         /// </summary>
-        public int? OriginalLanguageId
+        public short? OriginalLanguageId
         { get; set; }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace Pagila.Command.Film
         /// <summary>
         /// Gets or Sets the Length
         /// </summary>
-        public int? Length
+        public short? Length
         { get; set; }
 
         /// <summary>

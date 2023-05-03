@@ -24,11 +24,11 @@ namespace Pagila.Dtos
         { get; set; }
 
         [DataMember]
-        public int LanguageId
+        public short LanguageId
         { get; set; }
 
         [DataMember]
-        public int? OriginalLanguageId
+        public short? OriginalLanguageId
         { get; set; }
 
         [DataMember]
@@ -40,7 +40,7 @@ namespace Pagila.Dtos
         { get; set; }
 
         [DataMember]
-        public int? Length
+        public short? Length
         { get; set; }
 
         [DataMember]

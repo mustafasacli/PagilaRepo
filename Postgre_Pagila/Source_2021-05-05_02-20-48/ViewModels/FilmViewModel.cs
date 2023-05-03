@@ -36,13 +36,13 @@ namespace Pagila.ViewModel
         /// Gets or Sets the LanguageId
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessage = "LanguageId alanýna veri girilmelidir.")]
-        public int LanguageId
+        public short LanguageId
         { get; set; }
 
         /// <summary>
         /// Gets or Sets the OriginalLanguageId
         /// </summary>
-        public int? OriginalLanguageId
+        public short? OriginalLanguageId
         { get; set; }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Pagila.ViewModel
         /// <summary>
         /// Gets or Sets the Length
         /// </summary>
-        public int? Length
+        public short? Length
         { get; set; }
 
         /// <summary>
@@ -96,6 +96,12 @@ namespace Pagila.ViewModel
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessage = "Fulltext alanýna veri girilmelidir.")]
         public string Fulltext
+        { get; set; }
+
+        public string LanguageName
+        { get; set; }
+
+        public string OriginalLanguageName
         { get; set; }
     }
 }

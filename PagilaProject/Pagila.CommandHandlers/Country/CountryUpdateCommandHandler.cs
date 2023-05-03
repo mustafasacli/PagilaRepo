@@ -3,6 +3,7 @@ using Pagila.Command.Country;
 using Pagila.Entity;
 using SimpleInfra.Common.Response;
 using Simply.Crud;
+using System;
 
 namespace Pagila.CommandHandlers.Country
 {
@@ -24,7 +25,8 @@ namespace Pagila.CommandHandlers.Country
             {
                 var result = database.PartialUpdate<CountryEntity>(new
                 {
-                    command.Country
+                    command.Country,
+                    LastUpdate = DateTime.UtcNow
                 }, p => p.CountryId == command.CountryId);
                 response.ResponseCode = result;
                 response.RCode = result.ToString();
