@@ -31,7 +31,8 @@ namespace Pagila.QueryHandlers
         /// <returns>A ISimpleDatabase.</returns>
         protected ISimpleDatabase GetDatabase()
         {
-            ISimpleDatabase database = new SimpleDatabase(SimpleDatabase.Create<NpgsqlConnection>("server = 127.0.0.1; Database = pagila; user id = postgres; password = pg123;"));
+            ISimpleDatabase database = new SimpleDatabase(
+                SimpleDatabase.Create<NpgsqlConnection>("server = 127.0.0.1; Database = pagila; user id = postgres; password = pg123;"));
             return database;
         }
 

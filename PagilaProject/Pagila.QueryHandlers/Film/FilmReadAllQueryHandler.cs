@@ -45,6 +45,7 @@ namespace Pagila.QueryHandlers.Film
                     database.Where<LanguageEntity>(tableAliasInfo: TableAliasInfo.New("t3"))
                     .AddPropertyForSelect(q => q.Name, nameof(FilmEntity.OriginalLanguageName))
                     );
+                database.LogDbCommand = true;
                 database.DbCommandLogAction = PrintCommand;
 
                 var liste = database.PartialSelect(film).ToList();
@@ -65,7 +66,7 @@ namespace Pagila.QueryHandlers.Film
         /// <param name="command">The command.</param>
         void PrintCommand(IDbCommand command)
         {
-            System.Console.WriteLine(command.CommandText);
+            //System.Console.WriteLine(command.CommandText);
         }
     }
 }
